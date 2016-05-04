@@ -141,6 +141,7 @@ if (typeof define === 'function' && define["amd"]){
     define([], function () { return seat_client; } );
 }  
 else if (typeof require === "function" && typeof module === "object" && module && module["exports"]){
+    var WebSocket = require('ws');
     module.exports = seat_client;
 } 
 else if ( typeof window === "object" && typeof window.document === "object" ) {

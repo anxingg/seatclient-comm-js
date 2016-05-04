@@ -5,14 +5,17 @@
         "author": {
                 "name": "anxing"
         },
-        "dependencies": {
-                "node-static": "0.5.9",
+        "devDependencies": {
                 "chai": "~3.4.1",
                 "mocha": "~2.3.4",
-                "moment": "2.13.0"
+                "mochawesome": "~1.2.1",
+                "ws": "~0.4"
+        },
+        "dependencies": {
+                "ws": "~0.4"
         },
         "scripts": {
                 "run" : "node server.js",
-                "test" : "node ./tests/testComm.js" 
+                "test" : "mocha ./tests/testComm.js" 
         }
 }

@@ -5,9 +5,9 @@ To run this application, first install dependencies:
 
     npm install
 
-And run a server:
+And test :
 
-    node server.js
+    npm test
 
 
 That will spawn an http server at http://127.0.0.1:9999/ which will
