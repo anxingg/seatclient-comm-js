@@ -12,13 +12,13 @@
     <div>
         <span>test</span><br/>
         <input type="button" id="bt_connect" value="re connect" onclick="seat_client.connect()"/> 
-        <input type="button" id="bt_login" value="login" onclick="seat_client.login(1,201,'12345',1,0,'noname',1,'13683717560')"/> 
+        <input type="button" id="bt_login" value="login" onclick="seat_client.sendlogin(1,201,'12345',1,0,'noname',1,'13683717560')"/> 
     </div>
 <script>
 var log = document.getElementById("log");
 var text = document.getElementById("text");
     
-function onloginResponse(MSIUserId,nResult){
+function onloginResp(MSIUserId,nResult){
     log.value += "seat_client.onloginResponse: "+MSIUserId.toString()+","+nResult.toString()+"\n";
 }
 
@@ -35,7 +35,7 @@ log.value = ""; // Clear log on reload
 seat_client.server_url = "ws://localhost:1202/msiserver";
 seat_client.onopen = onopen;
 seat_client.onclose = onclose;
-seat_client.onloginResponse = onloginResponse;
+seat_client.onloginResp = onloginResp;
 //onloginResponse
 seat_client.connect();
 

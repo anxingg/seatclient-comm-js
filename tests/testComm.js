@@ -22,7 +22,7 @@ seat_client.server_url = "ws://localhost:1202/msiserver";
 seat_client.onclose = onclose;
 
 
-
+var gMSIUserId = 230
 describe('seat_client', function() {
     describe('#connect()', function () {
         it("should connect success", function (done) {
@@ -35,15 +35,88 @@ describe('seat_client', function() {
         });
     });
     describe('#login()', function () {
-        it("should login success:1,201,'12345',1,0,'noname',1,'13683717560'", function () {
+        it("should login success:230 1 123456 1 -1 NoIpName 1 15936456107", function (done) {
             seat_client.onloginResp = function(MSIUserId,nResult){
-                log += "seat_client.onloginResponse: "+MSIUserId.toString()+","+nResult.toString()+"\n";
+                log = ""; // Clear log on reload
+                log += "seat_client.onloginResp: "+MSIUserId.toString()+","+nResult.toString()+"\n";
                 print();
-                assert.equal(1,MSIUserId);
+                assert.equal(gMSIUserId,MSIUserId);
                 assert.equal(1,nResult);
                 done();
             };
-            seat_client.sendlogin(1,201,'12345',1,0,'noname',1,'13683717560');
+            seat_client.sendlogin(gMSIUserId,1,'123456',1,-1,'NoIpName',1,'15936456107');
+        });
+    });
+    describe('#checkout()', function () {
+        it("should checkout success", function (done) {
+            seat_client.oncheckoutResp = function(MSIUserId,nResult){
+                log = ""; // Clear log on reload
+                log += "seat_client.oncheckoutResp: "+MSIUserId.toString()+","+nResult.toString()+"\n";
+                print();
+                assert.equal(gMSIUserId,MSIUserId);
+                assert.equal(1,nResult);
+                done();
+            };
+            seat_client.sendcheckout(gMSIUserId,0);
+        });
+    });
+    describe('#setmsistate()', function () {
+        it("should setmsistate idle success", function (done) {
+            seat_client.onsetmsistateResp = function(MSIUserId,nResult){
+                log = ""; // Clear log on reload
+                log += "seat_client.onsetmsistateResp: "+MSIUserId.toString()+","+nResult.toString()+"\n";
+                print();
+                assert.equal(gMSIUserId,MSIUserId);
+                assert.equal(1,nResult);
+                done();
+            };
+            seat_client.sendsetmsistate(gMSIUserId,0);
+        });
+    });
+    describe('#needcall()', function () {
+        it("should needcall success", function () {
+            seat_client.sendneedcall(gMSIUserId,1);
+        });
+    });
+    
+    describe('#callin()', function () {
+        this.timeout(30000);
+        it("callin success:1101 230 201604221748540024 -1 10 1258130695 13849041182 13849041182 0 0", function (done) {
+            seat_client.oncallinReport = function(MSIUserId,callId,srcMsiUserId,serviceId,
+                        dstNum,srcNum,firstDstNum,collaData,callSrc){
+                console.log("oncallinReport:"+MSIUserId.toString()+","+callId);
+                assert.equal(gMSIUserId,MSIUserId);
+                assert.equal("201604221748540024",callId);
+                seat_client.sendcallinResp(MSIUserId,callId,1);
+                done();
+            }
+        });
+    });
+    
+    describe('#connectedReport()', function () {
+        this.timeout(30000);
+        it("connectedReport and hangup :1150 230 201604221748540024 1 0; 1102 230 201604221748540024 1", function (done) {
+            seat_client.onconnectedReport = function(MSIUserId,callId,nResult,nType){
+                console.log("onconnectedReport:"+MSIUserId.toString()+","+callId);
+                assert.equal(gMSIUserId,MSIUserId);
+                assert.equal("201604221748540024",callId);
+                seat_client.sendhangup(MSIUserId,callId);
+                
+            }
+            seat_client.onhangupReport = function(MSIUserId,callId,nType){
+                console.log("seat_client.onhangupReport:"+MSIUserId.toString()+","+callId);
+                assert.equal(gMSIUserId,MSIUserId);
+                assert.equal("201604221748540024",callId);
+                done();
+            }
+        });
+    });
+    
+    describe('#idle()', function () {
+        this.timeout(600000);
+        it("wait idle timeout", function (done) {
+            ;
         });
     });
 });
+
