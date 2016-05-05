@@ -22,7 +22,9 @@ seat_client.server_url = "ws://localhost:1202/msiserver";
 seat_client.onclose = onclose;
 
 
-var gMSIUserId = 230
+var gMSIUserId = 245
+var gCallId = 201605050930210024;
+var gWorkNo = 123456
 describe('seat_client', function() {
     describe('#connect()', function () {
         it("should connect success", function (done) {
@@ -35,7 +37,7 @@ describe('seat_client', function() {
         });
     });
     describe('#login()', function () {
-        it("should login success:230 1 123456 1 -1 NoIpName 1 15936456107", function (done) {
+        it("should login success:1200 245 123456  1 -1 NoIpName 1 13783476576", function (done) {
             seat_client.onloginResp = function(MSIUserId,nResult){
                 log = ""; // Clear log on reload
                 log += "seat_client.onloginResp: "+MSIUserId.toString()+","+nResult.toString()+"\n";
@@ -44,7 +46,7 @@ describe('seat_client', function() {
                 assert.equal(1,nResult);
                 done();
             };
-            seat_client.sendlogin(gMSIUserId,1,'123456',1,-1,'NoIpName',1,'15936456107');
+            seat_client.sendlogin(gMSIUserId,gWorkNo,"pass",1,-1,'NoIpName',1,'13783476576');
         });
     });
     describe('#checkout()', function () {
@@ -86,7 +88,7 @@ describe('seat_client', function() {
                         dstNum,srcNum,firstDstNum,collaData,callSrc){
                 console.log("oncallinReport:"+MSIUserId.toString()+","+callId);
                 assert.equal(gMSIUserId,MSIUserId);
-                assert.equal("201604221748540024",callId);
+                assert.equal(gCallId,callId);
                 seat_client.sendcallinResp(MSIUserId,callId,1);
                 done();
             }
@@ -99,14 +101,25 @@ describe('seat_client', function() {
             seat_client.onconnectedReport = function(MSIUserId,callId,nResult,nType){
                 console.log("onconnectedReport:"+MSIUserId.toString()+","+callId);
                 assert.equal(gMSIUserId,MSIUserId);
-                assert.equal("201604221748540024",callId);
+                assert.equal(gCallId,callId);
                 seat_client.sendhangup(MSIUserId,callId);
                 
             }
             seat_client.onhangupReport = function(MSIUserId,callId,nType){
                 console.log("seat_client.onhangupReport:"+MSIUserId.toString()+","+callId);
                 assert.equal(gMSIUserId,MSIUserId);
-                assert.equal("201604221748540024",callId);
+                assert.equal(gCallId,callId);
+                done();
+            }
+        });
+    });
+    
+    describe('#onserviceReport()', function () {
+        this.timeout(30000);
+        it("onserviceReport:1152 245 1 1 13783688005", function (done) {
+            seat_client.onserviceReport = function(MSIUserId,serviceId,nServiceNum,phoneList){
+                console.log("onserviceReport:"+MSIUserId.toString()+","+serviceId);
+                assert.equal(gMSIUserId,MSIUserId);
                 done();
             }
         });
