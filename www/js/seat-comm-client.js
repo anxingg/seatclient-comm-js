@@ -127,7 +127,7 @@ var MSI_STATE_CONSTANTS = {};
 MSI_STATE_CONSTANTS.SeatState_LoginIn = 0;
 MSI_STATE_CONSTANTS.SeatState_LoginOut =1;
 
-var CALL_TYPE = {
+var CALL_TYPE_CONSTANTS = {
     Idle : 0 ,
     InCome : 1 ,
     OutCall : 2 
@@ -136,12 +136,12 @@ var callInfo = {
     callId : "",
     phone : "",
     nState : CALL_INFO_STATE_CONSTANTS.CallSate_NULL,
-    nCallType : CALL_TYPE.Idle,
+    nCallType : CALL_TYPE_CONSTANTS.Idle,
     initCallInfo : function(){
         callId = "";
         phone = "";
         nState = CALL_INFO_STATE_CONSTANTS.CallSate_NULL,
-        nCallType = CALL_TYPE.Idle
+        nCallType = CALL_TYPE_CONSTANTS.Idle
     }
 }
 var seat_client = {};
@@ -165,12 +165,83 @@ seat_client.onerror = function() {
     console.log("seat_client.onerror:");
     seat_client.close();
 };
+seat_client.changeCallState = function(nCallState){
+    seat_client.nCallState = nCallState;
+}
+seat_client.initCallInfo = function(){
+    seat_client.callInfo.initCallInfo();
+    seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallSate_NULL);
+}
 seat_client.loginResp = function(dataArray){
+    seat_client.initCallInfo();
     seat_client.onloginResp(dataArray[1],dataArray[2]); 
+}
+seat_client.callinReport = function(dataArray){
+    seat_client.initCallInfo();
+    if (dataArray[9]==1)//0新呼叫 1三方 2监听3转移4强插 5 强拆
+    {
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Conf_Alting);
+    }
+    else 
+    {
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_InCome_Alerting);
+    }
+    seat_client.callInfo.nCallType = CALL_TYPE_CONSTANTS.InCome;
+    seat_client.callInfo.callId = dataArray[2];
+    seat_client.callInfo.phone = dataArray[6];
+    if(dataArray[9]==1){
+        throw "三方未实现";
+    }
+    else{
+        seat_client.oncallinReport(dataArray[1],dataArray[2],dataArray[3],dataArray[4],dataArray[5],dataArray[6],
+                dataArray[7],dataArray[8],dataArray[9]);
+    }
+}
+/**
+* @description 电话已接通
+*/
+seat_client.connectedReport = function(dataArray){
+    if(seat_client.callInfo.callId == dataArray[2]){
+        if (seat_client.callInfo.nState == CALL_INFO_STATE_CONSTANTS.CallState_Conf_Alting)
+        {
+            ChangeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Conf_OK);// 会通话中
+        }
+        else
+        {
+            ChangeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Connect);
+        }
+        seat_client.onconnectedReport(dataArray[1],dataArray[2],dataArray[3],dataArray[4]);
+    }
+    else{
+        console.log("warnning:seat_client.callInfo.callId=",seat_client.callInfo.callId);
+    }
+}
+seat_client.idleresp = function(dataArray){
+    console.log("COMM_MSGHEAD_CONSTANTS.IDLERESP Receive"); 
+}
+seat_client.checkoutResp = function(dataArray){
+    seat_client.oncheckoutResp(dataArray[1],dataArray[2]);
+}
+seat_client.setmsistateResp = function(dataArray){
+    seat_client.onsetmsistateResp(dataArray[1],dataArray[2]);
+}
+
+seat_client.hangupReport = function(dataArray){
+    seat_client.onhangupReport(dataArray[1],dataArray[2],dataArray[3]);
+}
+seat_client.serviceReport = function(dataArray){
+    seat_client.onserviceReport(dataArray[1],dataArray[2],dataArray[3],dataArray[4]);
 }
 seat_client.msgMap =[
     {dataHead:COMM_MSGHEAD_CONSTANTS.LOGINRESP,procFunction:seat_client.loginResp},
-    {dataHead:COMM_MSGHEAD_CONSTANTS.LOGINRESP,procFunction:seat_client.loginResp}
+    {dataHead:COMM_MSGHEAD_CONSTANTS.CALLINREPORT,procFunction:seat_client.callinReport},
+    {dataHead:COMM_MSGHEAD_CONSTANTS.IDLERESP,procFunction:seat_client.idleresp},
+    {dataHead:COMM_MSGHEAD_CONSTANTS.CHECKOUTRESP,procFunction:seat_client.checkoutResp},
+    {dataHead:COMM_MSGHEAD_CONSTANTS.SETMSISTATERESP,procFunction:seat_client.setmsistateResp},
+    {dataHead:COMM_MSGHEAD_CONSTANTS.SETMSISTATERESP,procFunction:seat_client.setmsistateResp},
+    {dataHead:COMM_MSGHEAD_CONSTANTS.CONNECTEDREPORT,procFunction:seat_client.connectedReport},
+    {dataHead:COMM_MSGHEAD_CONSTANTS.HANGUPCALLREPORT,procFunction:seat_client.hangupReport},
+    {dataHead:COMM_MSGHEAD_CONSTANTS.SERVICEREPORT,procFunction:seat_client.serviceReport},
 ]
 seat_client.msgMap.findAndProc = function(dataHead){
     var bfind = false;
@@ -193,28 +264,6 @@ seat_client.onmessage = function(evt) {
     if(seat_client.msgMap.findAndProc(dataHead) == true)
     {
         console.log("seat_client.msgMap.findAndProc=true");
-    }
-    else if(dataHead == COMM_MSGHEAD_CONSTANTS.CALLINREPORT){
-       seat_client.oncallinReport(dataArray[1],dataArray[2],dataArray[3],dataArray[4],dataArray[5],dataArray[6],
-            dataArray[7],dataArray[8],dataArray[9]);
-    }
-    else if(dataHead == COMM_MSGHEAD_CONSTANTS.IDLERESP){
-       console.log("COMM_MSGHEAD_CONSTANTS.IDLERESP Receive"); 
-    }
-    else if(dataHead == COMM_MSGHEAD_CONSTANTS.CHECKOUTRESP){
-        seat_client.oncheckoutResp(dataArray[1],dataArray[2]);
-    }
-    else if(dataHead == COMM_MSGHEAD_CONSTANTS.SETMSISTATERESP){
-        seat_client.onsetmsistateResp(dataArray[1],dataArray[2]);
-    }
-    else if(dataHead == COMM_MSGHEAD_CONSTANTS.CONNECTEDREPORT){
-        seat_client.onconnectedReport(dataArray[1],dataArray[2],dataArray[3],dataArray[4]);
-    }
-    else if(dataHead == COMM_MSGHEAD_CONSTANTS.HANGUPCALLREPORT){
-        seat_client.onhangupReport(dataArray[1],dataArray[2],dataArray[3]);
-    }
-    else if(dataHead == COMM_MSGHEAD_CONSTANTS.SERVICEREPORT){
-        seat_client.onserviceReport(dataArray[1],dataArray[2],dataArray[3],dataArray[4]);
     }
     else{
         console.log("seat_client.onmessage cann't process:"+dataHead);
@@ -246,8 +295,6 @@ function GetDateDiff(sTime, eTime, diffType) {
     return parseInt((new Date(eTime) 
         - new Date(sTime)) / parseInt(divNum));
 }
-
-
 
 seat_client.onidle = function(){
     console.log("seatclient.onidle");
