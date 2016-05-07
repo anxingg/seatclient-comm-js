@@ -1,0 +1,65 @@
+[2016-05-05 09:33:09]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-05 09:33:09]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-05 09:33:21]-Rev  DB  Msg <==1152 245 1 1 13783688005
+[2016-05-05 09:33:21]-Send Web Msg ==>25 1,13783688005
+[2016-05-05 09:33:21]-Send Web Msg ==>3000 0,1
+[2016-05-05 09:33:59]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-05 09:33:59]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-05 09:34:03]-Rev  Web Msg <==5 
+[2016-05-05 09:34:03]-Rev  Web MsgCCCC <==1
+[2016-05-05 09:34:03]-Send DB  Msg ==>1251 245 0#
+[2016-05-05 09:34:04]-Rev  DB  Msg <==1151 245 1
+[2016-05-05 09:34:04]-[ChangeMsiState]-SeatState_LoginOut-Change To-SeatState_LoginIn
+[2016-05-05 09:34:04]-Send Web Msg ==>16 0,1
+[2016-05-05 09:34:04]-Send Web Msg ==>3000 0,0
+[2016-05-05 09:34:04]-Send DB  Msg ==>1263 245 1#
+[2016-05-05 09:34:04]-Send DB  Msg ==>1203 245 1#
+[2016-05-05 09:34:04]-Rev  DB  Msg <==1163 245 1
+[2016-05-05 09:34:04]-[DT]-[SetOutCalllHandle]-[]-Enter
+[2016-05-05 09:34:04]-[DT]-[SetOutCalllHandle]-[]-Return
+[2016-05-05 09:34:04]-Rev  DB  Msg <==1152 245 1 0 
+[2016-05-05 09:34:04]-Send Web Msg ==>25 0,
+[2016-05-05 09:34:04]-Send Web Msg ==>3000 0,0
+[2016-05-05 09:34:04]-Rev  DB  Msg <==1152 245 1 0 
+[2016-05-05 09:34:04]-Rev  DB  Msg <==1101 245 201605050930210024 -1 1 125813069 13783688005 13783476576 0 0
+[2016-05-05 09:34:04]-Send Web Msg ==>25 0,
+[2016-05-05 09:34:04]-Send Web Msg ==>3000 0,0
+[2016-05-05 09:34:04]-[DT]-[CallInEventHandle]-[]-Enter
+[2016-05-05 09:34:04]-[ChangeCallState]-CallSate_NULL-Change To-CallSate_NULL
+[2016-05-05 09:34:04]-Send Web Msg ==>3000 0,0
+[2016-05-05 09:34:04]-[ChangeCallState]-CallSate_NULL-Change To-CallState_InCome_Alerting
+[2016-05-05 09:34:04]-Send Web Msg ==>3000 1,0
+[2016-05-05 09:34:06]-Send Web Msg ==>2 13783688005,13783476576,,呼入,,,,0,1
+[2016-05-05 09:34:06]-Send Web Msg ==>3000 1,0
+[2016-05-05 09:34:06]-[DT]-[CallInEventHandle]-[201605050930210024]-Return
+[2016-05-05 09:34:21]-Rev  DB  Msg <==1150 245 201605050930210024 1 0
+[2016-05-05 09:34:21]-[DT]-[CallEstablishHandle]-[201605050930210024]-Enter
+[2016-05-05 09:34:21]-[ChangeCallState]-CallState_InCome_Alerting-Change To-CallState_Connect
+[2016-05-05 09:34:21]-Send Web Msg ==>3000 3,0
+[2016-05-05 09:34:21]-Send Web Msg ==>3 13783688005,13783476576,,呼入,,,0,201605050930210024
+[2016-05-05 09:34:21]-Send Web Msg ==>3000 3,0
+[2016-05-05 09:34:21]-[DT]-[CallEstablishHandle]-[201605050930210024]-Return
+[2016-05-05 09:34:22]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-05 09:34:22]-Rev  Web MsgBBBBBB <==0
+[2016-05-05 09:34:22]-[DT]-[http://218.206.244.202:2323/mcHotline/jbpmworkorder/getProductByPhoneDecideForward.action?callPhone=13783476576&phone=13783688005&filePath=201605050930210024]-[-1]-URL
+[2016-05-05 09:34:22]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-05 09:34:22]-Rev  Web MsgBBBBBB <==0
+[2016-05-05 09:34:22]-[DT]-[http://218.206.244.202:2323/mcHotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-05-05 09:34:49]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-05 09:34:50]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-05 09:34:52]-Rev  DB  Msg <==1102 245 201605050930210024 2
+[2016-05-05 09:34:52]-[DT]-[CallEndHandle]-[201605050930210024]-Enter
+[2016-05-05 09:34:52]-Rev  Web Msg <==6 
+[2016-05-05 09:34:52]-Rev  Web MsgCCCC <==0
+[2016-05-05 09:34:52]-Send Web Msg ==>5 13783688005,13783476576,,呼入,2016-05-05 09:34:21,2016-05-05 09:34:52,31,201605050930210024
+[2016-05-05 09:34:52]-Send Web Msg ==>3000 3,0
+[2016-05-05 09:34:52]-Send DB  Msg ==>1204 245 0#
+[2016-05-05 09:34:52]-[ChangeCallState]-CallState_Connect-Change To-CallState_End
+[2016-05-05 09:34:52]-Send Web Msg ==>3000 31,1
+[2016-05-05 09:34:52]-[ChangeCallState]-CallState_End-Change To-CallSate_NULL
+[2016-05-05 09:34:52]-Send Web Msg ==>3000 0,1
+[2016-05-05 09:34:52]-[DT]-[CallEndHandle]-[]-Return
+[2016-05-05 09:34:52]-Rev  DB  Msg <==1104 245 1
+[2016-05-05 09:34:52]-[ChangeMsiState]-SeatState_LoginOut-Change To-SeatState_LoginOut
+[2016-05-05 09:34:52]-Send Web Msg ==>16 1,1
+[2016-05-05 09:34:52]-Send Web Msg ==>3000 0,1
