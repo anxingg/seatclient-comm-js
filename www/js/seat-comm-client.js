@@ -342,8 +342,8 @@ seat_client.msgMap.findAndProc = function (dataHead,data) {
     return bfind;
 }
 seat_client.onmessage = function (evt) {
-    console.log("seat_client.onmessage data=" + evt.data);
     seat_client.lastmsgtime = new Date();
+    console.log("seat_client.onmessage time="+seat_client.lastmsgtime+" data=" + evt.data);
     var data = evt.data.replace(COMM_MSGHEAD_CONSTANTS.TAIL, "");
     var dataArray = data.split(COMM_MSGHEAD_CONSTANTS.SPLIT);
     var dataHead = dataArray[0];

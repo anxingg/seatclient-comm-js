@@ -15,7 +15,7 @@
                 "ws": "~0.4"
         },
         "scripts": {
-                "run" : "node server.js",
-                "test" : "mocha ./tests/testComm.js" 
+                "test" : "mocha ./tests/testComm.js",
+                "run" : "node client.js"  
         }
 }
