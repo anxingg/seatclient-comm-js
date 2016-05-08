@@ -69,8 +69,37 @@ describe('seat_client', function() {
             seat_client.sendcheckout(gMSIUserId,0);
         });
     });
-    
-    
+    describe('#getidlemsistate()',function(){
+        it("getidlemsistate",function(done){
+            seat_client.ongetidlemsistateResp = function(MSIUserId,num,msiStateList){
+                console.log("seat_client.ongetidlemsistateResp");
+                done();
+            }
+            seat_client.sendgetidlemsistate(gMSIUserId);
+        })
+    });
+    describe('#gettalkmsistate()',function(){
+        it("gettalkmsistate",function(done){
+            seat_client.ongettalkmsistateResp = function(MSIUserId,num,msiStateList){
+                console.log("seat_client.ongettalkmsistateResp");
+                done();
+            }
+            seat_client.sendgettalkmsistate(gMSIUserId);
+        })
+    });
+    /*
+    //这个是监控时候用的
+    describe('#sendmsistatemonitor()',function(){
+        it("sendmsistatemonitor",function(done){
+            seat_client.onmsistatemonitorResp = function(MSIUserId,num,msiStateList){
+                console.log("seat_client.onmsistatemonitorResp");
+                done();
+            }
+            seat_client.sendmsistatemonitor(gMSIUserId);
+        })
+    });
+    */
+    /*
     describe('#callin()', function () {
         this.timeout(120000);
         it("callin success:1101 245 201605050930210024 -1 10 1258130695 13849041182 13849041182 0 0", function (done) {
@@ -113,5 +142,6 @@ describe('seat_client', function() {
             }
         });
     });
+    */
 });
 

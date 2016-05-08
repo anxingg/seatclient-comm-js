@@ -73,6 +73,15 @@ COMM_MSGHEAD_CONSTANTS.SETMSISTATERESP = "1151";
 
 COMM_MSGHEAD_CONSTANTS.SERVICEREPORT = "1152";
 
+COMM_MSGHEAD_CONSTANTS.GETIDLEMSISTATE = "1254";
+COMM_MSGHEAD_CONSTANTS.GETIDLEMSISTATERESP = "1154";
+
+COMM_MSGHEAD_CONSTANTS.GETTALKMSISTATE = "1255";
+COMM_MSGHEAD_CONSTANTS.GETTALKMSISTATERESP = "1155";
+
+COMM_MSGHEAD_CONSTANTS.MSISTATEMONITOR = "1256";
+COMM_MSGHEAD_CONSTANTS.MSISTATEMONITORRESP = "1156";
+
 COMM_MSGHEAD_CONSTANTS.IDLE = "1268";
 COMM_MSGHEAD_CONSTANTS.IDLERESP = "1168";
 
@@ -230,13 +239,32 @@ seat_client.callinReport = function (dataArray) {
     seat_client.callInfo.callId = dataArray[2];
     seat_client.callInfo.phone = dataArray[6];
     if (dataArray[9] == 1) {
-        throw "三方未实现";
+        // 理论上三方跟普通来电没有区别
+        throw "三方未实现";  
     }
     else {
         seat_client.oncallinReport(dataArray[1], dataArray[2], dataArray[3], dataArray[4], dataArray[5], dataArray[6],
-            dataArray[7], dataArray[8], dataArray[9]);
+            dataArray[7], dataArray[8], dataArray[9],seat_client.callInfo.nCallType);
     }
 }
+/**
+ * @description 呼叫进入
+ * @param {int} MSIUserId 座席ID 
+ * @param {string} callId 呼叫ID
+ * @param {int} srcMsiUserId 来源坐席ID
+ * @param {int} serviceId 队列ID
+ * @param {string} calledNum 被叫号码
+ * @param {string} phone 主叫号码 
+ * @param {string} firstDstNum 第一被叫
+ * @param {string} collaData 带外数据
+ * @param {string} srcType 呼叫来源  0新呼叫 1三方 2监听3转移4强插 5 强拆
+ * @param {string} callType 呼叫类型 CALL_TYPE_CONSTANTS
+ */
+seat_client.oncallinReport = function (MSIUserId, callId, srcMsiUserId, serviceId, calledNum, phone, 
+    firstDstNum, collaData, srcType, callType) {
+    console.log("seat_client.oncallinReport:" + MSIUserId.toString() + "," + callId);
+}
+
 /**
 * @description 电话已接通
 */
@@ -249,16 +277,24 @@ seat_client.connectedReport = function (dataArray) {
             seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Connect);
         }
         if (seat_client.callInfo.nCallType == CALL_TYPE_CONSTANTS.InCome) {
-            seat_client.onconnectedReport(dataArray[1], dataArray[2], dataArray[3], dataArray[4]);
+            seat_client.onconnectedReport(dataArray[1], dataArray[2], dataArray[3], dataArray[4],seat_client.callInfo.nCallType);
         }
         else if (seat_client.callInfo.nCallType == CALL_TYPE_CONSTANTS.OutCall) {
-            seat_client.onconnectedReport(dataArray[1], dataArray[2], dataArray[3], dataArray[4]);
+            seat_client.onconnectedReport(dataArray[1], dataArray[2], dataArray[3], dataArray[4],seat_client.callInfo.nCallType);
         }
     }
     else {
         console.log("warnning:seat_client.connectedReport seat_client.callInfo.callId=", seat_client.callInfo.callId);
     }
 }
+/**
+ * @description 呼叫已经连接
+ * @param {int} MSIUserId 座席ID 
+ */
+seat_client.onconnectedReport = function (MSIUserId, callId, nResult, srcType, callType) {
+    console.log("seat_client.onconnectedReport:" + MSIUserId.toString() + "," + callId);
+}
+
 /**
 * @description 链路空闲到
 */
@@ -319,6 +355,53 @@ seat_client.hangupReport = function (dataArray) {
 seat_client.serviceReport = function (dataArray) {
     seat_client.onserviceReport(dataArray[1], dataArray[2], dataArray[3], dataArray[4]);
 }
+
+/**
+* @description 得到空闲坐席列表状态响应 1154 坐席ID 数目 队列ID列表（用|分割）
+*/
+seat_client.getidlemsistateResp = function (dataArray) {
+    seat_client.ongetidlemsistateResp(dataArray[1], dataArray[2], dataArray[3]);
+}
+/**
+* @description 得到空闲坐席列表状态响应
+* @param {int} MSIUserId 坐席ID
+* @param {int} num 数目
+@ @param {string} 空闲坐席列表 姓名|ID|工号|号码
+*/
+seat_client.ongetidlemsistateResp = function(MSIUserId,num,msiStateList){
+    console.log("seat_client.ongetidlemsistateResp");
+}
+/**
+* @description 得到通话中坐席列表状态响应 1155 坐席ID 数目 队列ID列表（用|分割）
+*/
+seat_client.gettalkmsistateResp = function (dataArray) {
+    seat_client.ongettalkmsistateResp(dataArray[1], dataArray[2], dataArray[3]);
+}
+/**
+* @description 得到通话中坐席列表状态响应
+* @param {int} MSIUserId 坐席ID
+* @param {int} num 数目
+@ @param {string} 坐席列表 姓名|ID|工号
+*/
+seat_client.ongettalkmsistateResp = function(MSIUserId,num,msiStateList){
+    console.log("seat_client.ongettalkmsistateResp");
+}
+/**
+* @description 坐席状态监控响应 1156 坐席ID 数目 队列ID列表（用|分割）
+*/
+seat_client.msistatemonitorResp = function (dataArray) {
+    seat_client.onmsistatemonitorResp(dataArray[1], dataArray[2], dataArray[3]);
+}
+/**
+* @description 坐席状态监控响应
+* @param {int} MSIUserId 坐席ID
+* @param {int} num 数目
+@ @param {string} 坐席列表 ID|工号|状态
+*/
+seat_client.onmsistatemonitorResp = function(MSIUserId,num,msiStateList){
+    console.log("seat_client.onmsistatemonitorResp");
+}
+
 seat_client.msgMap = [
     { dataHead: COMM_MSGHEAD_CONSTANTS.LOGINRESP, procFunction: seat_client.loginResp },
     { dataHead: COMM_MSGHEAD_CONSTANTS.CALLINREPORT, procFunction: seat_client.callinReport },
@@ -328,6 +411,9 @@ seat_client.msgMap = [
     { dataHead: COMM_MSGHEAD_CONSTANTS.CONNECTEDREPORT, procFunction: seat_client.connectedReport },
     { dataHead: COMM_MSGHEAD_CONSTANTS.HANGUPCALLREPORT, procFunction: seat_client.hangupReport },
     { dataHead: COMM_MSGHEAD_CONSTANTS.SERVICEREPORT, procFunction: seat_client.serviceReport },
+    { dataHead: COMM_MSGHEAD_CONSTANTS.GETIDLEMSISTATERESP, procFunction: seat_client.getidlemsistateResp },
+    { dataHead: COMM_MSGHEAD_CONSTANTS.GETTALKMSISTATERESP, procFunction: seat_client.gettalkmsistateResp },
+    { dataHead: COMM_MSGHEAD_CONSTANTS.MSISTATEMONITOR, procFunction: seat_client.msistatemonitorResp },
 ]
 seat_client.msgMap.findAndProc = function (dataHead,data) {
     var bfind = false;
@@ -431,7 +517,9 @@ seat_client.close = function (bSocketClose) {
         seat_client.comm.close();
     seat_client.closeFlag = true;
 }
-
+/**
+ * @description 呼叫状态变化
+ */
 seat_client.oncallstatechange = function (nCallState, nMsiState) {
     console.log("seat_client.oncallstatechange:nCallState=" + nCallState.toString() + ",nMsiState=" + nMsiState);
 }
@@ -459,14 +547,10 @@ seat_client.onloginResp = function (MSIUserId, nResult) {
     console.log("seat_client.onloginResp:" + MSIUserId.toString() + "," + nResult.toString());
 }
 
-/**
- * @description 呼叫进入
- * @param {int} MSIUserId 座席ID 
- */
-seat_client.oncallinReport = function (MSIUserId, callId, srcMsiUserId, serviceId, dstNum, srcNum, firstDstNum, collaData, callSrc) {
-    console.log("seat_client.oncallinReport:" + MSIUserId.toString() + "," + callId);
-}
 
+/**
+ * @description 呼叫进入应答
+ */
 seat_client.sendcallinResp = function (MSIUserId, callId, nResult) {
     var data = COMM_MSGHEAD_CONSTANTS.CALLINRESP + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() + COMM_MSGHEAD_CONSTANTS.SPLIT +
         callId + COMM_MSGHEAD_CONSTANTS.SPLIT + nResult.toString() + COMM_MSGHEAD_CONSTANTS.TAIL;
@@ -481,6 +565,9 @@ seat_client.sendheartbeat = function () {
     seat_client.send(data);
 }
 
+/**
+ * @description 签出
+ */
 seat_client.sendcheckout = function (MSIUserId, nType) {
     var data = COMM_MSGHEAD_CONSTANTS.CHECKOUT + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() + COMM_MSGHEAD_CONSTANTS.SPLIT
         + nType.toString() + " 0" + COMM_MSGHEAD_CONSTANTS.TAIL;
@@ -496,6 +583,9 @@ seat_client.oncheckoutResp = function (MSIUserId, nResult) {
     console.log("seat_client.oncheckoutResp:" + MSIUserId.toString() + "," + nResult.toString());
 }
 
+/**
+ * @description 设置坐席状态
+ */
 seat_client.sendsetmsistate = function (MSIUserId, nType) {
     var data = COMM_MSGHEAD_CONSTANTS.SETMSISTATE + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() + COMM_MSGHEAD_CONSTANTS.SPLIT
         + nType.toString() + " 0" + COMM_MSGHEAD_CONSTANTS.TAIL;
@@ -511,23 +601,49 @@ seat_client.onsetmsistateResp = function (MSIUserId, nResult) {
     console.log("seat_client.onsetmsistateResp:" + MSIUserId.toString() + "," + nResult.toString());
 }
 
+/**
+ * @description 请求分配电话
+ */
 seat_client.sendneedcall = function (MSIUserId, nServiceId) {
     var data = COMM_MSGHEAD_CONSTANTS.NEEDCALL + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() + COMM_MSGHEAD_CONSTANTS.SPLIT
         + nServiceId.toString() + " 0 0" + COMM_MSGHEAD_CONSTANTS.TAIL;
     seat_client.send(data);
 }
 
-/**
- * @description 呼叫已经连接
- * @param {int} MSIUserId 座席ID 
- */
-seat_client.onconnectedReport = function (MSIUserId, callId, nResult, nType) {
-    console.log("seat_client.onconnectedReport:" + MSIUserId.toString() + "," + callId);
-}
 
+/**
+ * @description 挂机
+ */
 seat_client.sendhangup = function (MSIUserId, callId) {
     var data = COMM_MSGHEAD_CONSTANTS.HANGUPCALL + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() + COMM_MSGHEAD_CONSTANTS.SPLIT
         + callId.toString() + " 0 0" + COMM_MSGHEAD_CONSTANTS.TAIL;
+    seat_client.send(data);
+}
+
+/**
+ * @description 得到空闲坐席列表
+ */
+seat_client.sendgetidlemsistate = function (MSIUserId) {
+    var data = COMM_MSGHEAD_CONSTANTS.GETIDLEMSISTATE + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() 
+        + " 0 0" + COMM_MSGHEAD_CONSTANTS.TAIL;
+    seat_client.send(data);
+}
+
+/**
+ * @description 得到通话坐席列表
+ */
+seat_client.sendgettalkmsistate = function (MSIUserId) {
+    var data = COMM_MSGHEAD_CONSTANTS.GETTALKMSISTATE + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() 
+        + " 0 0" + COMM_MSGHEAD_CONSTANTS.TAIL;
+    seat_client.send(data);
+}
+
+/**
+ * @description 坐席状态监控
+ */
+seat_client.sendmsistatemonitor = function (MSIUserId) {
+    var data = COMM_MSGHEAD_CONSTANTS.MSISTATEMONITOR + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() 
+        + " 1 0" + COMM_MSGHEAD_CONSTANTS.TAIL;
     seat_client.send(data);
 }
 
