@@ -58,7 +58,7 @@ describe('seat_client', function() {
                 print();
                 assert.equal(gMSIUserId,MSIUserId);
                 assert.equal(1,nResult);
-                seat_client.sendsetmsistate(gMSIUserId,0);
+                seat_client.sendsetmsistate(0);
                 done();
             };
             seat_client.onsetmsistateResp = function(MSIUserId,nResult){
@@ -66,7 +66,7 @@ describe('seat_client', function() {
                 log += "seat_client.onsetmsistateResp: "+MSIUserId.toString()+","+nResult.toString()+"\n";
                 print();
             };
-            seat_client.sendcheckout(gMSIUserId,0);
+            seat_client.sendcheckout(0);
         });
     });
     describe('#getidlemsistate()',function(){
@@ -75,7 +75,7 @@ describe('seat_client', function() {
                 console.log("seat_client.ongetidlemsistateResp");
                 done();
             }
-            seat_client.sendgetidlemsistate(gMSIUserId);
+            seat_client.sendgetidlemsistate();
         })
     });
     describe('#gettalkmsistate()',function(){
@@ -84,7 +84,7 @@ describe('seat_client', function() {
                 console.log("seat_client.ongettalkmsistateResp");
                 done();
             }
-            seat_client.sendgettalkmsistate(gMSIUserId);
+            seat_client.sendgettalkmsistate();
         })
     });
     /*
@@ -95,7 +95,7 @@ describe('seat_client', function() {
                 console.log("seat_client.onmsistatemonitorResp");
                 done();
             }
-            seat_client.sendmsistatemonitor(gMSIUserId);
+            seat_client.sendmsistatemonitor();
         })
     });
     */
@@ -108,7 +108,7 @@ describe('seat_client', function() {
                 console.log("oncallinReport:"+MSIUserId.toString()+","+callId);
                 assert.equal(gMSIUserId,MSIUserId);
                 assert.equal(gCallId,callId);
-                seat_client.sendcallinResp(MSIUserId,callId,1);
+                seat_client.sendcallinResp(1);
                 done();
             }
         });
@@ -121,7 +121,7 @@ describe('seat_client', function() {
                 console.log("onconnectedReport:"+MSIUserId.toString()+","+callId);
                 assert.equal(gMSIUserId,MSIUserId);
                 assert.equal(gCallId,callId);
-                seat_client.sendhangup(MSIUserId,callId);
+                seat_client.sendhangup();
                 
             }
             seat_client.onhangupReport = function(MSIUserId,callId,nType){

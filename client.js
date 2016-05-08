@@ -36,7 +36,7 @@ seat_client.onloginResp = function(MSIUserId,nResult){
     log += "seat_client.onloginResp: "+MSIUserId.toString()+","+nResult.toString()+"\n";
     print();
     if(nResult == true){
-        seat_client.sendsetmsistate(gMSIUserId,0);
+        seat_client.sendsetmsistate(0);
     }
 };  
 
@@ -55,7 +55,7 @@ seat_client.onsetmsistateResp = function(MSIUserId,nResult){
 seat_client.oncallinReport = function(MSIUserId,callId,srcMsiUserId,serviceId,
             dstNum,srcNum,firstDstNum,collaData,callSrc){
     console.log("oncallinReport:"+MSIUserId.toString()+","+callId);
-    seat_client.sendcallinResp(MSIUserId,callId,1);
+    seat_client.sendcallinResp(1);
 }
 
 seat_client.onconnectedReport = function(MSIUserId,callId,nResult,nType){
