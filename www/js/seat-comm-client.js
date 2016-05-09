@@ -84,8 +84,20 @@ COMM_MSGHEAD_CONSTANTS.MSISTATEMONITORRESP = "1156";
 
 COMM_MSGHEAD_CONSTANTS.OUTCALLIDREPORT = "1160";
 
+COMM_MSGHEAD_CONSTANTS.SETMSIOUTCALLORCALLSTATE = "1263";
+COMM_MSGHEAD_CONSTANTS.SETMSIOUTCALLORCALLSTATERESP = "1163";
+
 COMM_MSGHEAD_CONSTANTS.CALLKEEPORCALLBACK = "1266";
 COMM_MSGHEAD_CONSTANTS.CALLKEEPORCALLBACKRESP = "1166";
+
+COMM_MSGHEAD_CONSTANTS.SINGLETRANSFERCALL = "1264";
+COMM_MSGHEAD_CONSTANTS.TRANSFERCALL = "1264";
+COMM_MSGHEAD_CONSTANTS.TRANSFERCALLRESP = "1164";
+
+COMM_MSGHEAD_CONSTANTS.OUTCALL = "1267";
+COMM_MSGHEAD_CONSTANTS.OUTCALLRESP = "1167";
+
+
 
 COMM_MSGHEAD_CONSTANTS.IDLE = "1268";
 COMM_MSGHEAD_CONSTANTS.IDLERESP = "1168";
@@ -170,6 +182,7 @@ var msiUser = {
 }
 var seat_client = {};
 
+//转换为页面可能存在全局变量问题，浏览器刷新
 seat_client.server_url = "";
 seat_client.callInfo = callInfo;
 seat_client.msiUser = msiUser;
@@ -295,6 +308,10 @@ seat_client.connectedReport = function (dataArray) {
 /**
  * @description 呼叫已经连接
  * @param {int} MSIUserId 座席ID 
+ * @param {string} callId 呼叫ID
+ * @param {int} nResult 呼叫结果
+ * @param {string} srcType 来电来源 (0新呼叫 1三方 2监听3转移4强插 5 强拆 )
+ * @param {int} callType 呼叫类型 CALL_TYPE_CONSTANTS.InCome，CALL_TYPE_CONSTANTS.OutCall
  */
 seat_client.onconnectedReport = function (MSIUserId, callId, nResult, srcType, callType) {
     console.log("seat_client.onconnectedReport:" + MSIUserId.toString() + "," + callId);
@@ -442,6 +459,87 @@ seat_client.oncallkeeporcallbackResp = function(MSIUserId,callId,nType,nResult){
     console.log("seat_client.onmsistatemonitorResp");
 }
 
+/**
+* @description 座席请求设置坐席状态成功与否 1163 坐席ID  1/0（1：成功，0：失败）
+*/
+seat_client.setmsioutcallorcallstateResp = function (dataArray) {
+    if(dataArray[2] == 1){
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_OutCall_StateReq);
+    }
+    seat_client.onsetmsioutcallorcallstateResp(dataArray[1],dataArray[2])
+}
+
+/**
+* @description 座席请求设置坐席状态成功与否
+* @param {int} MSIUserId 坐席ID
+@ @param {int} nResult 1/0（成功/失败）
+*/
+seat_client.onsetmsioutcallorcallstateResp = function(MSIUserId,nResult){
+    console.log("seat_client.onsetmsioutcallorcallstateResp");
+}
+
+/**
+* @description 1167 外呼电话结果
+     1167 坐席ID 呼叫ID 呼叫结果 原因
+*/
+seat_client.outcallResp = function (dataArray) {
+    if(dataArray[3] == 1){
+        seat_client.callInfo.callId = dataArray[2];
+        seat_client.callInfo.nCallType = CALL_TYPE_CONSTANTS.OutCall;
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Connect);
+        seat_client.onconnectedReport(dataArray[1],dataArray[2], 1, 0, CALL_TYPE_CONSTANTS.OutCall) 
+    }
+    else{
+        seat_client.initCallInfo();
+    }
+    seat_client.onoutcallResp(dataArray[1],dataArray[2],dataArray[3],dataArray[4]);
+}
+
+/**
+* @description 1167 外呼电话结果
+     1167 坐席ID 呼叫ID 呼叫结果 原因
+    呼叫结果：0呼叫失败，1呼叫成功
+    原因：呼叫失败的原因，目前为0
+* @param {int} MSIUserId 坐席ID
+* @param {string} callId 呼叫ID
+* @param {int} nResult 1/0（成功/失败）
+* @param {string} reanson 原因值
+*/
+seat_client.onoutcallResp = function(MSIUserId,callId,nResult,reason){
+    console.log("seat_client.onoutcallResp");
+}
+
+/**
+* @description 1164 转接成功/失败
+    1164 坐席ID 呼叫ID 1/0（转接成功/失败）
+    转接成功，坐席处理相当于挂断。
+*/
+seat_client.transfercallResp = function (dataArray) {
+    if(dataArray[3] == 1){
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Single_OK);
+        seat_client.ontransfercallResp(dataArray[1],dataArray[2],dataArray[3],dataArray[4]);
+        saat_client.hangupReport([COMM_MSGHEAD_CONSTANTS.HANGUPCALLREPORT,dataArray[1],dataArray[2],'2']);
+    }
+    else{
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Conf_Filed);
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Connect);
+        seat_client.ontransfercallResp(dataArray[1],dataArray[2],dataArray[3],dataArray[4]);
+    }
+}
+
+/**
+* @description 1167 外呼电话结果
+     1167 坐席ID 呼叫ID 呼叫结果 原因
+    呼叫结果：0呼叫失败，1呼叫成功
+    原因：呼叫失败的原因，目前为0
+* @param {int} MSIUserId 坐席ID
+* @param {string} callId 呼叫ID
+* @param {int} nResult 1/0（成功/失败）
+* @param {string} reanson 原因值
+*/
+seat_client.ontransfercallResp = function(MSIUserId,callId,nResult,reason){
+    console.log("seat_client.onoutcallResp");
+}
 
 seat_client.msgMap = [
     { dataHead: COMM_MSGHEAD_CONSTANTS.LOGINRESP, procFunction: seat_client.loginResp },
@@ -457,6 +555,9 @@ seat_client.msgMap = [
     { dataHead: COMM_MSGHEAD_CONSTANTS.MSISTATEMONITOR, procFunction: seat_client.msistatemonitorResp },
     { dataHead: COMM_MSGHEAD_CONSTANTS.OUTCALLIDREPORT, procFunction: seat_client.outcallidreport },
     { dataHead: COMM_MSGHEAD_CONSTANTS.CALLKEEPORCALLBACKRESP, procFunction: seat_client.callkeeporcallbackResp },
+    { dataHead: COMM_MSGHEAD_CONSTANTS.SETMSIOUTCALLORCALLSTATERESP, procFunction: seat_client.setmsioutcallorcallstateResp },
+    { dataHead: COMM_MSGHEAD_CONSTANTS.OUTCALLRESP, procFunction: seat_client.outcallResp },
+    { dataHead: COMM_MSGHEAD_CONSTANTS.TRANSFERCALLRESP, procFunction: seat_client.transfercallResp },
 ]
 seat_client.msgMap.findAndProc = function (dataHead,data) {
     var bfind = false;
@@ -731,7 +832,6 @@ seat_client.sendmsistatemonitor = function () {
 seat_client.sendcallkeeporcallback = function (nType) {
     var bRet = false;
     var MSIUserId = seat_client.msiUser.MSIUserId;
-    var callId = seat_client.callInfo.callId;
     if((seat_client.callInfo.callId.length > 0) && (seat_client.callInfo.nCallState==CALL_INFO_STATE_CONSTANTS.CallState_Connect)){
         var data = COMM_MSGHEAD_CONSTANTS.CALLKEEPORCALLBACK + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() 
             + COMM_MSGHEAD_CONSTANTS.SPLIT+nType.toString() + COMM_MSGHEAD_CONSTANTS.TAIL;
@@ -741,7 +841,66 @@ seat_client.sendcallkeeporcallback = function (nType) {
     return bRet;
 }
 
+/**
+ * @description 请求设置坐席外呼状态 1263 坐席ID  1/2（呼入/呼出）
+ */
+seat_client.sendmsioutcallorcallstate = function (nType) {
+    var bRet = false;
+    var MSIUserId = seat_client.msiUser.MSIUserId;
+    var data = COMM_MSGHEAD_CONSTANTS.SETMSIOUTCALLORCALLSTATE + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() 
+        + COMM_MSGHEAD_CONSTANTS.SPLIT+nType.toString() + COMM_MSGHEAD_CONSTANTS.TAIL;
+    seat_client.send(data);
+    bRet = true;
+    return bRet;
+}
 
+/**
+ * @description 请求设置坐席外呼状态 1267 坐席ID 外呼号码 显示号码
+ * @param {string} phone 外呼号码 
+ * @param {string} showNum 显示号码 
+ */
+seat_client.sendoutcall = function (phone,showNum) {
+    var bRet = false;
+    var MSIUserId = seat_client.msiUser.MSIUserId;
+    seat_client.callInfo.phone = phone;
+    var data = COMM_MSGHEAD_CONSTANTS.OUTCALL + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() 
+        + COMM_MSGHEAD_CONSTANTS.SPLIT+ phone + COMM_MSGHEAD_CONSTANTS.SPLIT+showNum + COMM_MSGHEAD_CONSTANTS.TAIL;
+    seat_client.send(data);
+    bRet = true;
+    return bRet;
+}
+/**
+ * @description 1264 请求转接其他坐席 1264 坐席ID 呼叫ID 目标坐席ID 转接类型（0/1转接外线/转接内部座席）转接外线号码
+ * @param {bool} bSing 是否单步 
+ * @param {int} nType 0 转接外线;1 转接内部座席
+ * @param {string} target  外线号码或目标坐席ID
+ */
+seat_client.sendtransfercall = function (bSingle,nType,target) {
+    var bRet = false;
+    if((seat_client.callInfo.callId.length > 0) && (seat_client.callInfo.nCallState==CALL_INFO_STATE_CONSTANTS.CallState_Connect)){
+        var MSIUserId = seat_client.msiUser.MSIUserId;
+        var callId = seat_client.callInfo.callId;
+        var head = COMM_MSGHEAD_CONSTANTS.TRANSFERCALL;
+        if(bSingle==true){
+            head = COMM_MSGHEAD_CONSTANTS.SINGLETRANSFERCALL;
+        }
+        var targetMsiId = "0";
+        var targetPhone = "0";
+        if(nType==0){
+            targetPhone = target; 
+        }
+        else {
+            targetMsiId = target;
+        }
+        var data = head + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() 
+            + COMM_MSGHEAD_CONSTANTS.SPLIT+callId + COMM_MSGHEAD_CONSTANTS.SPLIT
+            + targetMsiId + COMM_MSGHEAD_CONSTANTS.SPLIT+
+            nType.toString() + COMM_MSGHEAD_CONSTANTS.SPLIT+targetPhone + COMM_MSGHEAD_CONSTANTS.TAIL;
+        seat_client.send(data);
+        bRet = true;
+    }
+    return bRet;
+}
 /**
  * @description 队列情况报告
  */
