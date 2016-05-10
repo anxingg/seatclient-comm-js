@@ -696,7 +696,7 @@ seat_client.onloginResp = function (MSIUserId, nResult) {
  * @description 呼叫进入应答
  */
 seat_client.sendcallinResp = function (nResult) {
-    var MSIUserId = seat_client.msiUser.MSIUserId;
+    var MSIUserId = seat_client.msiUser.msiUserId;
     var callId = seat_client.callInfo.callId;
     var data = COMM_MSGHEAD_CONSTANTS.CALLINRESP + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() + COMM_MSGHEAD_CONSTANTS.SPLIT +
         callId + COMM_MSGHEAD_CONSTANTS.SPLIT + nResult.toString() + COMM_MSGHEAD_CONSTANTS.TAIL;
@@ -716,7 +716,7 @@ seat_client.sendheartbeat = function () {
  */
 seat_client.sendcheckout = function (nType) {
     var bRet = false;
-    var MSIUserId = seat_client.msiUser.MSIUserId;
+    var MSIUserId = seat_client.msiUser.msiUserId;
     if(seat_client.msiUser.msistate == MSI_STATE_CONSTANTS.SeatState_LoginIn){
         if(seat_client.callInfo.nState == CALL_INFO_STATE_CONSTANTS.CallSate_NULL){
             var data = COMM_MSGHEAD_CONSTANTS.CHECKOUT + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() + COMM_MSGHEAD_CONSTANTS.SPLIT
@@ -745,7 +745,7 @@ seat_client.oncheckoutResp = function (MSIUserId, nResult) {
  */
 seat_client.sendsetmsistate = function (nType) {
     var bRet = false;
-    var MSIUserId = seat_client.msiUser.MSIUserId;
+    var MSIUserId = seat_client.msiUser.msiUserId;
     if(seat_client.msiUser.msistate == MSI_STATE_CONSTANTS.SeatState_LoginOut){
         if(seat_client.callInfo.nState == CALL_INFO_STATE_CONSTANTS.CallSate_NULL){
             var data = COMM_MSGHEAD_CONSTANTS.SETMSISTATE + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() + COMM_MSGHEAD_CONSTANTS.SPLIT
@@ -770,7 +770,7 @@ seat_client.onsetmsistateResp = function (MSIUserId, nResult) {
  * @description 请求分配电话
  */
 seat_client.sendneedcall = function () {
-    var MSIUserId = seat_client.msiUser.MSIUserId;
+    var MSIUserId = seat_client.msiUser.msiUserId;
     var data = COMM_MSGHEAD_CONSTANTS.NEEDCALL + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() + COMM_MSGHEAD_CONSTANTS.SPLIT
         + "-1" + " 0 0" + COMM_MSGHEAD_CONSTANTS.TAIL;
     seat_client.send(data);
@@ -782,7 +782,7 @@ seat_client.sendneedcall = function () {
  */
 seat_client.sendhangup = function () {
     var bRet = false;
-    var MSIUserId = seat_client.msiUser.MSIUserId;
+    var MSIUserId = seat_client.msiUser.msiUserId;
     var callId = seat_client.callInfo.callId;
     if(seat_client.callInfo.callId.length > 0){
         var data = COMM_MSGHEAD_CONSTANTS.HANGUPCALL + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() + COMM_MSGHEAD_CONSTANTS.SPLIT
@@ -797,7 +797,7 @@ seat_client.sendhangup = function () {
  * @description 得到空闲坐席列表
  */
 seat_client.sendgetidlemsistate = function () {
-    var MSIUserId = seat_client.msiUser.MSIUserId;
+    var MSIUserId = seat_client.msiUser.msiUserId;
     var data = COMM_MSGHEAD_CONSTANTS.GETIDLEMSISTATE + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() 
         + " 0 0" + COMM_MSGHEAD_CONSTANTS.TAIL;
     seat_client.send(data);
@@ -808,7 +808,7 @@ seat_client.sendgetidlemsistate = function () {
  * @description 得到通话坐席列表
  */
 seat_client.sendgettalkmsistate = function () {
-    var MSIUserId = seat_client.msiUser.MSIUserId;
+    var MSIUserId = seat_client.msiUser.msiUserId;
     var data = COMM_MSGHEAD_CONSTANTS.GETTALKMSISTATE + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() 
         + " 0 0" + COMM_MSGHEAD_CONSTANTS.TAIL;
     seat_client.send(data);
@@ -819,7 +819,7 @@ seat_client.sendgettalkmsistate = function () {
  * @description 坐席状态监控
  */
 seat_client.sendmsistatemonitor = function () {
-    var MSIUserId = seat_client.msiUser.MSIUserId;
+    var MSIUserId = seat_client.msiUser.msiUserId;
     var data = COMM_MSGHEAD_CONSTANTS.MSISTATEMONITOR + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() 
         + " 1 0" + COMM_MSGHEAD_CONSTANTS.TAIL;
     seat_client.send(data);
@@ -831,7 +831,7 @@ seat_client.sendmsistatemonitor = function () {
  */
 seat_client.sendcallkeeporcallback = function (nType) {
     var bRet = false;
-    var MSIUserId = seat_client.msiUser.MSIUserId;
+    var MSIUserId = seat_client.msiUser.msiUserId;
     if((seat_client.callInfo.callId.length > 0) && (seat_client.callInfo.nCallState==CALL_INFO_STATE_CONSTANTS.CallState_Connect)){
         var data = COMM_MSGHEAD_CONSTANTS.CALLKEEPORCALLBACK + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() 
             + COMM_MSGHEAD_CONSTANTS.SPLIT+nType.toString() + COMM_MSGHEAD_CONSTANTS.TAIL;
@@ -846,7 +846,7 @@ seat_client.sendcallkeeporcallback = function (nType) {
  */
 seat_client.sendmsioutcallorcallstate = function (nType) {
     var bRet = false;
-    var MSIUserId = seat_client.msiUser.MSIUserId;
+    var MSIUserId = seat_client.msiUser.msiUserId;
     var data = COMM_MSGHEAD_CONSTANTS.SETMSIOUTCALLORCALLSTATE + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() 
         + COMM_MSGHEAD_CONSTANTS.SPLIT+nType.toString() + COMM_MSGHEAD_CONSTANTS.TAIL;
     seat_client.send(data);
@@ -861,7 +861,7 @@ seat_client.sendmsioutcallorcallstate = function (nType) {
  */
 seat_client.sendoutcall = function (phone,showNum) {
     var bRet = false;
-    var MSIUserId = seat_client.msiUser.MSIUserId;
+    var MSIUserId = seat_client.msiUser.msiUserId;
     seat_client.callInfo.phone = phone;
     var data = COMM_MSGHEAD_CONSTANTS.OUTCALL + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() 
         + COMM_MSGHEAD_CONSTANTS.SPLIT+ phone + COMM_MSGHEAD_CONSTANTS.SPLIT+showNum + COMM_MSGHEAD_CONSTANTS.TAIL;
@@ -878,7 +878,7 @@ seat_client.sendoutcall = function (phone,showNum) {
 seat_client.sendtransfercall = function (bSingle,nType,target) {
     var bRet = false;
     if((seat_client.callInfo.callId.length > 0) && (seat_client.callInfo.nCallState==CALL_INFO_STATE_CONSTANTS.CallState_Connect)){
-        var MSIUserId = seat_client.msiUser.MSIUserId;
+        var MSIUserId = seat_client.msiUser.msiUserId;
         var callId = seat_client.callInfo.callId;
         var head = COMM_MSGHEAD_CONSTANTS.TRANSFERCALL;
         if(bSingle==true){

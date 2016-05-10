@@ -82,6 +82,8 @@ function cmd(){
         var chunk = process.stdin.read();
         if (chunk !== null) {
             process.stdout.write('输入指令:' + chunk);
+            if(chunk == "exit")
+                process.exit();
         }
     });
 };
