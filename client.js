@@ -1,7 +1,7 @@
 /*
 主要的测试程序，测试通讯协议
 */
-var assert = require('chai').assert;
+
 var seat_client = require('./www/js/seat-comm-client');
 
 var log = "";
