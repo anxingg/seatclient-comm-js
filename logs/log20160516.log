@@ -1,0 +1,327 @@
+[2016-05-16 13:37:22]-about:blank
+[2016-05-16 13:37:26]-http://218.206.244.202:2323/mcHotline/seatLogin.jsp?_clientType=wap
+[2016-05-16 13:37:30]-Rev  Web Msg <==19 245,123456,123456,e10adc3949ba59abbe56e057f20f883e,石鑫,1,13783476576,1,0,1, , ,北京全亚,1,3710000,1
+[2016-05-16 13:37:40]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-16 13:37:40]-Rev  Web MsgBBBBBB <==0
+[2016-05-16 13:37:40]-[DT]-[http://218.206.244.202:2323/mcHotline/hotline/seat/jsp/seatWelcome_typeFour.jsp]-[-1]-URL
+[2016-05-16 13:37:40]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-16 13:37:40]-Rev  Web MsgBBBBBB <==0
+[2016-05-16 13:37:40]-[DT]-[http://218.206.244.202:2323/mcHotline/hotline/seatWelcome/jsp/index.jsp]-[-1]-URL
+[2016-05-16 13:37:40]-请求连接到IP:218.206.244.202端口:31202
+[2016-05-16 13:37:40]-Send DB  Msg ==>1200 245 123456  1 -1 NoIpName 1 13783476576#
+[2016-05-16 13:37:42]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-16 13:37:42]-Rev  Web MsgBBBBBB <==0
+[2016-05-16 13:37:42]-[DT]-[http://218.206.244.202:2323/mcHotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-05-16 13:37:42]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-16 13:37:42]-Rev  Web MsgBBBBBB <==0
+[2016-05-16 13:37:42]-[DT]-[http://218.206.244.202:2323/mcHotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-05-16 13:38:30]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 13:39:20]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 13:40:10]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 13:45:53]-Rev  Web Msg <==6 
+[2016-05-16 13:45:54]-Rev  Web MsgCCCC <==0
+[2016-05-16 13:46:00]-Rev  Web Msg <==6 
+[2016-05-16 13:46:00]-Rev  Web MsgCCCC <==0
+[2016-05-16 13:46:02]-Rev  Web Msg <==6 
+[2016-05-16 13:46:02]-Rev  Web MsgCCCC <==0
+[2016-05-16 13:46:04]-Rev  Web Msg <==6 
+[2016-05-16 13:46:04]-Rev  Web MsgCCCC <==0
+[2016-05-16 13:46:05]-Rev  Web Msg <==6 
+[2016-05-16 13:46:05]-Rev  Web MsgCCCC <==0
+[2016-05-16 13:46:07]-Rev  Web Msg <==6 
+[2016-05-16 13:46:07]-Rev  Web MsgCCCC <==0
+[2016-05-16 13:46:09]-Rev  Web Msg <==99 
+[2016-05-16 13:46:09]-Rev  Web MsgCCCC <==0
+[2016-05-16 13:46:12]-Rev  Web Msg <==99 
+[2016-05-16 13:46:12]-Rev  Web MsgCCCC <==0
+[2016-05-16 13:46:15]-Rev  Web Msg <==99 
+[2016-05-16 13:46:15]-Rev  Web MsgCCCC <==0
+[2016-05-16 14:16:29]-about:blank
+[2016-05-16 14:16:30]-http://218.206.244.202:2323/mcHotline/seatLogin.jsp?_clientType=wap
+[2016-05-16 14:16:34]-Rev  Web Msg <==19 245,123456,123456,e10adc3949ba59abbe56e057f20f883e,石鑫,1,13783476576,1,0,1, , ,北京全亚,1,3710000,1
+[2016-05-16 14:16:38]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-16 14:16:38]-Rev  Web MsgBBBBBB <==0
+[2016-05-16 14:16:38]-[DT]-[http://218.206.244.202:2323/mcHotline/hotline/seat/jsp/seatWelcome_typeFour.jsp]-[-1]-URL
+[2016-05-16 14:16:38]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-16 14:16:38]-Rev  Web MsgBBBBBB <==0
+[2016-05-16 14:16:38]-[DT]-[http://218.206.244.202:2323/mcHotline/hotline/seatWelcome/jsp/index.jsp]-[-1]-URL
+[2016-05-16 14:16:38]-请求连接到IP:218.206.244.202端口:31202
+[2016-05-16 14:16:38]-Send DB  Msg ==>1200 245 123456  1 -1 NoIpName 1 13783476576#
+[2016-05-16 14:16:39]-Rev  DB  Msg <==1100 245 1
+[2016-05-16 14:16:41]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-16 14:16:41]-Rev  Web MsgBBBBBB <==0
+[2016-05-16 14:16:41]-[DT]-[http://218.206.244.202:2323/mcHotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-05-16 14:16:41]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-16 14:16:41]-Rev  Web MsgBBBBBB <==0
+[2016-05-16 14:16:41]-[DT]-[http://218.206.244.202:2323/mcHotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-05-16 14:16:43]-Rev  Web Msg <==6 
+[2016-05-16 14:16:43]-Rev  Web MsgCCCC <==0
+[2016-05-16 14:16:43]-Send DB  Msg ==>1204 245 0#
+[2016-05-16 14:16:43]-Rev  DB  Msg <==1104 245 1
+[2016-05-16 14:16:43]-[ChangeMsiState]-SeatState_LoginIn-Change To-SeatState_LoginOut
+[2016-05-16 14:16:43]-Send Web Msg ==>16 1,1
+[2016-05-16 14:16:43]-Send Web Msg ==>3000 0,1
+[2016-05-16 14:17:28]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:17:28]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:17:53]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-16 14:17:53]-Rev  Web MsgBBBBBB <==1
+[2016-05-16 14:17:53]-[DT]-[http://218.206.244.202:2323/mcHotline/logined/outCallTask/outCallTaskList.jsp?fromPage=prev]-[-1]-URL
+[2016-05-16 14:17:53]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-16 14:17:53]-Rev  Web MsgBBBBBB <==1
+[2016-05-16 14:17:53]-[DT]-[http://218.206.244.202:2323/mcHotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-05-16 14:17:57]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-16 14:17:57]-Rev  Web MsgBBBBBB <==1
+[2016-05-16 14:17:57]-[DT]-[http://218.206.244.202:2323/mcHotline/hotline/seat/jsp/callPanel.jsp]-[-1]-URL
+[2016-05-16 14:17:57]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-16 14:17:57]-Rev  Web MsgBBBBBB <==1
+[2016-05-16 14:17:57]-[DT]-[http://218.206.244.202:2323/mcHotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-05-16 14:18:05]-Rev  Web Msg <==7 
+[2016-05-16 14:18:05]-Rev  Web MsgCCCC <==1
+[2016-05-16 14:18:05]-Send DB  Msg ==>1263 245 2#
+[2016-05-16 14:18:05]-Rev  DB  Msg <==1163 245 1
+[2016-05-16 14:18:05]-[DT]-[SetOutCalllHandle]-[]-Enter
+[2016-05-16 14:18:05]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_StateReq
+[2016-05-16 14:18:05]-Send Web Msg ==>3000 4,1
+[2016-05-16 14:18:05]-Rev  Web Msg <==8 12333,13783688005
+[2016-05-16 14:18:05]-Rev  Web MsgCCCC <==1
+[2016-05-16 14:18:05]-Send DB  Msg ==>1267 245 13783688005 03711258130695#
+[2016-05-16 14:18:05]-Send Web Msg ==>10 1
+[2016-05-16 14:18:05]-Send Web Msg ==>3000 4,1
+[2016-05-16 14:18:05]-[DT]-[SetOutCalllHandle]-[]-Return
+[2016-05-16 14:18:05]-Rev  DB  Msg <==1160 245 201605161408170002
+[2016-05-16 14:18:05]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_Beging
+[2016-05-16 14:18:05]-Send Web Msg ==>3000 5,1
+[2016-05-16 14:18:17]-Rev  DB  Msg <==1160 245 201605161408170002
+[2016-05-16 14:18:17]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_OutCall_Beging
+[2016-05-16 14:18:17]-Send Web Msg ==>3000 5,1
+[2016-05-16 14:18:18]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:18:18]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:18:24]-Rev  DB  Msg <==1167 245 201605161408170002 1 0
+[2016-05-16 14:18:24]-[DT]-[MsiCallInfo.State]-[201605161408170002]-
+[2016-05-16 14:18:24]-[DT]-[GetCallOutRespHandle]-[201605161408170002]-Enter
+[2016-05-16 14:18:24]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_Connect
+[2016-05-16 14:18:24]-Send Web Msg ==>3000 3,1
+[2016-05-16 14:18:25]-Send Web Msg ==>3 13783688005,13783476576,,外呼,,,,201605161408170002
+[2016-05-16 14:18:25]-Send Web Msg ==>3000 3,1
+[2016-05-16 14:18:25]-Send Web Msg ==>11 1
+[2016-05-16 14:18:25]-Send Web Msg ==>3000 3,1
+[2016-05-16 14:18:25]-[DT]-[GetCallOutRespHandle]-[]-Return
+[2016-05-16 14:19:08]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:19:08]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:19:29]-Rev  DB  Msg <==1102 245 201605161408170002 2
+[2016-05-16 14:19:29]-[DT]-[CallEndHandle]-[201605161408170002]-Enter
+[2016-05-16 14:19:29]-Send Web Msg ==>5 13783476576,13783688005,,外呼,2016-05-16 14:18:24,2016-05-16 14:19:29,4,201605161408170002
+[2016-05-16 14:19:29]-Send Web Msg ==>3000 3,1
+[2016-05-16 14:19:29]-Send DB  Msg ==>1204 245 0#
+[2016-05-16 14:19:29]-[ChangeCallState]-CallState_Connect-Change To-CallState_End
+[2016-05-16 14:19:29]-Send Web Msg ==>3000 31,1
+[2016-05-16 14:19:29]-[ChangeCallState]-CallState_End-Change To-CallSate_NULL
+[2016-05-16 14:19:29]-Send Web Msg ==>3000 0,1
+[2016-05-16 14:19:29]-[DT]-[CallEndHandle]-[]-Return
+[2016-05-16 14:19:29]-Rev  DB  Msg <==1104 245 1
+[2016-05-16 14:19:29]-[ChangeMsiState]-SeatState_LoginOut-Change To-SeatState_LoginOut
+[2016-05-16 14:19:29]-Send Web Msg ==>16 1,1
+[2016-05-16 14:19:29]-Send Web Msg ==>3000 0,1
+[2016-05-16 14:19:45]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-16 14:19:45]-Rev  Web MsgBBBBBB <==1
+[2016-05-16 14:19:45]-[DT]-[http://218.206.244.202:2323/mcHotline/hotline/seat/jsp/seatMonitorAndList.jsp]-[-1]-URL
+[2016-05-16 14:19:46]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-16 14:19:46]-Rev  Web MsgBBBBBB <==1
+[2016-05-16 14:19:46]-[DT]-[http://218.206.244.202:2323/mcHotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-05-16 14:19:58]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:19:58]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:20:48]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:20:48]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:20:51]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-16 14:20:51]-Rev  Web MsgBBBBBB <==1
+[2016-05-16 14:20:51]-[DT]-[http://218.206.244.202:2323/mcHotline/hotline/seat/jsp/seatMonitorAndList.jsp]-[-1]-URL
+[2016-05-16 14:20:51]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-16 14:20:51]-Rev  Web MsgBBBBBB <==1
+[2016-05-16 14:20:51]-[DT]-[http://218.206.244.202:2323/mcHotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-05-16 14:21:03]-Rev  DB  Msg <==1152 245 1 1 13783688005
+[2016-05-16 14:21:03]-Send Web Msg ==>25 1,13783688005
+[2016-05-16 14:21:03]-Send Web Msg ==>3000 0,1
+[2016-05-16 14:21:06]-Rev  Web Msg <==5 
+[2016-05-16 14:21:06]-Rev  Web MsgCCCC <==1
+[2016-05-16 14:21:06]-Send DB  Msg ==>1251 245 0#
+[2016-05-16 14:21:07]-Rev  DB  Msg <==1151 245 1
+[2016-05-16 14:21:07]-[ChangeMsiState]-SeatState_LoginOut-Change To-SeatState_LoginIn
+[2016-05-16 14:21:07]-Send Web Msg ==>16 0,1
+[2016-05-16 14:21:07]-Send Web Msg ==>3000 0,0
+[2016-05-16 14:21:07]-Send DB  Msg ==>1263 245 1#
+[2016-05-16 14:21:07]-Send DB  Msg ==>1203 245 1#
+[2016-05-16 14:21:08]-Rev  DB  Msg <==1163 245 1
+[2016-05-16 14:21:08]-[DT]-[SetOutCalllHandle]-[]-Enter
+[2016-05-16 14:21:08]-[DT]-[SetOutCalllHandle]-[]-Return
+[2016-05-16 14:21:09]-Rev  DB  Msg <==1152 245 1 0 
+[2016-05-16 14:21:09]-Rev  DB  Msg <==1152 245 1 0 
+[2016-05-16 14:21:09]-Send Web Msg ==>25 0,
+5 201605161410550003 -1 1 125813069 13783688005 13783476576 0 0
+[2016-05-16 14:21:09]-Send Web Msg ==>3000 0,0
+[2016-05-16 14:21:09]-Send Web Msg ==>25 0,
+[2016-05-16 14:21:09]-Send Web Msg ==>3000 0,0
+[2016-05-16 14:21:09]-[DT]-[CallInEventHandle]-[]-Enter
+[2016-05-16 14:21:09]-[ChangeCallState]-CallSate_NULL-Change To-CallSate_NULL
+[2016-05-16 14:21:09]-Send Web Msg ==>3000 0,0
+[2016-05-16 14:21:09]-[ChangeCallState]-CallSate_NULL-Change To-CallState_InCome_Alerting
+[2016-05-16 14:21:09]-Send Web Msg ==>3000 1,0
+[2016-05-16 14:21:10]-Send Web Msg ==>2 13783688005,13783476576,,呼入,,,,0,1
+[2016-05-16 14:21:10]-Send Web Msg ==>3000 1,0
+[2016-05-16 14:21:10]-[DT]-[CallInEventHandle]-[201605161410550003]-Return
+[2016-05-16 14:21:22]-Rev  DB  Msg <==1150 245 201605161410550003 1 0
+[2016-05-16 14:21:22]-[DT]-[CallEstablishHandle]-[201605161410550003]-Enter
+[2016-05-16 14:21:22]-[ChangeCallState]-CallState_InCome_Alerting-Change To-CallState_Connect
+[2016-05-16 14:21:22]-Send Web Msg ==>3000 3,0
+[2016-05-16 14:21:22]-Send Web Msg ==>3 13783688005,13783476576,,呼入,,,0,201605161410550003
+[2016-05-16 14:21:22]-Send Web Msg ==>3000 3,0
+[2016-05-16 14:21:22]-[DT]-[CallEstablishHandle]-[201605161410550003]-Return
+[2016-05-16 14:21:28]-Rev  Web Msg <==3 
+[2016-05-16 14:21:28]-Rev  Web MsgCCCC <==0
+[2016-05-16 14:21:28]-Send DB  Msg ==>1266 245 201605161410550003 1#
+[2016-05-16 14:21:28]-Rev  DB  Msg <==1166 245 201605161410550003 1 1
+[2016-05-16 14:21:28]-[DT]-[CallKeepORCallBackRespHandle]-[201605161410550003]-Enter
+[2016-05-16 14:21:28]-[ChangeCallState]-CallState_Connect-Change To-CallState_Hold
+[2016-05-16 14:21:28]-Send Web Msg ==>3000 6,0
+[2016-05-16 14:21:28]-Send Web Msg ==>12 1,1
+[2016-05-16 14:21:28]-Send Web Msg ==>3000 6,0
+[2016-05-16 14:21:28]-[DT]-[CallKeepORCallBackRespHandle]-[201605161410550003]-Return
+[2016-05-16 14:21:38]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:21:38]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:21:41]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-16 14:21:41]-Rev  Web MsgBBBBBB <==0
+[2016-05-16 14:21:41]-[DT]-[http://218.206.244.202:2323/mcHotline/jbpmworkorder/getProductByPhoneDecideForward.action?callPhone=13783476576&phone=13783688005&filePath=201605161410550003]-[-1]-URL
+[2016-05-16 14:21:42]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-16 14:21:42]-Rev  Web MsgBBBBBB <==0
+[2016-05-16 14:21:42]-[DT]-[http://218.206.244.202:2323/mcHotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-05-16 14:22:11]-Rev  Web Msg <==4 
+[2016-05-16 14:22:11]-Rev  Web MsgCCCC <==0
+[2016-05-16 14:22:11]-Send DB  Msg ==>1266 245 201605161410550003 2#
+[2016-05-16 14:22:11]-Rev  DB  Msg <==1166 245 201605161410550003 2 1
+[2016-05-16 14:22:11]-[DT]-[CallKeepORCallBackRespHandle]-[201605161410550003]-Enter
+[2016-05-16 14:22:11]-[ChangeCallState]-CallState_Hold-Change To-CallState_Connect
+[2016-05-16 14:22:11]-Send Web Msg ==>3000 3,0
+[2016-05-16 14:22:11]-Send Web Msg ==>12 2,1
+[2016-05-16 14:22:11]-Send Web Msg ==>3000 3,0
+[2016-05-16 14:22:11]-[DT]-[CallKeepORCallBackRespHandle]-[201605161410550003]-Return
+[2016-05-16 14:22:14]-Rev  Web Msg <==9 2,0
+[2016-05-16 14:22:14]-Rev  Web MsgCCCC <==0
+[2016-05-16 14:22:14]-Send DB  Msg ==>1254 245 0 0 0 0#
+[2016-05-16 14:22:14]-Rev  DB  Msg <==1154 245 0
+[2016-05-16 14:22:14]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-16 14:22:14]-Rev  Web MsgBBBBBB <==0
+[2016-05-16 14:22:14]-[DT]-[http://218.206.244.202:2323/mcHotline/hotline/seat/jsp/threeSeatOrCSLink.jsp]-[-1]-URL
+[2016-05-16 14:22:14]-Send Web Msg ==>14 2=
+[2016-05-16 14:22:14]-Send Web Msg ==>3000 3,0
+[2016-05-16 14:22:15]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-16 14:22:15]-Rev  Web MsgBBBBBB <==0
+[2016-05-16 14:22:15]-[DT]-[http://218.206.244.202:2323/mcHotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-05-16 14:22:18]-Rev  Web Msg <==9 2,0
+[2016-05-16 14:22:18]-Rev  Web MsgCCCC <==0
+[2016-05-16 14:22:18]-Send DB  Msg ==>1254 245 0 0 0 0#
+[2016-05-16 14:22:18]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-16 14:22:18]-Rev  Web MsgBBBBBB <==0
+[2016-05-16 14:22:18]-[DT]-[http://218.206.244.202:2323/mcHotline/hotline/seat/jsp/threeSeatOrCSLink.jsp]-[-1]-URL
+[2016-05-16 14:22:18]-Rev  DB  Msg <==1154 245 0
+[2016-05-16 14:22:18]-Send Web Msg ==>14 2=
+[2016-05-16 14:22:18]-Send Web Msg ==>3000 3,0
+[2016-05-16 14:22:18]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-05-16 14:22:18]-Rev  Web MsgBBBBBB <==0
+[2016-05-16 14:22:18]-[DT]-[http://218.206.244.202:2323/mcHotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-05-16 14:22:28]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:22:28]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:22:33]-Rev  Web Msg <==10 1,0,13783616420
+[2016-05-16 14:22:33]-Rev  Web MsgCCCC <==0
+[2016-05-16 14:22:33]-[DT]-[MSITurnToOtherMSI]-[201605161410550003]-Enter
+[2016-05-16 14:22:33]-[ChangeCallState]-CallState_Connect-Change To-CallState_Single_Begin
+[2016-05-16 14:22:33]-Send Web Msg ==>3000 13,0
+[2016-05-16 14:22:33]-Send DB  Msg ==>1262 245 201605161410550003 0 0 13783616420#
+[2016-05-16 14:22:33]-[DT]-[MSITurnToOtherMSI]-[201605161410550003]-Return
+[2016-05-16 14:22:33]-Rev  DB  Msg <==1102 245 201605161410550003 1
+[2016-05-16 14:22:33]-[DT]-[CallEndHandle]-[201605161410550003]-Enter
+[2016-05-16 14:22:33]-Rev  Web Msg <==6 
+[2016-05-16 14:22:33]-Rev  Web MsgCCCC <==0
+[2016-05-16 14:22:33]-Send Web Msg ==>5 13783688005,13783476576,,呼入,2016-05-16 14:21:22,2016-05-16 14:22:33,10,201605161410550003
+[2016-05-16 14:22:33]-Send Web Msg ==>3000 13,0
+[2016-05-16 14:22:33]-Send DB  Msg ==>1204 245 0#
+[2016-05-16 14:22:33]-[ChangeCallState]-CallState_Single_Begin-Change To-CallState_End
+[2016-05-16 14:22:33]-Send Web Msg ==>3000 31,1
+[2016-05-16 14:22:33]-[ChangeCallState]-CallState_End-Change To-CallSate_NULL
+[2016-05-16 14:22:33]-Send Web Msg ==>3000 0,1
+[2016-05-16 14:22:33]-[DT]-[CallEndHandle]-[]-Return
+[2016-05-16 14:22:33]-Rev  DB  Msg <==1104 245 1
+[2016-05-16 14:22:33]-[ChangeMsiState]-SeatState_LoginOut-Change To-SeatState_LoginOut
+[2016-05-16 14:22:33]-Send Web Msg ==>16 1,1
+[2016-05-16 14:22:33]-Send Web Msg ==>3000 0,1
+[2016-05-16 14:23:18]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:23:18]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:24:08]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:24:08]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:24:58]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:24:58]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:25:48]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:25:48]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:26:38]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:26:38]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:27:28]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:27:28]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:28:18]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:28:18]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:29:08]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:29:08]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:29:58]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:29:58]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:30:48]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:30:48]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:31:38]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:31:38]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:32:28]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:32:28]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:33:18]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:33:18]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:34:08]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:34:08]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:34:58]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:34:58]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:35:48]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:35:48]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:36:38]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:36:38]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:37:28]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:37:28]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:38:18]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:38:18]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:39:08]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:39:08]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:39:58]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:39:58]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:40:48]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:40:48]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:41:38]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:41:38]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:42:28]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:42:28]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:43:18]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:43:18]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:44:08]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:44:08]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:44:58]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:44:58]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:45:48]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:45:48]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:46:38]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:46:38]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:47:28]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:47:28]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:48:18]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:48:18]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:49:08]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:49:08]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:49:58]-Send DB  Msg ==>1268 0 0 0#
+[2016-05-16 14:49:58]-Rev  DB  Msg <==1168 0 0 0
+[2016-05-16 14:50:23]-Rev  Web Msg <==99 
+[2016-05-16 14:50:23]-Rev  Web MsgCCCC <==1
+[2016-05-16 14:50:23]-Rev  Web Msg <==15 99
+[2016-05-16 14:50:23]-Rev  Web MsgCCCC <==1
+[2016-05-16 14:50:23]-[DT]-[退出登录]-[ ]-MsiUserID:ISMI.MSI_MSIUser
+[2016-05-16 14:50:23]-Send Web Msg ==>27 1,确定退出系统？
+[2016-05-16 14:50:23]-Send Web Msg ==>3000 0,1
