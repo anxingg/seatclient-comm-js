@@ -17,10 +17,10 @@ function onclose() {
 
 log = ""; // Clear log on reload
 
-var gMSIUserId = 245
-var gWorkNo = 123456;
+var gMSIUserId = 294
+var gWorkNo = 393900;
 
-seat_client.server_url = "ws://127.0.0.1:1202/msiserver";
+seat_client.server_url = "ws://218.206.243.36:1202/msiserver";
 
 seat_client.onclose = onclose;
 
@@ -95,7 +95,7 @@ function cmd(){
                 seat_client.sendmsioutcallorcallstate(2);
             }
             else if(chunk.indexOf("outcall") != -1){
-                seat_client.sendoutcall("13783688005","1258130699999");
+                seat_client.sendoutcall("13683717560","+8637156597182");
             }
             else 
                 process.stdout.write("unknown!");

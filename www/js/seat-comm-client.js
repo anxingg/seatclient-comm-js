@@ -35,8 +35,10 @@ var seat_comm_client = function (server_url, onopen, onclose, onmessage, onerror
         if (this.socket.readyState == WebSocket.OPEN) {
             this.socket.send(data);
         } else {
-            var err = "socket.readyState=" + this.socket.readyState;
-            throw err;
+            var err = "socket send error:socket.readyState=" + this.socket.readyState;
+            console.log(err);
+            ob.socket.onerror(new Error(err));
+            //throw err;
         }
     }
     ob.ping = function () {
@@ -203,6 +205,13 @@ var msiUser = {
  */
 var seat_client = {};
 
+/**
+ * @description 打印日志 
+ */
+var log = function(msg){
+    console.log(new Date()+" : "+msg);
+}
+seat_client.log = log;
 
 seat_client.server_url = "";
 seat_client.callInfo = callInfo;
@@ -212,7 +221,7 @@ seat_client.msiUser = msiUser;
  * @description 通讯连接成功 
  */
 seat_client.onopen = function () {
-    console.log("seat_client.onopen");
+    seat_client.log("seat_client.onopen");
 };
 
 seat_client.closeFlag = true;
@@ -230,28 +239,29 @@ seat_client.isConnected = function () {
  * @description SOCKET 关闭 
  */
 seat_client.onclose = function () {
-    console.log("seat_client.onclose");
+    seat_client.log("seat_client.onclose");
     seat_client.close(true);
 };
 /**
  * @description 出错
  */
-seat_client.onerror = function () {
-    console.log("seat_client.onerror:");
-    seat_client.close();
+seat_client.onerror = function (evt) {
+    seat_client.log("seat_client.onerror:"+evt);
+    //seat_client.close(false);
+    seat_client.onidle();
 };
 /**
  * @description 正在重新连接
  */
 seat_client.onReconnect = function () {
-    console.log("seat_client.onReconnect ");
+    seat_client.log("seat_client.onReconnect ");
 }
 /**
 * @description 改变呼叫状态
 * @private
 */
 seat_client.changeCallState = function (nCallState) {
-    console.log("seat_client.changeCallState before="+seat_client.callInfo.nState.toString()
+    seat_client.log("seat_client.changeCallState before="+seat_client.callInfo.nState.toString()
         +",after="+seat_client.callInfo.nState.toString())
     seat_client.callInfo.nState = nCallState;
 }
@@ -269,7 +279,7 @@ seat_client.initCallInfo = function () {
 * @private
 */
 seat_client.changeMsiState = function (nMsiState) {
-    console.log("seat_client.changeMsiState ="+nMsiState);
+    seat_client.log("seat_client.changeMsiState ="+nMsiState);
     seat_client.msiUser.msiState = nMsiState;
 }
 /**
@@ -325,7 +335,7 @@ seat_client.callinReport = function (dataArray) {
  */
 seat_client.oncallinReport = function (MSIUserId, callId, srcMsiUserId, serviceId, calledNum, phone, 
     firstDstNum, collaData, srcType, callType) {
-    console.log("seat_client.oncallinReport:" + MSIUserId.toString() + "," + callId);
+    seat_client.log("seat_client.oncallinReport:" + MSIUserId.toString() + "," + callId);
 }
 
 /**
@@ -348,7 +358,7 @@ seat_client.connectedReport = function (dataArray) {
         }
     }
     else {
-        console.log("warnning:seat_client.connectedReport seat_client.callInfo.callId=", seat_client.callInfo.callId);
+        seat_client.log("warnning:seat_client.connectedReport seat_client.callInfo.callId=", seat_client.callInfo.callId);
     }
 }
 /**
@@ -360,7 +370,7 @@ seat_client.connectedReport = function (dataArray) {
  * @param {int} callType 呼叫类型 CALL_TYPE_CONSTANTS.InCome，CALL_TYPE_CONSTANTS.OutCall
  */
 seat_client.onconnectedReport = function (MSIUserId, callId, nResult, srcType, callType) {
-    console.log("seat_client.onconnectedReport:" + MSIUserId.toString() + "," + callId);
+    seat_client.log("seat_client.onconnectedReport:" + MSIUserId.toString() + "," + callId);
 }
 
 /**
@@ -368,7 +378,7 @@ seat_client.onconnectedReport = function (MSIUserId, callId, nResult, srcType, c
 * @private
 */
 seat_client.idleresp = function (dataArray) {
-    console.log("COMM_MSGHEAD_CONSTANTS.IDLERESP Receive");
+    seat_client.log("COMM_MSGHEAD_CONSTANTS.IDLERESP Receive");
 }
 /**
 * @description 签出相应
@@ -414,11 +424,11 @@ seat_client.hangupReport = function (dataArray) {
             }
             seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_End);
             seat_client.initCallInfo();
-            console.log("hangupreport end");
+            seat_client.log("hangupreport end");
         }
     }
     else {
-        console.log("warnning:seat_client.hangupReport seat_client.callInfo.callId=", seat_client.callInfo.callId);
+        seat_client.log("warnning:seat_client.hangupReport seat_client.callInfo.callId=", seat_client.callInfo.callId);
     }
 }
 /**
@@ -443,7 +453,7 @@ seat_client.getidlemsistateResp = function (dataArray) {
 * @param {string} 空闲坐席列表 姓名|ID|工号|号码
 */
 seat_client.ongetidlemsistateResp = function(MSIUserId,num,msiStateList){
-    console.log("seat_client.ongetidlemsistateResp");
+    seat_client.log("seat_client.ongetidlemsistateResp");
 }
 /**
 * @description 得到通话中坐席列表状态响应 1155 坐席ID 数目 队列ID列表（用|分割）
@@ -459,7 +469,7 @@ seat_client.gettalkmsistateResp = function (dataArray) {
 * @param {string} 坐席列表 姓名|ID|工号
 */
 seat_client.ongettalkmsistateResp = function(MSIUserId,num,msiStateList){
-    console.log("seat_client.ongettalkmsistateResp");
+    seat_client.log("seat_client.ongettalkmsistateResp");
 }
 /**
 * @private 
@@ -475,7 +485,7 @@ seat_client.msistatemonitorResp = function (dataArray) {
 * @param {string} 坐席列表 ID|工号|状态
 */
 seat_client.onmsistatemonitorResp = function(MSIUserId,num,msiStateList){
-    console.log("seat_client.onmsistatemonitorResp");
+    seat_client.log("seat_client.onmsistatemonitorResp");
 }
 
 /**
@@ -512,7 +522,7 @@ seat_client.callkeeporcallbackResp = function (dataArray) {
 * @param {int} nResult 1/0（成功/失败）
 */
 seat_client.oncallkeeporcallbackResp = function(MSIUserId,callId,nType,nResult){
-    console.log("seat_client.onmsistatemonitorResp");
+    seat_client.log("seat_client.onmsistatemonitorResp");
 }
 
 /**
@@ -532,7 +542,7 @@ seat_client.setmsioutcallorcallstateResp = function (dataArray) {
 * @param {int} nResult 1/0（成功/失败）
 */
 seat_client.onsetmsioutcallorcallstateResp = function(MSIUserId,nResult){
-    console.log("seat_client.onsetmsioutcallorcallstateResp");
+    seat_client.log("seat_client.onsetmsioutcallorcallstateResp");
 }
 
 /**
@@ -564,7 +574,7 @@ seat_client.outcallResp = function (dataArray) {
 * @param {string} reanson 原因值
 */
 seat_client.onoutcallResp = function(MSIUserId,callId,nResult,reason){
-    console.log("seat_client.onoutcallResp");
+    seat_client.log("seat_client.onoutcallResp");
 }
 
 /**
@@ -597,7 +607,7 @@ seat_client.transfercallResp = function (dataArray) {
 * @param {string} reanson 原因值
 */
 seat_client.ontransfercallResp = function(MSIUserId,callId,nResult,reason){
-    console.log("seat_client.onoutcallResp");
+    seat_client.log("seat_client.onoutcallResp");
 }
 
 seat_client.msgMap = [
@@ -635,12 +645,12 @@ seat_client.msgMap.findAndProc = function (dataHead,data) {
  */
 seat_client.onmessage = function (evt) {
     seat_client.lastmsgtime = new Date();
-    console.log("seat_client.onmessage time="+seat_client.lastmsgtime+" data=" + evt.data);
+    seat_client.log("seat_client.onmessage data=" + evt.data);
     var data = evt.data.replace(COMM_MSGHEAD_CONSTANTS.TAIL, "");
     var dataArray = data.split(COMM_MSGHEAD_CONSTANTS.SPLIT);
     var dataHead = dataArray[0];
     if (seat_client.msgMap.findAndProc(dataHead,dataArray) != true){
-        console.log("seat_client.onmessage cann't process:" + dataHead);
+        seat_client.log("seat_client.onmessage cann't process:" + dataHead);
     }
     seat_client.callstatechange();
 };
@@ -679,7 +689,7 @@ seat_client.onidle = function () {
         seat_client.comm.ping();
         var minu = GetDateDiff(seat_client.lastmsgtime, Date(), "minute");
         if (minu >= 3 * COMM_MSGHEAD_CONSTANTS.IDLEMAX) {
-            seat_client.close();
+            seat_client.close(false);
         }
         else if (minu >= COMM_MSGHEAD_CONSTANTS.IDLEMAX) {
             seat_client.sendheartbeat();
@@ -694,7 +704,7 @@ seat_client.onidle = function () {
     }
     }
     catch(ex){
-        console.log("seat_client.onidle error:"+ex.message);
+        seat_client.log("seat_client.onidle error:"+ex.message);
     }
 }
 /**
@@ -702,9 +712,9 @@ seat_client.onidle = function () {
 * 
 */
 seat_client.connect = function () {
-    console.log("seat_client.connect");
+    seat_client.log("seat_client.connect");
     if (seat_client.comm instanceof seat_comm_client) {
-        seat_client.close();
+        seat_client.close(false);
     }
     seat_client.comm = new seat_comm_client(seat_client.server_url, seat_client.onopen,
         seat_client.onclose, seat_client.onmessage, seat_client.onerror);
@@ -718,7 +728,7 @@ seat_client.connect = function () {
 * @private
 */
 seat_client.send = function (data) {
-    console.log("seat_client.send:" + data);
+    seat_client.log("seat_client.send:" + data);
     seat_client.comm.send(data);
 }
 
@@ -728,14 +738,14 @@ seat_client.send = function (data) {
   @para {bool} bSocketClose SOCKET是否已经关闭
 */
 seat_client.close = function (bSocketClose) {
-    console.log("seat_client.close");
+    seat_client.log("seat_client.close:bSocketClose="+bSocketClose);
     clearInterval(seat_client.interval);
     if (bSocketClose != true)
         seat_client.comm.close();
     seat_client.closeFlag = true;
 }
 seat_client.callstatechange = function () {
-    console.log("seat_client.callstatechange:nCallState=" + seat_client.callInfo.nState.toString()
+    seat_client.log("seat_client.callstatechange:nCallState=" + seat_client.callInfo.nState.toString()
          + ",nMsiState=" + seat_client.msiUser.msiState.toString());
     seat_client.oncallstatechange(seat_client.callInfo.nState, seat_client.msiUser.msiState);
 }
@@ -743,7 +753,7 @@ seat_client.callstatechange = function () {
  * @description 呼叫状态变化
  */
 seat_client.oncallstatechange = function (nCallState, nMsiState) {
-    console.log("seat_client.oncallstatechange:nCallState=" + nCallState.toString() + ",nMsiState=" + nMsiState);
+    seat_client.log("seat_client.oncallstatechange:nCallState=" + nCallState.toString() + ",nMsiState=" + nMsiState);
 }
 /**
 * @description 连接 void SendLogin(int MSIUserId, int WorkNo, string WorkPass, int CallType, int IsIP,string IpName,
@@ -775,7 +785,7 @@ seat_client.sendlogin = function (MSIUserId, WorkNo, WorkPass, CallType, IsIP, I
  * @param {int} nResult 登录结果 1/0（成功失败）
  */
 seat_client.onloginResp = function (MSIUserId, nResult) {
-    console.log("seat_client.onloginResp:" + MSIUserId.toString() + "," + nResult.toString());
+    seat_client.log("seat_client.onloginResp:" + MSIUserId.toString() + "," + nResult.toString());
 }
 
 
@@ -827,7 +837,7 @@ seat_client.sendcheckout = function (nType) {
  * @param {int} nResult 登录结果 (1：成功，0：失败)
  */
 seat_client.oncheckoutResp = function (MSIUserId, nResult) {
-    console.log("seat_client.oncheckoutResp:" + MSIUserId.toString() + "," + nResult.toString());
+    seat_client.log("seat_client.oncheckoutResp:" + MSIUserId.toString() + "," + nResult.toString());
 }
 
 /**
@@ -853,7 +863,7 @@ seat_client.sendsetmsistate = function (nType) {
  * @param {int} nResult 登录结果 (1：成功，0：失败)
  */
 seat_client.onsetmsistateResp = function (MSIUserId, nResult) {
-    console.log("seat_client.onsetmsistateResp:" + MSIUserId.toString() + "," + nResult.toString());
+    seat_client.log("seat_client.onsetmsistateResp:" + MSIUserId.toString() + "," + nResult.toString());
 }
 
 /**
@@ -1001,7 +1011,7 @@ seat_client.sendtransfercall = function (bSingle,nType,target) {
  * @param {string} phoneList 号码列表,以|分割
  */
 seat_client.onserviceReport = function (MSIUserId, serviceId, nServiceNum, phoneList) {
-    console.log("seat_client.onserviceReport:" + MSIUserId.toString() + "," + serviceId.toString());
+    seat_client.log("seat_client.onserviceReport:" + MSIUserId.toString() + "," + serviceId.toString());
 }
 
 /**
@@ -1009,7 +1019,7 @@ seat_client.onserviceReport = function (MSIUserId, serviceId, nServiceNum, phone
  * @param {int} MSIUserId 座席ID 
  */
 seat_client.onhangupReport = function (MSIUserId, callId, nType) {
-    console.log("seat_client.onhangupReport:" + MSIUserId.toString() + "," + callId);
+    seat_client.log("seat_client.onhangupReport:" + MSIUserId.toString() + "," + callId);
 }
 
 if (typeof define === 'function' && define["amd"]) {
