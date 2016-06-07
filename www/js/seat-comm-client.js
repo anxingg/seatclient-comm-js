@@ -109,6 +109,17 @@ COMM_MSGHEAD_CONSTANTS.OUTCALL = "1267";
 COMM_MSGHEAD_CONSTANTS.OUTCALLRESP = "1167";
 
 
+COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERHOLD = "1278";
+COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERHOLDRESP = "1178";
+
+COMM_MSGHEAD_CONSTANTS.ADVICETRANSFEROUTCALL = "1279";
+COMM_MSGHEAD_CONSTANTS.ADVICETRANSFEROUTCALLRESP = "1179";
+
+COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERTRANSFER = "1280";
+COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERTRANSFERRESP = "1180";
+
+COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERHANGUP = "1281";
+COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERHANGUPRESP = "1181";
 
 COMM_MSGHEAD_CONSTANTS.IDLE = "1268";
 COMM_MSGHEAD_CONSTANTS.IDLERESP = "1168";
@@ -612,6 +623,80 @@ seat_client.ontransfercallResp = function(MSIUserId,callId,nResult,reason){
     seat_client.log("seat_client.onoutcallResp");
 }
 
+/**
+* @description 1178 咨询转移保持/接回（1/2）  咨询转移响应
+    质询转接保持请求的响应
+* @private
+*/
+seat_client.advicetransferholdResp = function (dataArray) {
+    if(dataArray[1] == 1){ //保持
+        if(dataArray[2] ==1){
+            seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Hold);
+        }
+    }
+    else{
+        if(dataArray[2] ==1){
+            seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Connect);
+        }
+    }
+    seat_client.onadvicetransferholdResp(dataArray[1],dataArray[2]);
+}
+
+/**
+* @description 1178 咨询转移保持/接回（1/2） 咨询转移响应
+    质询转接保持请求的响应
+* @param {int} nType 咨询转移保持/接回（1/2）
+* @param {int} nResult 1/0（成功/失败）
+*/
+seat_client.onadvicetransferholdResp = function(nType,nResult){
+    seat_client.log("seat_client.onadvicetransferholdResp");
+}
+
+/**
+* @description 1179 成功/失败 （1/0）
+    质询转接保持请求的响应
+* @private
+*/
+seat_client.advicetransferoutcallResp = function (dataArray) {
+    if(dataArray[1] ==1){
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Transfer_Begin);
+    }
+    else
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Hold);
+    seat_client.onadvicetransferoutcallResp(dataArray[1]);
+}
+
+/**
+* @description 1179 成功/失败 （1/0）
+* @param {int} nResult 1/0（成功/失败）
+*/
+seat_client.onadvicetransferoutcallResp = function(nResult){
+    seat_client.log("seat_client.onadvicetransferoutcallResp");
+}
+
+/**
+* @description 1181 坐席ID 呼叫ID 咨询转移挂断响应
+*  1181 类型 1 第一个  2 第二个  3 源坐席挂断
+* @private
+*/
+seat_client.advicetransferhangupResp = function (dataArray) {
+    if(dataArray[1] ==1){
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Connect);
+    }
+    else if(dataArray[1] ==2){
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Hold);
+    }
+    seat_client.onadvicetransferhangupResp(dataArray[1]);
+}
+
+/**
+* @description 1181 类型 1 第一个  2 第二个  3 源坐席挂断
+* @param {int} nResult 1/0（成功/失败）
+*/
+seat_client.onadvicetransferhangupResp = function(nSrc){
+    seat_client.log("seat_client.onadvicetransferhangupResp");
+}
+
 seat_client.msgMap = [
     { dataHead: COMM_MSGHEAD_CONSTANTS.LOGINRESP, procFunction: seat_client.loginResp },
     { dataHead: COMM_MSGHEAD_CONSTANTS.CALLINREPORT, procFunction: seat_client.callinReport },
@@ -629,6 +714,9 @@ seat_client.msgMap = [
     { dataHead: COMM_MSGHEAD_CONSTANTS.SETMSIOUTCALLORCALLSTATERESP, procFunction: seat_client.setmsioutcallorcallstateResp },
     { dataHead: COMM_MSGHEAD_CONSTANTS.OUTCALLRESP, procFunction: seat_client.outcallResp },
     { dataHead: COMM_MSGHEAD_CONSTANTS.TRANSFERCALLRESP, procFunction: seat_client.transfercallResp },
+    { dataHead: COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERHOLDRESP, procFunction: seat_client.advicetransferholdResp },
+    { dataHead: COMM_MSGHEAD_CONSTANTS.ADVICETRANSFEROUTCALLRESP, procFunction: seat_client.advicetransferoutcallResp },
+    { dataHead: COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERHANGUPRESP, procFunction: seat_client.advicetransferhangupResp },
 ]
 seat_client.msgMap.findAndProc = function (dataHead,data) {
     var bfind = false;
@@ -1013,8 +1101,6 @@ seat_client.sendtransfercall = function (bSingle,nType,target) {
  */
 seat_client.sendsinglesteptransfercall = function (nType,target){
     var bRet = false;
-    seat_client.log("sendsinglesteptransfercall:nCallState="+seat_client.callInfo.nState
-        +",callid="+seat_client.callInfo.callId.length);
     if((seat_client.callInfo.callId.length > 0) && (seat_client.callInfo.nState==CALL_INFO_STATE_CONSTANTS.CallState_Connect)){
         var MSIUserId = seat_client.msiUser.msiUserId;
         var callId = seat_client.callInfo.callId;
@@ -1037,6 +1123,73 @@ seat_client.sendsinglesteptransfercall = function (nType,target){
     }
     return bRet;
 }
+/**
+ * @description 1278 呼叫ID 咨询转移保持/接回 （1/2）
+ * @param {int} nType 咨询转移保持/接回
+ */
+seat_client.sendadvicetransferhold = function (nType) {
+    var bRet = false;
+    var callId = seat_client.callInfo.callId;
+    var data = COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERHOLD + COMM_MSGHEAD_CONSTANTS.SPLIT + callId
+        + COMM_MSGHEAD_CONSTANTS.SPLIT + nType.toString() + COMM_MSGHEAD_CONSTANTS.TAIL;
+    seat_client.send(data);
+    bRet = true;
+    return bRet;
+}
+
+/**
+ * @description 1279 呼叫ID 类型（0/1 内线 外线） 号码（坐席ID/外线号码） 源坐席ID
+ * @param {int} nType 0 转接外线;1 转接内部座席
+ * @param {string} target  外线号码或目标坐席ID
+ */
+seat_client.sendadvicetransferoutcall = function (nType,target){
+    var bRet = false;
+    if((seat_client.callInfo.callId.length > 0) && (seat_client.callInfo.nState==CALL_INFO_STATE_CONSTANTS.CallState_Hold)){
+        var MSIUserId = seat_client.msiUser.msiUserId;
+        var callId = seat_client.callInfo.callId;
+        var head = COMM_MSGHEAD_CONSTANTS.ADVICETRANSFEROUTCALL;
+        var data = head + COMM_MSGHEAD_CONSTANTS.SPLIT + callId 
+            + COMM_MSGHEAD_CONSTANTS.SPLIT+nType.toString() + COMM_MSGHEAD_CONSTANTS.SPLIT
+            + target + COMM_MSGHEAD_CONSTANTS.SPLIT+MSIUserId.toString()+ COMM_MSGHEAD_CONSTANTS.TAIL;
+        seat_client.send(data);
+        bRet = true;
+    }
+    return bRet;
+}
+
+/**
+ * @description 1280 呼叫ID
+ */
+seat_client.sendadvicetransfertransfer = function (){
+    var bRet = false;
+    if(seat_client.callInfo.callId.length > 0){
+        var callId = seat_client.callInfo.callId;
+        var head = COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERTRANSFER;
+        var data = head + COMM_MSGHEAD_CONSTANTS.SPLIT + callId 
+            + COMM_MSGHEAD_CONSTANTS.TAIL;
+        seat_client.send(data);
+        bRet = true;
+    }
+    return bRet;
+}
+
+/**
+ * @description 1281 坐席端ID 咨询转移挂断目标用户 
+ * 1281 呼叫ID
+ */
+seat_client.sendadvicetransferhangup = function (){
+    var bRet = false;
+    if(seat_client.callInfo.callId.length > 0){
+        var callId = seat_client.callInfo.callId;
+        var head = COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERHANGUP;
+        var data = head + COMM_MSGHEAD_CONSTANTS.SPLIT + callId 
+            + COMM_MSGHEAD_CONSTANTS.TAIL;
+        seat_client.send(data);
+        bRet = true;
+    }
+    return bRet;
+}
+
 /**
  * @description 队列情况报告
  * @param {int} MSIUserId 坐席ID
