@@ -266,7 +266,7 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.close">close</a></b>(bSocketClose)
+								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.callstatechange">callstatechange</a></b>()
 								</div>
 								<div class="description"></div>
 							</td>
@@ -278,6 +278,34 @@ ul.inheritsList
 								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.connect">connect</a></b>()
 								</div>
 								<div class="description">连接服务</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.onadvicetransferhangupResp">onadvicetransferhangupResp</a></b>(nSrc)
+								</div>
+								<div class="description">1181 类型 1 第一个  2 第二个  3 源坐席挂断</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.onadvicetransferholdResp">onadvicetransferholdResp</a></b>(nType, nResult)
+								</div>
+								<div class="description">1178 咨询转移保持/接回（1/2） 咨询转移响应
+    质询转接保持请求的响应</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.onadvicetransferoutcallResp">onadvicetransferoutcallResp</a></b>(nResult)
+								</div>
+								<div class="description">1179 成功/失败 （1/0）</div>
 							</td>
 						</tr>
 					
@@ -338,7 +366,7 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.onerror">onerror</a></b>()
+								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.onerror">onerror</a></b>(evt)
 								</div>
 								<div class="description">出错</div>
 							</td>
@@ -374,15 +402,6 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.onidle">onidle</a></b>()
-								</div>
-								<div class="description"></div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
 								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.onloginResp">onloginResp</a></b>(MSIUserId, nResult)
 								</div>
 								<div class="description">登录响应</div>
@@ -401,6 +420,51 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
+								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.onmonitorinsertendResp">onmonitorinsertendResp</a></b>(nReason)
+								</div>
+								<div class="description">1175 强拆结束1175 坐席ID 呼叫ID 原因1/0 （自己挂断/其他）</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.onmonitorinsertResp">onmonitorinsertResp</a></b>(nResult)
+								</div>
+								<div class="description">1172 强插成功/失败1172 坐席ID 呼叫ID 1/0（成功/失败）</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.onmonitorinterceptResp">onmonitorinterceptResp</a></b>(nResult)
+								</div>
+								<div class="description">1173 拦截成功/失败1173 坐席ID 呼叫ID 1/0（成功/失败）</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.onmonitorlistenResp">onmonitorlistenResp</a></b>(nResult)
+								</div>
+								<div class="description">1171 监听成功/失败1171 坐席ID 呼叫ID 1/0（监听成功/失败）</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.onmonitorteardownResp">onmonitorteardownResp</a></b>(nResult)
+								</div>
+								<div class="description">1177 强拆成功/失败1177 坐席ID 呼叫ID 1/0（成功/失败）</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
 								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.onmsistatemonitorResp">onmsistatemonitorResp</a></b>(MSIUserId, num, 坐席列表)
 								</div>
 								<div class="description">坐席状态监控响应</div>
@@ -412,7 +476,7 @@ ul.inheritsList
 							<td class="nameDescription">
 								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.onopen">onopen</a></b>()
 								</div>
-								<div class="description"></div>
+								<div class="description">通讯连接成功</div>
 							</td>
 						</tr>
 					
@@ -467,6 +531,24 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
+								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.onthreewayendResp">onthreewayendResp</a></b>(nReason)
+								</div>
+								<div class="description">1175 三方结束1174 坐席ID 呼叫ID 原因1/0 （自己挂断/其他）</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.onthreewayResp">onthreewayResp</a></b>(nResult)
+								</div>
+								<div class="description">1170 通话成功/失败1170 坐席ID 呼叫ID 1/0（通话成功/失败）</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
 								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.ontransfercallResp">ontransfercallResp</a></b>(MSIUserId, callId, nResult, reanson)
 								</div>
 								<div class="description">1167 外呼电话结果
@@ -479,9 +561,36 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.send">send</a></b>(data)
+								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.sendadvicetransferhangup">sendadvicetransferhangup</a></b>()
 								</div>
-								<div class="description"></div>
+								<div class="description">1281 坐席端ID 咨询转移挂断目标用户 1281 呼叫ID</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.sendadvicetransferhold">sendadvicetransferhold</a></b>(nType)
+								</div>
+								<div class="description">1278 呼叫ID 咨询转移保持/接回 （1/2）</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.sendadvicetransferoutcall">sendadvicetransferoutcall</a></b>(nType, target)
+								</div>
+								<div class="description">1279 呼叫ID 类型（0/1 内线 外线） 号码（坐席ID/外线号码） 源坐席ID</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.sendadvicetransfertransfer">sendadvicetransfertransfer</a></b>()
+								</div>
+								<div class="description">1280 呼叫ID</div>
 							</td>
 						</tr>
 					
@@ -552,6 +661,42 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
+								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.sendmonitorinsert">sendmonitorinsert</a></b>(nTargetMSIUserId)
+								</div>
+								<div class="description">1272 班长坐席强插1272 坐席ID 目标坐席ID</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.sendmonitorintercept">sendmonitorintercept</a></b>(nTargetMSIUserId)
+								</div>
+								<div class="description">1273 班长坐席拦截1273 坐席ID 目标坐席ID</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.sendmonitorlinsen">sendmonitorlinsen</a></b>(nTargetMSIUserId)
+								</div>
+								<div class="description">1271 班长坐席监听1271 坐席ID 目标坐席ID</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.sendmonitorteardown">sendmonitorteardown</a></b>(nCompanyId, nTargetMSIUserId)
+								</div>
+								<div class="description">1277 班长坐席强拆1277 坐席ID 单位ID 目标坐席ID</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
 								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.sendmsioutcallorcallstate">sendmsioutcallorcallstate</a></b>(nType)
 								</div>
 								<div class="description">请求设置坐席外呼状态 1263 坐席ID  1/2（呼入/呼出）</div>
@@ -597,9 +742,18 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.sendtransfercall">sendtransfercall</a></b>(bSing, nType, target)
+								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.sendsinglesteptransfercall">sendsinglesteptransfercall</a></b>(nType, target)
 								</div>
-								<div class="description">1264 请求转接其他坐席 1264 坐席ID 呼叫ID 目标坐席ID 转接类型（0/1转接外线/转接内部座席）转接外线号码</div>
+								<div class="description">1262 坐席ID 呼叫ID 目标坐席ID 转接类型（0/1转接外线/转接内部座席）转接外线号码</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">seat_client.<b><a href="../symbols/seat_client.html#.sendthreeway">sendthreeway</a></b>(nType, target)
+								</div>
+								<div class="description">1270 请求三方通话1270 坐席ID 呼叫ID 目标坐席ID 转接类型（1/0 转接内部座席/转接外线）转接外线号码，工单ID</div>
 							</td>
 						</tr>
 					
@@ -652,11 +806,11 @@ ul.inheritsList
 					Method Detail
 				</div>
 				
-					<a name=".close"> </a>
+					<a name=".callstatechange"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
 					
-					<span class="light">seat_client.</span><b>close</b>(bSocketClose)
+					<span class="light">seat_client.</span><b>callstatechange</b>()
 					
 					</div>
 					<div class="description">
@@ -667,17 +821,6 @@ ul.inheritsList
 					
 					
 					
-						
-							<dl class="detailList">
-							<dt class="heading">Parameters:</dt>
-							
-								<dt>
-									<b>bSocketClose</b>
-									
-								</dt>
-								<dd></dd>
-							
-							</dl>
 						
 						
 						
@@ -703,6 +846,121 @@ ul.inheritsList
 					
 					
 					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".onadvicetransferhangupResp"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">seat_client.</span><b>onadvicetransferhangupResp</b>(nSrc)
+					
+					</div>
+					<div class="description">
+						1181 类型 1 第一个  2 第二个  3 源坐席挂断
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{int}</span> <b>nSrc</b>
+									
+								</dt>
+								<dd>类型 1 第一个  2 第二个  3 源坐席挂断</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".onadvicetransferholdResp"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">seat_client.</span><b>onadvicetransferholdResp</b>(nType, nResult)
+					
+					</div>
+					<div class="description">
+						1178 咨询转移保持/接回（1/2） 咨询转移响应
+    质询转接保持请求的响应
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{int}</span> <b>nType</b>
+									
+								</dt>
+								<dd>咨询转移保持/接回（1/2）</dd>
+							
+								<dt>
+									<span class="light fixedFont">{int}</span> <b>nResult</b>
+									
+								</dt>
+								<dd>1/0（成功/失败）</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".onadvicetransferoutcallResp"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">seat_client.</span><b>onadvicetransferoutcallResp</b>(nResult)
+					
+					</div>
+					<div class="description">
+						1179 成功/失败 （1/0）
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{int}</span> <b>nResult</b>
+									
+								</dt>
+								<dd>1/0（成功/失败）</dd>
+							
+							</dl>
 						
 						
 						
@@ -1030,7 +1288,7 @@ ul.inheritsList
 					<div class="fixedFont">&lt;static&gt; 
 					
 					
-					<span class="light">seat_client.</span><b>onerror</b>()
+					<span class="light">seat_client.</span><b>onerror</b>(evt)
 					
 					</div>
 					<div class="description">
@@ -1041,6 +1299,17 @@ ul.inheritsList
 					
 					
 					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>evt</b>
+									
+								</dt>
+								<dd></dd>
+							
+							</dl>
 						
 						
 						
@@ -1195,31 +1464,6 @@ ul.inheritsList
 
 					<hr />
 				
-					<a name=".onidle"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					
-					<span class="light">seat_client.</span><b>onidle</b>()
-					
-					</div>
-					<div class="description">
-						
-						
-						
-					</div>
-					
-					
-					
-						
-						
-						
-						
-						
-						
-						
-
-					<hr />
-				
 					<a name=".onloginResp"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
@@ -1298,6 +1542,186 @@ ul.inheritsList
 
 					<hr />
 				
+					<a name=".onmonitorinsertendResp"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">seat_client.</span><b>onmonitorinsertendResp</b>(nReason)
+					
+					</div>
+					<div class="description">
+						1175 强拆结束1175 坐席ID 呼叫ID 原因1/0 （自己挂断/其他）
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{int}</span> <b>nReason</b>
+									
+								</dt>
+								<dd>原因1/0 （自己挂断/其他）</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".onmonitorinsertResp"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">seat_client.</span><b>onmonitorinsertResp</b>(nResult)
+					
+					</div>
+					<div class="description">
+						1172 强插成功/失败1172 坐席ID 呼叫ID 1/0（成功/失败）
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{int}</span> <b>nResult</b>
+									
+								</dt>
+								<dd>1/0（成功/失败）</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".onmonitorinterceptResp"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">seat_client.</span><b>onmonitorinterceptResp</b>(nResult)
+					
+					</div>
+					<div class="description">
+						1173 拦截成功/失败1173 坐席ID 呼叫ID 1/0（成功/失败）
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{int}</span> <b>nResult</b>
+									
+								</dt>
+								<dd>1/0（成功/失败）</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".onmonitorlistenResp"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">seat_client.</span><b>onmonitorlistenResp</b>(nResult)
+					
+					</div>
+					<div class="description">
+						1171 监听成功/失败1171 坐席ID 呼叫ID 1/0（监听成功/失败）
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{int}</span> <b>nResult</b>
+									
+								</dt>
+								<dd>1/0（成功/失败）</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".onmonitorteardownResp"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">seat_client.</span><b>onmonitorteardownResp</b>(nResult)
+					
+					</div>
+					<div class="description">
+						1177 强拆成功/失败1177 坐席ID 呼叫ID 1/0（成功/失败）
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{int}</span> <b>nResult</b>
+									
+								</dt>
+								<dd>1/0（成功/失败）</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
 					<a name=".onmsistatemonitorResp"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
@@ -1354,7 +1778,7 @@ ul.inheritsList
 					
 					</div>
 					<div class="description">
-						
+						通讯连接成功
 						
 						
 					</div>
@@ -1591,6 +2015,78 @@ ul.inheritsList
 
 					<hr />
 				
+					<a name=".onthreewayendResp"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">seat_client.</span><b>onthreewayendResp</b>(nReason)
+					
+					</div>
+					<div class="description">
+						1175 三方结束1174 坐席ID 呼叫ID 原因1/0 （自己挂断/其他）
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{int}</span> <b>nReason</b>
+									
+								</dt>
+								<dd>原因1/0 （自己挂断/其他）</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".onthreewayResp"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">seat_client.</span><b>onthreewayResp</b>(nResult)
+					
+					</div>
+					<div class="description">
+						1170 通话成功/失败1170 坐席ID 呼叫ID 1/0（通话成功/失败）
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{int}</span> <b>nResult</b>
+									
+								</dt>
+								<dd>1/0（成功/失败）</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
 					<a name=".ontransfercallResp"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
@@ -1648,15 +2144,40 @@ ul.inheritsList
 
 					<hr />
 				
-					<a name=".send"> </a>
+					<a name=".sendadvicetransferhangup"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
 					
-					<span class="light">seat_client.</span><b>send</b>(data)
+					<span class="light">seat_client.</span><b>sendadvicetransferhangup</b>()
 					
 					</div>
 					<div class="description">
+						1281 坐席端ID 咨询转移挂断目标用户 1281 呼叫ID
 						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".sendadvicetransferhold"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">seat_client.</span><b>sendadvicetransferhold</b>(nType)
+					
+					</div>
+					<div class="description">
+						1278 呼叫ID 咨询转移保持/接回 （1/2）
 						
 						
 					</div>
@@ -1668,12 +2189,79 @@ ul.inheritsList
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<b>data</b>
+									<span class="light fixedFont">{int}</span> <b>nType</b>
 									
 								</dt>
-								<dd></dd>
+								<dd>咨询转移保持/接回</dd>
 							
 							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".sendadvicetransferoutcall"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">seat_client.</span><b>sendadvicetransferoutcall</b>(nType, target)
+					
+					</div>
+					<div class="description">
+						1279 呼叫ID 类型（0/1 内线 外线） 号码（坐席ID/外线号码） 源坐席ID
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{int}</span> <b>nType</b>
+									
+								</dt>
+								<dd>0 转接外线;1 转接内部座席</dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>target</b>
+									
+								</dt>
+								<dd>外线号码或目标坐席ID</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".sendadvicetransfertransfer"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">seat_client.</span><b>sendadvicetransfertransfer</b>()
+					
+					</div>
+					<div class="description">
+						1280 呼叫ID
+						
+						
+					</div>
+					
+					
+					
 						
 						
 						
@@ -1946,6 +2534,156 @@ ul.inheritsList
 
 					<hr />
 				
+					<a name=".sendmonitorinsert"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">seat_client.</span><b>sendmonitorinsert</b>(nTargetMSIUserId)
+					
+					</div>
+					<div class="description">
+						1272 班长坐席强插1272 坐席ID 目标坐席ID
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{int}</span> <b>nTargetMSIUserId</b>
+									
+								</dt>
+								<dd>目标坐席ID</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".sendmonitorintercept"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">seat_client.</span><b>sendmonitorintercept</b>(nTargetMSIUserId)
+					
+					</div>
+					<div class="description">
+						1273 班长坐席拦截1273 坐席ID 目标坐席ID
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{int}</span> <b>nTargetMSIUserId</b>
+									
+								</dt>
+								<dd>目标坐席ID</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".sendmonitorlinsen"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">seat_client.</span><b>sendmonitorlinsen</b>(nTargetMSIUserId)
+					
+					</div>
+					<div class="description">
+						1271 班长坐席监听1271 坐席ID 目标坐席ID
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{int}</span> <b>nTargetMSIUserId</b>
+									
+								</dt>
+								<dd>目标坐席ID</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".sendmonitorteardown"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">seat_client.</span><b>sendmonitorteardown</b>(nCompanyId, nTargetMSIUserId)
+					
+					</div>
+					<div class="description">
+						1277 班长坐席强拆1277 坐席ID 单位ID 目标坐席ID
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{int}</span> <b>nCompanyId</b>
+									
+								</dt>
+								<dd>单位ID</dd>
+							
+								<dt>
+									<span class="light fixedFont">{int}</span> <b>nTargetMSIUserId</b>
+									
+								</dt>
+								<dd>目标坐席ID</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
 					<a name=".sendmsioutcallorcallstate"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
@@ -2110,15 +2848,15 @@ ul.inheritsList
 
 					<hr />
 				
-					<a name=".sendtransfercall"> </a>
+					<a name=".sendsinglesteptransfercall"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
 					
-					<span class="light">seat_client.</span><b>sendtransfercall</b>(bSing, nType, target)
+					<span class="light">seat_client.</span><b>sendsinglesteptransfercall</b>(nType, target)
 					
 					</div>
 					<div class="description">
-						1264 请求转接其他坐席 1264 坐席ID 呼叫ID 目标坐席ID 转接类型（0/1转接外线/转接内部座席）转接外线号码
+						1262 坐席ID 呼叫ID 目标坐席ID 转接类型（0/1转接外线/转接内部座席）转接外线号码
 						
 						
 					</div>
@@ -2130,10 +2868,46 @@ ul.inheritsList
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<span class="light fixedFont">{bool}</span> <b>bSing</b>
+									<span class="light fixedFont">{int}</span> <b>nType</b>
 									
 								</dt>
-								<dd>是否单步</dd>
+								<dd>0 转接外线;1 转接内部座席</dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>target</b>
+									
+								</dt>
+								<dd>外线号码或目标坐席ID</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".sendthreeway"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">seat_client.</span><b>sendthreeway</b>(nType, target)
+					
+					</div>
+					<div class="description">
+						1270 请求三方通话1270 坐席ID 呼叫ID 目标坐席ID 转接类型（1/0 转接内部座席/转接外线）转接外线号码，工单ID
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
 							
 								<dt>
 									<span class="light fixedFont">{int}</span> <b>nType</b>
@@ -2170,7 +2944,7 @@ ul.inheritsList
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
 			
-			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Fri May 13 2016 10:22:54 GMT+0800 (CST)
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Tue Jun 07 2016 17:59:11 GMT+0800 (CST)
 		</div>
 	</body>
 </html>
