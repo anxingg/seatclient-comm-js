@@ -111,6 +111,18 @@ function cmd(){
             else if(chunk.indexOf("transfertransfer") != -1){
                 seat_client.sendadvicetransfertransfer();
             }
+            else if(chunk.indexOf("monitorlisten") != -1){
+                seat_client.sendmonitorlinsen(294);
+            }
+            else if(chunk.indexOf("monitorinsert") != -1){
+                seat_client.sendmonitorinsert(294);
+            }
+            else if(chunk.indexOf("monitorintercept") != -1){
+                seat_client.sendmonitorintercept(294);
+            }
+            else if(chunk.indexOf("monitorteardown") != -1){
+                seat_client.sendmonitorteardown(83,294);
+            }
             else if(chunk.indexOf("checkout") != -1){
                 seat_client.sendcheckout(0);
             }

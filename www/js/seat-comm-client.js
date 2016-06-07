@@ -108,6 +108,17 @@ COMM_MSGHEAD_CONSTANTS.TRANSFERCALLRESP = "1164";
 COMM_MSGHEAD_CONSTANTS.OUTCALL = "1267";
 COMM_MSGHEAD_CONSTANTS.OUTCALLRESP = "1167";
 
+COMM_MSGHEAD_CONSTANTS.MONITORLISTEN = "1271";
+COMM_MSGHEAD_CONSTANTS.MONITORLISTENRESP = "1171";
+
+COMM_MSGHEAD_CONSTANTS.MONITORINSERT = "1272";
+COMM_MSGHEAD_CONSTANTS.MONITORINSERTRESP = "1172";
+
+COMM_MSGHEAD_CONSTANTS.MONITORINTERCEPT = "1273";
+COMM_MSGHEAD_CONSTANTS.MONITORINTERCEPTTRESP = "1173";
+
+COMM_MSGHEAD_CONSTANTS.MONITORTEARDOWN = "1277";
+COMM_MSGHEAD_CONSTANTS.MONITORTEARDOWNRESP = "1177";
 
 COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERHOLD = "1278";
 COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERHOLDRESP = "1178";
@@ -120,6 +131,8 @@ COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERTRANSFERRESP = "1180";
 
 COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERHANGUP = "1281";
 COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERHANGUPRESP = "1181";
+
+
 
 COMM_MSGHEAD_CONSTANTS.IDLE = "1268";
 COMM_MSGHEAD_CONSTANTS.IDLERESP = "1168";
@@ -190,26 +203,26 @@ var CALL_TYPE_CONSTANTS = {
     OutCall: 2
 }
 var callInfo = {
-    callId: "",
-    phone: "",
-    nState: CALL_INFO_STATE_CONSTANTS.CallSate_NULL,
-    nCallType: CALL_TYPE_CONSTANTS.Idle,
-    initCallInfo: function () {
-        callId = "";
-        phone = "";
-        nState = CALL_INFO_STATE_CONSTANTS.CallSate_NULL,
-            nCallType = CALL_TYPE_CONSTANTS.Idle
+    callId : "",
+    phone : "",
+    nState : CALL_INFO_STATE_CONSTANTS.CallSate_NULL,
+    nCallType : CALL_TYPE_CONSTANTS.Idle,
+    initCallInfo : function () {
+        callInfo.callId = "";
+        callInfo.phone = "";
+        callInfo.nState = CALL_INFO_STATE_CONSTANTS.CallSate_NULL;
+        callInfo.nCallType = CALL_TYPE_CONSTANTS.Idle;
     }
 }
 var msiUser = {
-    msiPhone: "",
-    msiUserId: -1,
-    workNo: "",
-    role: -1,
-    serviceId: -1,
-    msiPhoneType: -1,
-    msiState: MSI_STATE_CONSTANTS.SeatState_LoginOut,
-    compyId: -1
+    msiPhone : "",
+    msiUserId : -1,
+    workNo : "",
+    role : -1,
+    serviceId : -1,
+    msiPhoneType : -1,
+    msiState : MSI_STATE_CONSTANTS.SeatState_LoginOut,
+    compyId : -1
 }
 /**
  * seat_client
@@ -691,10 +704,107 @@ seat_client.advicetransferhangupResp = function (dataArray) {
 
 /**
 * @description 1181 类型 1 第一个  2 第二个  3 源坐席挂断
-* @param {int} nResult 1/0（成功/失败）
+* @param {int} nSrc 类型 1 第一个  2 第二个  3 源坐席挂断
 */
 seat_client.onadvicetransferhangupResp = function(nSrc){
     seat_client.log("seat_client.onadvicetransferhangupResp");
+}
+
+/**
+* @description 1171 监听成功/失败
+* 1171 坐席ID 呼叫ID 1/0（监听成功/失败）
+* @private
+*/
+seat_client.monitorlistenResp = function (dataArray) {
+    if( seat_client.callInfo.nState == CALL_INFO_STATE_CONSTANTS.CallState_Connect ){
+       if(dataArray[3] ==0){
+            seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Monitor_Filed);
+        }
+        else {
+            seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Monitor_OK);
+        } 
+        seat_client.onmonitorlistenResp(3);
+    }
+    else{
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Monitor_Filed);
+        seat_client.onmonitorlistenResp(0);
+    }
+}
+
+/**
+* @description 1171 监听成功/失败
+* 1171 坐席ID 呼叫ID 1/0（监听成功/失败）
+* @param {int} nResult 1/0（成功/失败）
+*/
+seat_client.onmonitorlistenResp = function(nResult){
+    seat_client.log("seat_client.onmonitorlistenResp");
+}
+
+/**
+* @description 1172 强插成功/失败
+* 1172 坐席ID 呼叫ID 1/0（成功/失败）
+* @private
+*/
+seat_client.monitorinsertResp = function (dataArray) {
+    if( seat_client.callInfo.nState == CALL_INFO_STATE_CONSTANTS.CallState_Connect ){
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Entry_OK);
+    }
+    else{
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Entry_Filed);
+    }
+    seat_client.onmonitorinsertResp(dataArray[3]);
+}
+
+/**
+* @description 1172 强插成功/失败
+* 1172 坐席ID 呼叫ID 1/0（成功/失败）
+* @param {int} nResult 1/0（成功/失败）
+*/
+seat_client.onmonitorinsertResp = function(nResult){
+    seat_client.log("seat_client.onmonitorinsertResp");
+}
+
+/**
+* @description 1173 拦截成功/失败
+* 1173 坐席ID 呼叫ID 1/0（成功/失败）
+* @private
+*/
+seat_client.monitorinterceptResp = function (dataArray) {
+    if( seat_client.callInfo.nState == CALL_INFO_STATE_CONSTANTS.CallState_Connect ){
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Demolished_OK);
+    }
+    else{
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Demolished_Filed);
+    }
+    seat_client.onmonitorinterceptResp(dataArray[3]);
+}
+
+/**
+* @description 1173 拦截成功/失败
+* 1173 坐席ID 呼叫ID 1/0（成功/失败）
+* @param {int} nResult 1/0（成功/失败）
+*/
+seat_client.onmonitorinterceptResp = function(nResult){
+    seat_client.log("seat_client.onmonitorinterceptResp");
+}
+
+/**
+* @description 1177 强拆成功/失败
+* 1177 坐席ID 呼叫ID 1/0（成功/失败）
+* @private
+*/
+seat_client.monitorteardownResp = function (dataArray) {
+    seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Demolished_OK);
+    seat_client.onmonitorteardownResp(dataArray[3]);
+}
+
+/**
+* @description 1177 强拆成功/失败
+* 1177 坐席ID 呼叫ID 1/0（成功/失败）
+* @param {int} nResult 1/0（成功/失败）
+*/
+seat_client.onmonitorteardownResp = function(nResult){
+    seat_client.log("seat_client.onmonitorteardownResp");
 }
 
 seat_client.msgMap = [
@@ -717,6 +827,10 @@ seat_client.msgMap = [
     { dataHead: COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERHOLDRESP, procFunction: seat_client.advicetransferholdResp },
     { dataHead: COMM_MSGHEAD_CONSTANTS.ADVICETRANSFEROUTCALLRESP, procFunction: seat_client.advicetransferoutcallResp },
     { dataHead: COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERHANGUPRESP, procFunction: seat_client.advicetransferhangupResp },
+    { dataHead: COMM_MSGHEAD_CONSTANTS.MONITORLISTENRESP, procFunction: seat_client.monitorlistenResp },
+    { dataHead: COMM_MSGHEAD_CONSTANTS.MONITORINSERTRESP, procFunction: seat_client.monitorinsertResp },
+    { dataHead: COMM_MSGHEAD_CONSTANTS.MONITORINTERCEPTRESP, procFunction: seat_client.monitorinterceptResp },
+    { dataHead: COMM_MSGHEAD_CONSTANTS.MONITORTEARDOWNRESP, procFunction: seat_client.monitorteardownResp },
 ]
 seat_client.msgMap.findAndProc = function (dataHead,data) {
     var bfind = false;
@@ -1183,6 +1297,86 @@ seat_client.sendadvicetransferhangup = function (){
         var callId = seat_client.callInfo.callId;
         var head = COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERHANGUP;
         var data = head + COMM_MSGHEAD_CONSTANTS.SPLIT + callId 
+            + COMM_MSGHEAD_CONSTANTS.TAIL;
+        seat_client.send(data);
+        bRet = true;
+    }
+    return bRet;
+}
+
+/**
+ * @description 1271 班长坐席监听
+ * 1271 坐席ID 目标坐席ID
+ * @param {int} nTargetMSIUserId 目标坐席ID
+ */
+seat_client.sendmonitorlinsen = function (nTargetMSIUserId){
+    var bRet = false;
+    seat_client.log("seat_client.callInfo.nCallType="+seat_client.callInfo.nCallType);
+    if((seat_client.callInfo.nCallType == CALL_TYPE_CONSTANTS.Idle) && (seat_client.msiUser.msiUserId != nTargetMSIUserId)){
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Monitor_Begin);
+        var head = COMM_MSGHEAD_CONSTANTS.MONITORLISTEN;
+        var data = head + COMM_MSGHEAD_CONSTANTS.SPLIT + seat_client.msiUser.msiUserId.toString()
+            + COMM_MSGHEAD_CONSTANTS.SPLIT + nTargetMSIUserId.toString()
+            + COMM_MSGHEAD_CONSTANTS.TAIL;
+        seat_client.send(data);
+        bRet = true;
+    }
+    return bRet;
+}
+
+/**
+ * @description 1272 班长坐席强插
+ * 1272 坐席ID 目标坐席ID
+ * @param {int} nTargetMSIUserId 目标坐席ID
+ */
+seat_client.sendmonitorinsert = function (nTargetMSIUserId){
+    var bRet = false;
+    if((seat_client.msiUser.msiUserId != nTargetMSIUserId)
+        && (seat_client.callInfo.nState==CALL_INFO_STATE_CONSTANTS.CallState_Monitor_OK)){
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Entry_Beging);
+        var head = COMM_MSGHEAD_CONSTANTS.MONITORINSERT;
+        var data = head + COMM_MSGHEAD_CONSTANTS.SPLIT + seat_client.msiUser.msiUserId.toString()
+            + COMM_MSGHEAD_CONSTANTS.SPLIT + nTargetMSIUserId.toString()
+            + COMM_MSGHEAD_CONSTANTS.TAIL;
+        seat_client.send(data);
+        bRet = true;
+    }
+    return bRet;
+}
+
+/**
+ * @description 1273 班长坐席拦截
+ * 1273 坐席ID 目标坐席ID
+ * @param {int} nTargetMSIUserId 目标坐席ID
+ */
+seat_client.sendmonitorintercept = function (nTargetMSIUserId){
+    var bRet = false;
+    if((seat_client.msiUser.msiUserId != nTargetMSIUserId)
+        && (seat_client.callInfo.nState==CALL_INFO_STATE_CONSTANTS.CallState_Monitor_OK)){
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Monitor_Begin);
+        var head = COMM_MSGHEAD_CONSTANTS.MONITORINTERCEPT;
+        var data = head + COMM_MSGHEAD_CONSTANTS.SPLIT + seat_client.msiUser.msiUserId.toString()
+            + COMM_MSGHEAD_CONSTANTS.SPLIT + nTargetMSIUserId.toString()
+            + COMM_MSGHEAD_CONSTANTS.TAIL;
+        seat_client.send(data);
+        bRet = true;
+    }
+    return bRet;
+}
+
+/**
+ * @description 1277 班长坐席强拆
+ * 1277 坐席ID 单位ID 目标坐席ID 
+ * @param {int} nCompanyId 单位ID
+ * @param {int} nTargetMSIUserId 目标坐席ID
+ */
+seat_client.sendmonitorteardown = function (nCompanyId,nTargetMSIUserId){
+    var bRet = false;
+    if((seat_client.msiUser.msiUserId != nTargetMSIUserId)){
+        var head = COMM_MSGHEAD_CONSTANTS.MONITORTEARDOWN;
+        var data = head + COMM_MSGHEAD_CONSTANTS.SPLIT + seat_client.msiUser.msiUserId.toString()
+            + COMM_MSGHEAD_CONSTANTS.SPLIT + nCompanyId.toString()
+            + COMM_MSGHEAD_CONSTANTS.SPLIT + nTargetMSIUserId.toString()
             + COMM_MSGHEAD_CONSTANTS.TAIL;
         seat_client.send(data);
         bRet = true;
