@@ -1,0 +1,1207 @@
+[2016-06-06 11:09:22]-about:blank
+[2016-06-06 11:09:24]-http://218.206.244.202:2323/mcHotline/seatLogin.jsp?_clientType=wap
+[2016-06-06 11:09:36]-about:blank
+[2016-06-06 11:09:37]-http://218.206.244.202:2323/mcHotline/seatLogin.jsp?_clientType=wap
+[2016-06-06 11:20:55]-about:blank
+[2016-06-06 11:20:56]-http://218.206.244.202:2323/mcHotline/seatLogin.jsp?_clientType=wap
+[2016-06-06 13:39:50]-about:blank
+[2016-06-06 13:39:51]-http://218.206.244.202:2323/hcs/seatLogin.jsp?_clientType=wap
+[2016-06-06 13:48:52]-Rev  Web Msg <==19 223,20021,20021,e10adc3949ba59abbe56e057f20f883e,20021,1,13783616420,0,0,1, , ,北京全亚,1,3710000,1
+[2016-06-06 13:48:55]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 13:48:55]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 13:48:55]-[DT]-[http://218.206.244.202:2323/hcs/hotline/seatWelcome/jsp/index.jsp]-[-1]-URL
+[2016-06-06 13:48:55]-请求连接到IP:218.206.244.202端口:31202
+[2016-06-06 13:48:56]-Send DB  Msg ==>1200 223 20021  1 -1 NoIpName 1 13783616420#
+[2016-06-06 13:48:56]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 13:48:56]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 13:48:56]-[DT]-[http://192.168.10.100:8080/onlineChat/page/chat/chat.jsp?userId=162&appKey=]-[-1]-URL
+[2016-06-06 13:48:56]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 13:48:56]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 13:48:56]-[DT]-[http://218.206.244.202:2323/hcs/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 13:48:56]-Rev  DB  Msg <==1100 223 1
+[2016-06-06 13:48:57]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 13:48:57]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 13:48:57]-[DT]-[http://218.206.244.202:2323/hcs/hotline/seat/jsp/seatWelcome_typeFour.jsp]-[-1]-URL
+[2016-06-06 13:48:57]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 13:48:57]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 13:48:57]-[DT]-[http://218.206.244.202:2323/hcs/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 13:49:11]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 13:49:11]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 13:49:11]-[DT]-[http://218.206.244.202:2323/hcs/hotline/seat/jsp/seatWelcome_typeFour.jsp]-[-1]-URL
+[2016-06-06 13:49:11]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 13:49:11]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 13:49:11]-[DT]-[http://218.206.244.202:2323/hcs/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 13:49:15]-Rev  Web Msg <==6 
+[2016-06-06 13:49:15]-Rev  Web MsgCCCC <==0
+[2016-06-06 13:49:15]-Send DB  Msg ==>1204 223 0#
+[2016-06-06 13:49:15]-Rev  DB  Msg <==1104 223 1
+[2016-06-06 13:49:15]-[ChangeMsiState]-SeatState_LoginIn-Change To-SeatState_LoginOut
+[2016-06-06 13:49:15]-Send Web Msg ==>16 1,1
+[2016-06-06 13:49:15]-Send Web Msg ==>3000 0,1
+[2016-06-06 13:49:34]-Rev  Web Msg <==5 
+[2016-06-06 13:49:34]-Rev  Web MsgCCCC <==1
+[2016-06-06 13:49:34]-Send DB  Msg ==>1251 223 0#
+[2016-06-06 13:49:34]-Rev  DB  Msg <==1151 223 1
+[2016-06-06 13:49:34]-[ChangeMsiState]-SeatState_LoginOut-Change To-SeatState_LoginIn
+[2016-06-06 13:49:34]-Send Web Msg ==>16 0,1
+[2016-06-06 13:49:34]-Send Web Msg ==>3000 0,0
+[2016-06-06 13:49:34]-Send DB  Msg ==>1263 223 1#
+[2016-06-06 13:49:34]-Send DB  Msg ==>1203 223 1#
+[2016-06-06 13:49:34]-Rev  DB  Msg <==1163 223 1
+[2016-06-06 13:49:34]-[DT]-[SetOutCalllHandle]-[]-Enter
+[2016-06-06 13:49:34]-[DT]-[SetOutCalllHandle]-[]-Return
+[2016-06-06 13:49:36]-Rev  Web Msg <==6 
+[2016-06-06 13:49:36]-Rev  Web MsgCCCC <==0
+[2016-06-06 13:49:36]-Send DB  Msg ==>1204 223 0#
+[2016-06-06 13:49:36]-Rev  DB  Msg <==1104 223 1
+[2016-06-06 13:49:36]-[ChangeMsiState]-SeatState_LoginIn-Change To-SeatState_LoginOut
+[2016-06-06 13:49:36]-Send Web Msg ==>16 1,1
+[2016-06-06 13:49:36]-Send Web Msg ==>3000 0,1
+[2016-06-06 13:49:42]-Rev  Web Msg <==5 
+[2016-06-06 13:49:42]-Rev  Web MsgCCCC <==1
+[2016-06-06 13:49:42]-Send DB  Msg ==>1251 223 0#
+[2016-06-06 13:49:42]-Rev  DB  Msg <==1151 223 1
+[2016-06-06 13:49:42]-[ChangeMsiState]-SeatState_LoginOut-Change To-SeatState_LoginIn
+[2016-06-06 13:49:42]-Send Web Msg ==>16 0,1
+[2016-06-06 13:49:42]-Send Web Msg ==>3000 0,0
+[2016-06-06 13:49:42]-Send DB  Msg ==>1263 223 1#
+[2016-06-06 13:49:42]-Send DB  Msg ==>1203 223 1#
+[2016-06-06 13:49:42]-Rev  DB  Msg <==1163 223 1
+[2016-06-06 13:49:42]-[DT]-[SetOutCalllHandle]-[]-Enter
+[2016-06-06 13:49:42]-[DT]-[SetOutCalllHandle]-[]-Return
+[2016-06-06 13:49:46]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 13:49:46]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 13:50:10]-about:blank
+[2016-06-06 13:50:11]-http://218.206.244.202:2323/hcs/seatLogin.jsp?_clientType=wap
+[2016-06-06 13:50:21]-Rev  Web Msg <==19 223,20021,20021,e10adc3949ba59abbe56e057f20f883e,20021,1,13783616420,0,0,1, , ,北京全亚,1,3710000,1
+[2016-06-06 13:50:24]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 13:50:24]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 13:50:24]-[DT]-[http://192.168.10.100:8080/onlineChat/page/chat/chat.jsp?userId=162&appKey=]-[-1]-URL
+[2016-06-06 13:50:25]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 13:50:25]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 13:50:25]-[DT]-[http://218.206.244.202:2323/hcs/hotline/seat/jsp/seatWelcome_typeFour.jsp]-[-1]-URL
+[2016-06-06 13:50:25]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 13:50:25]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 13:50:25]-[DT]-[http://218.206.244.202:2323/hcs/hotline/seatWelcome/jsp/index.jsp]-[-1]-URL
+[2016-06-06 13:50:25]-请求连接到IP:218.206.244.202端口:31202
+[2016-06-06 13:50:26]-Send DB  Msg ==>1200 223 20021  1 -1 NoIpName 1 13783616420#
+[2016-06-06 13:50:26]-Rev  DB  Msg <==1100 223 1
+[2016-06-06 13:50:27]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 13:50:27]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 13:50:27]-[DT]-[http://218.206.244.202:2323/hcs/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 13:50:27]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 13:50:27]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 13:50:27]-[DT]-[http://218.206.244.202:2323/hcs/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 13:50:27]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 13:50:27]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 13:50:27]-[DT]-[http://218.206.244.202:2323/hcs/hotline/seat/jsp/seatWelcome_typeFour.jsp]-[-1]-URL
+[2016-06-06 13:50:27]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 13:50:27]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 13:50:27]-[DT]-[http://218.206.244.202:2323/hcs/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 13:50:32]-Rev  Web Msg <==6 
+[2016-06-06 13:50:32]-Rev  Web MsgCCCC <==0
+[2016-06-06 13:50:32]-Send DB  Msg ==>1204 223 0#
+[2016-06-06 13:50:32]-Rev  DB  Msg <==1104 223 1
+[2016-06-06 13:50:32]-[ChangeMsiState]-SeatState_LoginIn-Change To-SeatState_LoginOut
+[2016-06-06 13:50:32]-Send Web Msg ==>16 1,1
+[2016-06-06 13:50:32]-Send Web Msg ==>3000 0,1
+[2016-06-06 13:50:37]-Rev  Web Msg <==5 
+[2016-06-06 13:50:37]-Rev  Web MsgCCCC <==1
+[2016-06-06 13:50:37]-Send DB  Msg ==>1251 223 0#
+[2016-06-06 13:50:37]-Rev  DB  Msg <==1151 223 1
+[2016-06-06 13:50:37]-[ChangeMsiState]-SeatState_LoginOut-Change To-SeatState_LoginIn
+[2016-06-06 13:50:37]-Send Web Msg ==>16 0,1
+[2016-06-06 13:50:37]-Send Web Msg ==>3000 0,0
+[2016-06-06 13:50:37]-Send DB  Msg ==>1263 223 1#
+[2016-06-06 13:50:37]-Send DB  Msg ==>1203 223 1#
+[2016-06-06 13:50:37]-Rev  DB  Msg <==1163 223 1
+[2016-06-06 13:50:37]-[DT]-[SetOutCalllHandle]-[]-Enter
+[2016-06-06 13:50:37]-[DT]-[SetOutCalllHandle]-[]-Return
+[2016-06-06 13:50:38]-Rev  Web Msg <==6 
+[2016-06-06 13:50:38]-Rev  Web MsgCCCC <==0
+[2016-06-06 13:50:38]-Send DB  Msg ==>1204 223 0#
+[2016-06-06 13:50:38]-Rev  DB  Msg <==1104 223 1
+[2016-06-06 13:50:38]-[ChangeMsiState]-SeatState_LoginIn-Change To-SeatState_LoginOut
+[2016-06-06 13:50:38]-Send Web Msg ==>16 1,1
+[2016-06-06 13:50:38]-Send Web Msg ==>3000 0,1
+[2016-06-06 13:50:39]-Rev  Web Msg <==5 
+[2016-06-06 13:50:39]-Rev  Web MsgCCCC <==1
+[2016-06-06 13:50:39]-Send DB  Msg ==>1251 223 0#
+[2016-06-06 13:50:39]-Rev  DB  Msg <==1151 223 1
+[2016-06-06 13:50:39]-[ChangeMsiState]-SeatState_LoginOut-Change To-SeatState_LoginIn
+[2016-06-06 13:50:39]-Send Web Msg ==>16 0,1
+[2016-06-06 13:50:39]-Send Web Msg ==>3000 0,0
+[2016-06-06 13:50:39]-Send DB  Msg ==>1263 223 1#
+[2016-06-06 13:50:39]-Send DB  Msg ==>1203 223 1#
+[2016-06-06 13:50:39]-Rev  DB  Msg <==1163 223 1
+[2016-06-06 13:50:39]-[DT]-[SetOutCalllHandle]-[]-Enter
+[2016-06-06 13:50:39]-[DT]-[SetOutCalllHandle]-[]-Return
+[2016-06-06 13:50:40]-Rev  Web Msg <==6 
+[2016-06-06 13:50:40]-Rev  Web MsgCCCC <==0
+[2016-06-06 13:50:40]-Send DB  Msg ==>1204 223 0#
+[2016-06-06 13:50:40]-Rev  DB  Msg <==1104 223 1
+[2016-06-06 13:50:40]-[ChangeMsiState]-SeatState_LoginIn-Change To-SeatState_LoginOut
+[2016-06-06 13:50:40]-Send Web Msg ==>16 1,1
+[2016-06-06 13:50:40]-Send Web Msg ==>3000 0,1
+[2016-06-06 13:50:41]-Rev  Web Msg <==5 
+[2016-06-06 13:50:41]-Rev  Web MsgCCCC <==1
+[2016-06-06 13:50:41]-Send DB  Msg ==>1251 223 0#
+[2016-06-06 13:50:41]-Rev  DB  Msg <==1151 223 1
+[2016-06-06 13:50:41]-[ChangeMsiState]-SeatState_LoginOut-Change To-SeatState_LoginIn
+[2016-06-06 13:50:41]-Send Web Msg ==>16 0,1
+[2016-06-06 13:50:41]-Send Web Msg ==>3000 0,0
+[2016-06-06 13:50:41]-Send DB  Msg ==>1263 223 1#
+[2016-06-06 13:50:41]-Send DB  Msg ==>1203 223 1#
+[2016-06-06 13:50:41]-Rev  DB  Msg <==1163 223 1
+[2016-06-06 13:50:41]-[DT]-[SetOutCalllHandle]-[]-Enter
+[2016-06-06 13:50:41]-[DT]-[SetOutCalllHandle]-[]-Return
+[2016-06-06 13:50:46]-Rev  Web Msg <==6 
+[2016-06-06 13:50:46]-Rev  Web MsgCCCC <==0
+[2016-06-06 13:50:46]-Send DB  Msg ==>1204 223 0#
+[2016-06-06 13:50:46]-Rev  DB  Msg <==1104 223 1
+[2016-06-06 13:50:46]-[ChangeMsiState]-SeatState_LoginIn-Change To-SeatState_LoginOut
+[2016-06-06 13:50:46]-Send Web Msg ==>16 1,1
+[2016-06-06 13:50:46]-Send Web Msg ==>3000 0,1
+[2016-06-06 13:51:19]-about:blank
+[2016-06-06 13:51:21]-http://218.206.244.202:2323/qytx-hotline/seatLogin.jsp?_clientType=wap
+[2016-06-06 13:51:28]-Rev  Web Msg <==99 
+[2016-06-06 13:52:36]-about:blank
+[2016-06-06 13:52:36]-http://218.206.244.202:2323/qytx-hotline/seatLogin.jsp?_clientType=wap
+[2016-06-06 13:52:46]-Rev  Web Msg <==99 
+[2016-06-06 14:01:48]-about:blank
+[2016-06-06 14:01:48]-http://218.206.244.202:2323/qytx-hotline/seatLogin.jsp?_clientType=wap
+[2016-06-06 14:01:54]-Rev  Web Msg <==19 223,20021,20021,e10adc3949ba59abbe56e057f20f883e,20021,1,13783616420,0,0,1, , ,北京全亚,1,3710000,1
+[2016-06-06 14:01:59]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:01:59]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 14:01:59]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seatWelcome/jsp/index.jsp]-[-1]-URL
+[2016-06-06 14:01:59]-请求连接到IP:218.206.244.202端口:31202
+[2016-06-06 14:01:59]-Send DB  Msg ==>1200 223 20021  1 -1 NoIpName 1 13783616420#
+[2016-06-06 14:01:59]-Rev  DB  Msg <==1100 223 1
+[2016-06-06 14:02:25]-about:blank
+[2016-06-06 14:02:25]-http://218.206.244.202:2323/qytx-hotline/seatLogin.jsp?_clientType=wap
+[2016-06-06 14:02:31]-Rev  Web Msg <==19 223,20021,20021,e10adc3949ba59abbe56e057f20f883e,20021,1,13783616420,0,0,1, , ,北京全亚,1,3710000,1
+[2016-06-06 14:02:31]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:02:31]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 14:02:31]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seatWelcome/jsp/index.jsp]-[-1]-URL
+[2016-06-06 14:02:31]-请求连接到IP:218.206.244.202端口:31202
+[2016-06-06 14:02:31]-Send DB  Msg ==>1200 223 20021  1 -1 NoIpName 1 13783616420#
+[2016-06-06 14:02:31]-Rev  DB  Msg <==1100 223 1
+[2016-06-06 14:08:56]-about:blank
+[2016-06-06 14:09:04]-http://218.206.244.202:2323/qytx-hotline/seatLogin.jsp?_clientType=wap
+[2016-06-06 14:09:10]-Rev  Web Msg <==19 223,20021,20021,e10adc3949ba59abbe56e057f20f883e,20021,1,13783616420,0,0,1, , ,北京全亚,1,3710000,1
+[2016-06-06 14:09:11]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:09:11]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 14:09:11]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seatWelcome/jsp/index.jsp]-[-1]-URL
+[2016-06-06 14:09:11]-请求连接到IP:218.206.244.202端口:31202
+[2016-06-06 14:09:11]-Send DB  Msg ==>1200 223 20021  1 -1 NoIpName 1 13783616420#
+[2016-06-06 14:09:11]-Rev  DB  Msg <==1100 223 1
+[2016-06-06 14:10:39]-about:blank
+[2016-06-06 14:11:24]-about:blank
+[2016-06-06 14:11:34]-http://218.206.244.202:2323/qytx-hotline/seatLogin.jsp?_clientType=wap
+[2016-06-06 14:11:48]-Rev  Web Msg <==19 230,1,1,e10adc3949ba59abbe56e057f20f883e,lihe,1,15936456107,1,0,1, , ,北京全亚,1,3710000,1
+[2016-06-06 14:11:48]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:11:48]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 14:11:48]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seatWelcome/jsp/index.jsp]-[-1]-URL
+[2016-06-06 14:11:48]-请求连接到IP:218.206.244.202端口:31202
+[2016-06-06 14:11:48]-Send DB  Msg ==>1200 230 1  1 -1 NoIpName 1 15936456107#
+[2016-06-06 14:11:49]-Rev  DB  Msg <==1100 230 1
+[2016-06-06 14:12:07]-about:blank
+[2016-06-06 14:12:07]-http://218.206.244.202:2323/qytx-hotline/seatLogin.jsp?_clientType=wap
+[2016-06-06 14:12:12]-Rev  Web Msg <==19 230,1,1,e10adc3949ba59abbe56e057f20f883e,lihe,1,15936456107,1,0,1, , ,北京全亚,1,3710000,1
+[2016-06-06 14:12:12]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:12:12]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 14:12:12]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seatWelcome/jsp/index.jsp]-[-1]-URL
+[2016-06-06 14:12:12]-请求连接到IP:218.206.244.202端口:31202
+[2016-06-06 14:12:12]-Send DB  Msg ==>1200 230 1  1 -1 NoIpName 1 15936456107#
+[2016-06-06 14:12:13]-Rev  DB  Msg <==1100 230 1
+[2016-06-06 14:12:38]-about:blank
+[2016-06-06 14:12:39]-http://218.206.244.202:2323/qytx-hotline/seatLogin.jsp?_clientType=wap
+[2016-06-06 14:12:42]-Rev  Web Msg <==19 230,1,1,e10adc3949ba59abbe56e057f20f883e,lihe,1,15936456107,1,0,1, , ,北京全亚,1,3710000,1
+[2016-06-06 14:12:43]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:12:43]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 14:12:43]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seatWelcome/jsp/index.jsp]-[-1]-URL
+[2016-06-06 14:12:43]-请求连接到IP:218.206.244.202端口:31202
+[2016-06-06 14:12:43]-Send DB  Msg ==>1200 230 1  1 -1 NoIpName 1 15936456107#
+[2016-06-06 14:12:43]-Rev  DB  Msg <==1100 230 1
+[2016-06-06 14:13:02]-about:blank
+[2016-06-06 14:13:03]-http://218.206.244.202:2323/qytx-hotline/seatLogin.jsp?_clientType=wap
+[2016-06-06 14:13:09]-Rev  Web Msg <==19 230,1,1,e10adc3949ba59abbe56e057f20f883e,lihe,1,15936456107,1,0,1, , ,北京全亚,1,3710000,1
+[2016-06-06 14:13:09]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:13:09]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 14:13:09]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seatWelcome/jsp/index.jsp]-[-1]-URL
+[2016-06-06 14:13:09]-请求连接到IP:218.206.244.202端口:31202
+[2016-06-06 14:13:09]-Send DB  Msg ==>1200 230 1  1 -1 NoIpName 1 15936456107#
+[2016-06-06 14:13:09]-Rev  DB  Msg <==1100 230 1
+[2016-06-06 14:13:59]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:13:59]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:14:49]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:14:50]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:15:39]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:15:39]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:16:29]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:16:30]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:17:19]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:17:20]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:18:47]-about:blank
+[2016-06-06 14:18:54]-http://218.206.244.202:2323/qytx-hotline/seatLogin.jsp?_clientType=wap
+[2016-06-06 14:18:57]-Rev  Web Msg <==19 230,1,1,e10adc3949ba59abbe56e057f20f883e,lihe,1,15936456107,1,0,1, , ,北京全亚,1,3710000,1
+[2016-06-06 14:19:08]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:19:08]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 14:19:08]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seat/jsp/seatWelcome_typeFour.jsp]-[-1]-URL
+[2016-06-06 14:19:08]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:19:08]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 14:19:08]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seatWelcome/jsp/index.jsp]-[-1]-URL
+[2016-06-06 14:19:08]-请求连接到IP:218.206.244.202端口:31202
+[2016-06-06 14:19:08]-Send DB  Msg ==>1200 230 1  1 -1 NoIpName 1 15936456107#
+[2016-06-06 14:19:08]-Rev  DB  Msg <==1100 230 1
+[2016-06-06 14:19:12]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:19:12]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 14:19:12]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 14:19:12]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:19:12]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 14:19:12]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 14:19:16]-Rev  Web Msg <==6 
+[2016-06-06 14:19:16]-Rev  Web MsgCCCC <==0
+[2016-06-06 14:19:16]-Send DB  Msg ==>1204 230 0#
+[2016-06-06 14:19:16]-Rev  DB  Msg <==1104 230 1
+[2016-06-06 14:19:16]-[ChangeMsiState]-SeatState_LoginIn-Change To-SeatState_LoginOut
+[2016-06-06 14:19:16]-Send Web Msg ==>16 1,1
+[2016-06-06 14:19:16]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:19:19]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:19:19]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:19:19]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seat/jsp/callPanel.jsp]-[-1]-URL
+[2016-06-06 14:19:19]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:19:19]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:19:19]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 14:19:58]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:19:58]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:20:48]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:20:48]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:21:38]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:21:38]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:21:43]-Rev  Web Msg <==99 
+[2016-06-06 14:21:43]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:21:43]-Rev  Web Msg <==15 99
+[2016-06-06 14:21:43]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:21:43]-[DT]-[退出登录]-[ ]-MsiUserID:ISMI.MSI_MSIUser
+[2016-06-06 14:21:43]-Send Web Msg ==>27 1,确定退出系统？
+[2016-06-06 14:21:43]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:21:44]-about:blank
+[2016-06-06 14:21:48]-http://218.206.244.202:2323/qytx-hotline/seatLogin.jsp?_clientType=wap
+[2016-06-06 14:21:50]-Rev  Web Msg <==19 230,1,1,e10adc3949ba59abbe56e057f20f883e,lihe,1,15729383900,1,0,1, , ,北京全亚,1,3710000,1
+[2016-06-06 14:21:57]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:21:57]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 14:21:57]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seat/jsp/seatWelcome_typeFour.jsp]-[-1]-URL
+[2016-06-06 14:21:57]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:21:57]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 14:21:57]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seatWelcome/jsp/index.jsp]-[-1]-URL
+[2016-06-06 14:21:57]-请求连接到IP:218.206.244.202端口:31202
+[2016-06-06 14:21:57]-Send DB  Msg ==>1200 230 1  1 -1 NoIpName 1 15729383900#
+[2016-06-06 14:21:57]-Rev  DB  Msg <==1100 230 1
+[2016-06-06 14:21:59]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:21:59]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 14:21:59]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 14:21:59]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:21:59]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 14:21:59]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 14:22:47]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:22:47]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:23:37]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:23:37]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:24:27]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:24:27]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:25:17]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:25:17]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:26:07]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:26:07]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:26:57]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:26:57]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:27:47]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:27:47]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:28:07]-Rev  Web Msg <==6 
+[2016-06-06 14:28:07]-Rev  Web MsgCCCC <==0
+[2016-06-06 14:28:07]-Send DB  Msg ==>1204 230 0#
+[2016-06-06 14:28:07]-Rev  DB  Msg <==1104 230 1
+[2016-06-06 14:28:07]-[ChangeMsiState]-SeatState_LoginIn-Change To-SeatState_LoginOut
+[2016-06-06 14:28:07]-Send Web Msg ==>16 1,1
+[2016-06-06 14:28:07]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:28:08]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:28:08]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:28:08]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seat/jsp/callPanel.jsp]-[-1]-URL
+[2016-06-06 14:28:08]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:28:08]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:28:08]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 14:28:34]-Rev  Web Msg <==7 
+[2016-06-06 14:28:34]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:28:34]-Send DB  Msg ==>1263 230 2#
+[2016-06-06 14:28:34]-Rev  DB  Msg <==1163 230 1
+[2016-06-06 14:28:34]-[DT]-[SetOutCalllHandle]-[]-Enter
+[2016-06-06 14:28:34]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_StateReq
+[2016-06-06 14:28:34]-Send Web Msg ==>3000 4,1
+[2016-06-06 14:28:34]-Rev  Web Msg <==8 12333,15937197558
+[2016-06-06 14:28:34]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:28:34]-Send DB  Msg ==>1267 230 15937197558 1258130695#
+[2016-06-06 14:28:34]-Send Web Msg ==>10 1
+[2016-06-06 14:28:34]-Send Web Msg ==>3000 4,1
+[2016-06-06 14:28:34]-[DT]-[SetOutCalllHandle]-[]-Return
+[2016-06-06 14:28:34]-Rev  DB  Msg <==1160 230 201606061418120001
+[2016-06-06 14:28:34]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_Beging
+[2016-06-06 14:28:34]-Send Web Msg ==>3000 5,1
+[2016-06-06 14:28:37]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:28:37]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:28:39]-Rev  DB  Msg <==1160 230 201606061418120001
+[2016-06-06 14:28:39]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_OutCall_Beging
+[2016-06-06 14:28:39]-Send Web Msg ==>3000 5,1
+[2016-06-06 14:28:49]-Rev  DB  Msg <==1167 230 201606061418120001 1 0
+[2016-06-06 14:28:49]-[DT]-[MsiCallInfo.State]-[201606061418120001]-
+[2016-06-06 14:28:49]-[DT]-[GetCallOutRespHandle]-[201606061418120001]-Enter
+[2016-06-06 14:28:49]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_Connect
+[2016-06-06 14:28:49]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:28:49]-Send Web Msg ==>3 15937197558,15729383900,,外呼,,,,201606061418120001
+[2016-06-06 14:28:49]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:28:49]-Send Web Msg ==>11 1
+[2016-06-06 14:28:49]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:28:49]-[DT]-[GetCallOutRespHandle]-[]-Return
+[2016-06-06 14:29:03]-Rev  Web Msg <==9 2,0
+[2016-06-06 14:29:03]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:29:03]-Send DB  Msg ==>1254 230 0 0 0 0#
+[2016-06-06 14:29:03]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:29:03]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:29:03]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seat/jsp/threeSeatOrCSLink.jsp]-[-1]-URL
+[2016-06-06 14:29:03]-Rev  DB  Msg <==1154 230 1 4|1 wuzhou 231 2 15824875962
+[2016-06-06 14:29:03]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:29:03]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:29:03]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 14:29:03]-Send Web Msg ==>14 2=wuzhou,231,2,15824875962
+[2016-06-06 14:29:03]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:29:08]-Rev  Web Msg <==10 1,1,231
+[2016-06-06 14:29:08]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:29:08]-[DT]-[MSITurnToOtherMSI]-[201606061418120001]-Enter
+[2016-06-06 14:29:08]-[ChangeCallState]-CallState_Connect-Change To-CallState_Single_Begin
+[2016-06-06 14:29:08]-Send Web Msg ==>3000 13,1
+[2016-06-06 14:29:08]-Send DB  Msg ==>1262 230 201606061418120001 231 1 0#
+[2016-06-06 14:29:08]-[DT]-[MSITurnToOtherMSI]-[201606061418120001]-Return
+[2016-06-06 14:29:08]-Rev  DB  Msg <==1102 230 201606061418120001 1
+[2016-06-06 14:29:08]-[DT]-[CallEndHandle]-[201606061418120001]-Enter
+[2016-06-06 14:29:08]-Send Web Msg ==>5 15729383900,15937197558,,外呼,2016-06-06 14:28:49,2016-06-06 14:29:08,19,201606061418120001
+[2016-06-06 14:29:08]-Send Web Msg ==>3000 13,1
+[2016-06-06 14:29:08]-Send DB  Msg ==>1204 230 0#
+[2016-06-06 14:29:08]-[ChangeCallState]-CallState_Single_Begin-Change To-CallState_End
+[2016-06-06 14:29:08]-Send Web Msg ==>3000 31,1
+[2016-06-06 14:29:08]-[ChangeCallState]-CallState_End-Change To-CallSate_NULL
+[2016-06-06 14:29:08]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:29:08]-[DT]-[CallEndHandle]-[]-Return
+[2016-06-06 14:29:09]-Rev  DB  Msg <==1102 230 201606061418120001 1
+[2016-06-06 14:29:09]-Rev  DB  Msg <==1104 230 1
+[2016-06-06 14:29:09]-[ChangeMsiState]-SeatState_LoginOut-Change To-SeatState_LoginOut
+[2016-06-06 14:29:09]-Send Web Msg ==>16 1,1
+[2016-06-06 14:29:09]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:29:27]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:29:27]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:29:57]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:29:57]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:29:57]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seat/jsp/callPanel.jsp]-[-1]-URL
+[2016-06-06 14:29:57]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:29:57]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:29:57]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 14:30:08]-Rev  Web Msg <==7 
+[2016-06-06 14:30:08]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:30:08]-Send DB  Msg ==>1263 230 2#
+[2016-06-06 14:30:08]-Rev  DB  Msg <==1163 230 1
+[2016-06-06 14:30:08]-[DT]-[SetOutCalllHandle]-[]-Enter
+[2016-06-06 14:30:08]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_StateReq
+[2016-06-06 14:30:08]-Send Web Msg ==>3000 4,1
+[2016-06-06 14:30:08]-Rev  Web Msg <==8 12333,15937197558
+[2016-06-06 14:30:08]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:30:08]-Send DB  Msg ==>1267 230 15937197558 1258130695#
+[2016-06-06 14:30:08]-Send Web Msg ==>10 1
+[2016-06-06 14:30:08]-Send Web Msg ==>3000 4,1
+[2016-06-06 14:30:08]-[DT]-[SetOutCalllHandle]-[]-Return
+[2016-06-06 14:30:08]-Rev  DB  Msg <==1160 230 201606061419460002
+[2016-06-06 14:30:08]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_Beging
+[2016-06-06 14:30:08]-Send Web Msg ==>3000 5,1
+[2016-06-06 14:30:13]-Rev  DB  Msg <==1160 230 201606061419460002
+[2016-06-06 14:30:13]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_OutCall_Beging
+[2016-06-06 14:30:13]-Send Web Msg ==>3000 5,1
+[2016-06-06 14:30:17]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:30:17]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:30:21]-Rev  DB  Msg <==1167 230 201606061419460002 1 0
+[2016-06-06 14:30:21]-[DT]-[MsiCallInfo.State]-[201606061419460002]-
+[2016-06-06 14:30:21]-[DT]-[GetCallOutRespHandle]-[201606061419460002]-Enter
+[2016-06-06 14:30:21]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_Connect
+[2016-06-06 14:30:21]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:30:21]-Send Web Msg ==>3 15937197558,15729383900,,外呼,,,,201606061419460002
+[2016-06-06 14:30:21]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:30:21]-Send Web Msg ==>11 1
+[2016-06-06 14:30:21]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:30:21]-[DT]-[GetCallOutRespHandle]-[]-Return
+[2016-06-06 14:30:37]-Rev  Web Msg <==9 2,0
+[2016-06-06 14:30:37]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:30:37]-Send DB  Msg ==>1254 230 0 0 0 0#
+[2016-06-06 14:30:37]-Rev  DB  Msg <==1154 230 1 4|1 wuzhou 231 2 15824875962
+[2016-06-06 14:30:37]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:30:37]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:30:37]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seat/jsp/threeSeatOrCSLink.jsp]-[-1]-URL
+[2016-06-06 14:30:37]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:30:37]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:30:37]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 14:30:37]-Send Web Msg ==>14 2=wuzhou,231,2,15824875962
+[2016-06-06 14:30:37]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:30:42]-Rev  Web Msg <==10 1,1,231
+[2016-06-06 14:30:42]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:30:42]-[DT]-[MSITurnToOtherMSI]-[201606061419460002]-Enter
+[2016-06-06 14:30:42]-[ChangeCallState]-CallState_Connect-Change To-CallState_Single_Begin
+[2016-06-06 14:30:42]-Send Web Msg ==>3000 13,1
+[2016-06-06 14:30:42]-Send DB  Msg ==>1262 230 201606061419460002 231 1 0#
+[2016-06-06 14:30:42]-[DT]-[MSITurnToOtherMSI]-[201606061419460002]-Return
+[2016-06-06 14:30:42]-Rev  DB  Msg <==1102 230 201606061419460002 1
+[2016-06-06 14:30:42]-[DT]-[CallEndHandle]-[201606061419460002]-Enter
+[2016-06-06 14:30:43]-Send Web Msg ==>5 15729383900,15937197558,,外呼,2016-06-06 14:30:21,2016-06-06 14:30:42,21,201606061419460002
+[2016-06-06 14:30:43]-Send Web Msg ==>3000 13,1
+[2016-06-06 14:30:43]-Send DB  Msg ==>1204 230 0#
+[2016-06-06 14:30:43]-[ChangeCallState]-CallState_Single_Begin-Change To-CallState_End
+[2016-06-06 14:30:43]-Send Web Msg ==>3000 31,1
+[2016-06-06 14:30:43]-[ChangeCallState]-CallState_End-Change To-CallSate_NULL
+[2016-06-06 14:30:43]-Rev  DB  Msg <==1102 230 201606061419460002 1
+[2016-06-06 14:30:43]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:30:43]-[DT]-[CallEndHandle]-[]-Return
+[2016-06-06 14:30:43]-Rev  DB  Msg <==1104 230 1
+[2016-06-06 14:30:43]-[ChangeMsiState]-SeatState_LoginOut-Change To-SeatState_LoginOut
+[2016-06-06 14:30:43]-Send Web Msg ==>16 1,1
+[2016-06-06 14:30:43]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:31:07]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:31:07]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:31:44]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:31:44]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:31:44]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seat/jsp/seatWelcome_typeFour.jsp]-[-1]-URL
+[2016-06-06 14:31:45]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:31:45]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:31:45]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 14:31:45]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:31:45]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:31:45]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 14:31:57]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:31:57]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:32:47]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:32:47]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:33:04]-Rev  Web Msg <==6 
+[2016-06-06 14:33:04]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:33:04]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:33:04]-[ER]-[HtmlToForm]-[]-Type:6Error MsiStateSeatState_LoginOut
+[2016-06-06 14:33:05]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:33:05]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:33:05]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seat/jsp/callPanel.jsp]-[-1]-URL
+[2016-06-06 14:33:05]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:33:05]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:33:05]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 14:33:13]-Rev  Web Msg <==7 
+[2016-06-06 14:33:13]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:33:13]-Send DB  Msg ==>1263 230 2#
+[2016-06-06 14:33:13]-Rev  DB  Msg <==1163 230 1
+[2016-06-06 14:33:13]-[DT]-[SetOutCalllHandle]-[]-Enter
+[2016-06-06 14:33:13]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_StateReq
+[2016-06-06 14:33:13]-Send Web Msg ==>3000 4,1
+[2016-06-06 14:33:13]-Rev  Web Msg <==8 12333,15937197558
+[2016-06-06 14:33:13]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:33:13]-Send DB  Msg ==>1267 230 15937197558 1258130695#
+[2016-06-06 14:33:13]-Send Web Msg ==>10 1
+[2016-06-06 14:33:13]-Send Web Msg ==>3000 4,1
+[2016-06-06 14:33:13]-[DT]-[SetOutCalllHandle]-[]-Return
+[2016-06-06 14:33:13]-Rev  DB  Msg <==1160 230 201606061422500003
+[2016-06-06 14:33:13]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_Beging
+[2016-06-06 14:33:13]-Send Web Msg ==>3000 5,1
+[2016-06-06 14:33:21]-Rev  DB  Msg <==1160 230 201606061422500003
+[2016-06-06 14:33:21]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_OutCall_Beging
+[2016-06-06 14:33:21]-Send Web Msg ==>3000 5,1
+[2016-06-06 14:33:27]-Rev  DB  Msg <==1167 230 201606061422500003 1 0
+[2016-06-06 14:33:27]-[DT]-[MsiCallInfo.State]-[201606061422500003]-
+[2016-06-06 14:33:27]-[DT]-[GetCallOutRespHandle]-[201606061422500003]-Enter
+[2016-06-06 14:33:27]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_Connect
+[2016-06-06 14:33:27]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:33:27]-Send Web Msg ==>3 15937197558,15729383900,,外呼,,,,201606061422500003
+[2016-06-06 14:33:27]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:33:27]-Send Web Msg ==>11 1
+[2016-06-06 14:33:27]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:33:27]-[DT]-[GetCallOutRespHandle]-[]-Return
+[2016-06-06 14:33:37]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:33:37]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:33:38]-Rev  Web Msg <==9 2,0
+[2016-06-06 14:33:38]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:33:38]-Send DB  Msg ==>1254 230 0 0 0 0#
+[2016-06-06 14:33:38]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:33:38]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:33:38]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seat/jsp/threeSeatOrCSLink.jsp]-[-1]-URL
+[2016-06-06 14:33:38]-Rev  DB  Msg <==1154 230 1 4|1 wuzhou 231 2 15824875962
+[2016-06-06 14:33:38]-Send Web Msg ==>14 2=wuzhou,231,2,15824875962
+[2016-06-06 14:33:38]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:33:38]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:33:38]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:33:38]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 14:33:40]-Rev  Web Msg <==11 0,231
+[2016-06-06 14:33:40]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:33:40]-[DT]-[ThreewayCalling]-[201606061422500003]-Enter
+[2016-06-06 14:33:40]-[ChangeCallState]-CallState_Connect-Change To-CallState_Conf_Begin
+[2016-06-06 14:33:40]-Send Web Msg ==>3000 16,1
+[2016-06-06 14:33:40]-Send DB  Msg ==>1270 230 201606061422500003 231 1  #
+[2016-06-06 14:33:40]-[DT]-[ThreewayCalling]-[201606061422500003]-Return
+[2016-06-06 14:33:48]-Rev  DB  Msg <==1170 230 201606061422500003 1
+[2016-06-06 14:33:48]-[ChangeCallState]-CallState_Conf_Begin-Change To-CallState_Conf_OK
+[2016-06-06 14:33:48]-Send Web Msg ==>3000 17,1
+[2016-06-06 14:33:48]-Send Web Msg ==>19 1
+[2016-06-06 14:33:48]-Send Web Msg ==>3000 17,1
+[2016-06-06 14:34:10]-Rev  Web Msg <==98 
+[2016-06-06 14:34:10]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:34:21]-Rev  DB  Msg <==1102 230 201606061422500003 2
+[2016-06-06 14:34:21]-[DT]-[CallEndHandle]-[201606061422500003]-Enter
+[2016-06-06 14:34:21]-Send Web Msg ==>5 15729383900,15937197558,,外呼,2016-06-06 14:33:27,2016-06-06 14:34:21,54,201606061422500003
+[2016-06-06 14:34:21]-Send Web Msg ==>3000 17,1
+[2016-06-06 14:34:21]-Send DB  Msg ==>1204 230 0#
+[2016-06-06 14:34:21]-[ChangeCallState]-CallState_Conf_OK-Change To-CallState_End
+[2016-06-06 14:34:21]-Send Web Msg ==>3000 31,1
+[2016-06-06 14:34:21]-[ChangeCallState]-CallState_End-Change To-CallSate_NULL
+[2016-06-06 14:34:21]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:34:21]-[DT]-[CallEndHandle]-[]-Return
+[2016-06-06 14:34:21]-Rev  DB  Msg <==1104 230 1
+[2016-06-06 14:34:21]-[ChangeMsiState]-SeatState_LoginOut-Change To-SeatState_LoginOut
+[2016-06-06 14:34:21]-Send Web Msg ==>16 1,1
+[2016-06-06 14:34:21]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:34:27]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:34:27]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:35:17]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:35:17]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:35:32]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:35:32]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:35:32]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seat/jsp/callPanel.jsp]-[-1]-URL
+[2016-06-06 14:35:32]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:35:32]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:35:32]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 14:35:49]-Rev  Web Msg <==7 
+[2016-06-06 14:35:49]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:35:49]-Send DB  Msg ==>1263 230 2#
+[2016-06-06 14:35:49]-Rev  DB  Msg <==1163 230 1
+[2016-06-06 14:35:49]-[DT]-[SetOutCalllHandle]-[]-Enter
+[2016-06-06 14:35:49]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_StateReq
+[2016-06-06 14:35:49]-Send Web Msg ==>3000 4,1
+[2016-06-06 14:35:49]-Rev  Web Msg <==8 12333,15937197558
+[2016-06-06 14:35:49]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:35:49]-Send DB  Msg ==>1267 230 15937197558 1258130695#
+[2016-06-06 14:35:49]-Send Web Msg ==>10 1
+[2016-06-06 14:35:49]-Send Web Msg ==>3000 4,1
+[2016-06-06 14:35:49]-[DT]-[SetOutCalllHandle]-[]-Return
+[2016-06-06 14:35:49]-Rev  DB  Msg <==1160 230 201606061425270004
+[2016-06-06 14:35:49]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_Beging
+[2016-06-06 14:35:49]-Send Web Msg ==>3000 5,1
+[2016-06-06 14:35:56]-Rev  DB  Msg <==1160 230 201606061425270004
+[2016-06-06 14:35:56]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_OutCall_Beging
+[2016-06-06 14:35:56]-Send Web Msg ==>3000 5,1
+[2016-06-06 14:36:02]-Rev  DB  Msg <==1167 230 201606061425270004 1 0
+[2016-06-06 14:36:02]-[DT]-[MsiCallInfo.State]-[201606061425270004]-
+[2016-06-06 14:36:02]-[DT]-[GetCallOutRespHandle]-[201606061425270004]-Enter
+[2016-06-06 14:36:02]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_Connect
+[2016-06-06 14:36:02]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:36:02]-Send Web Msg ==>3 15937197558,15729383900,,外呼,,,,201606061425270004
+[2016-06-06 14:36:02]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:36:02]-Send Web Msg ==>11 1
+[2016-06-06 14:36:02]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:36:02]-[DT]-[GetCallOutRespHandle]-[]-Return
+[2016-06-06 14:36:07]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:36:07]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:36:10]-Rev  Web Msg <==9 2,0
+[2016-06-06 14:36:10]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:36:10]-Send DB  Msg ==>1254 230 0 0 0 0#
+[2016-06-06 14:36:10]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:36:10]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:36:10]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seat/jsp/threeSeatOrCSLink.jsp]-[-1]-URL
+[2016-06-06 14:36:10]-Rev  DB  Msg <==1154 230 1 4|1 wuzhou 231 2 15824875962
+[2016-06-06 14:36:10]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:36:10]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:36:10]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 14:36:10]-Send Web Msg ==>14 2=wuzhou,231,2,15824875962
+[2016-06-06 14:36:10]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:36:14]-Rev  Web Msg <==11 0,231
+[2016-06-06 14:36:14]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:36:14]-[DT]-[ThreewayCalling]-[201606061425270004]-Enter
+[2016-06-06 14:36:14]-[ChangeCallState]-CallState_Connect-Change To-CallState_Conf_Begin
+[2016-06-06 14:36:14]-Send Web Msg ==>3000 16,1
+[2016-06-06 14:36:14]-Send DB  Msg ==>1270 230 201606061425270004 231 1  #
+[2016-06-06 14:36:14]-[DT]-[ThreewayCalling]-[201606061425270004]-Return
+[2016-06-06 14:36:21]-Rev  DB  Msg <==1170 230 201606061425270004 1
+[2016-06-06 14:36:21]-[ChangeCallState]-CallState_Conf_Begin-Change To-CallState_Conf_OK
+[2016-06-06 14:36:21]-Send Web Msg ==>3000 17,1
+[2016-06-06 14:36:22]-Send Web Msg ==>19 1
+[2016-06-06 14:36:22]-Send Web Msg ==>3000 17,1
+[2016-06-06 14:36:30]-Rev  DB  Msg <==1102 230 201606061425270004 1
+[2016-06-06 14:36:30]-[DT]-[CallEndHandle]-[201606061425270004]-Enter
+[2016-06-06 14:36:30]-Send Web Msg ==>5 15729383900,15937197558,,外呼,2016-06-06 14:36:02,2016-06-06 14:36:30,28,201606061425270004
+[2016-06-06 14:36:30]-Send Web Msg ==>3000 17,1
+[2016-06-06 14:36:30]-Send DB  Msg ==>1204 230 0#
+[2016-06-06 14:36:30]-[ChangeCallState]-CallState_Conf_OK-Change To-CallState_End
+[2016-06-06 14:36:30]-Send Web Msg ==>3000 31,1
+[2016-06-06 14:36:30]-[ChangeCallState]-CallState_End-Change To-CallSate_NULL
+[2016-06-06 14:36:30]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:36:30]-[DT]-[CallEndHandle]-[]-Return
+[2016-06-06 14:36:30]-Rev  DB  Msg <==1104 230 1
+[2016-06-06 14:36:30]-[ChangeMsiState]-SeatState_LoginOut-Change To-SeatState_LoginOut
+[2016-06-06 14:36:30]-Send Web Msg ==>16 1,1
+[2016-06-06 14:36:30]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:36:57]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:36:57]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:37:47]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:37:47]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:37:49]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:37:49]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:37:49]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seat/jsp/callPanel.jsp]-[-1]-URL
+[2016-06-06 14:37:49]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:37:49]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:37:49]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 14:37:58]-Rev  Web Msg <==7 
+[2016-06-06 14:37:58]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:37:58]-Send DB  Msg ==>1263 230 2#
+[2016-06-06 14:37:58]-Rev  DB  Msg <==1163 230 1
+[2016-06-06 14:37:58]-[DT]-[SetOutCalllHandle]-[]-Enter
+[2016-06-06 14:37:58]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_StateReq
+[2016-06-06 14:37:58]-Send Web Msg ==>3000 4,1
+[2016-06-06 14:37:58]-Rev  Web Msg <==8 12333,15937197558
+[2016-06-06 14:37:58]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:37:58]-Send DB  Msg ==>1267 230 15937197558 1258130695#
+[2016-06-06 14:37:58]-Send Web Msg ==>10 1
+[2016-06-06 14:37:58]-Send Web Msg ==>3000 4,1
+[2016-06-06 14:37:58]-[DT]-[SetOutCalllHandle]-[]-Return
+[2016-06-06 14:37:58]-Rev  DB  Msg <==1160 230 201606061427360005
+[2016-06-06 14:37:58]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_Beging
+[2016-06-06 14:37:58]-Send Web Msg ==>3000 5,1
+[2016-06-06 14:38:04]-Rev  DB  Msg <==1160 230 201606061427360005
+[2016-06-06 14:38:04]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_OutCall_Beging
+[2016-06-06 14:38:04]-Send Web Msg ==>3000 5,1
+[2016-06-06 14:38:10]-Rev  DB  Msg <==1167 230 201606061427360005 1 0
+[2016-06-06 14:38:10]-[DT]-[MsiCallInfo.State]-[201606061427360005]-
+[2016-06-06 14:38:10]-[DT]-[GetCallOutRespHandle]-[201606061427360005]-Enter
+[2016-06-06 14:38:10]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_Connect
+[2016-06-06 14:38:10]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:38:10]-Send Web Msg ==>3 15937197558,15729383900,,外呼,,,,201606061427360005
+[2016-06-06 14:38:10]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:38:10]-Send Web Msg ==>11 1
+[2016-06-06 14:38:10]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:38:10]-[DT]-[GetCallOutRespHandle]-[]-Return
+[2016-06-06 14:38:37]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:38:37]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:39:14]-Rev  DB  Msg <==1102 230 201606061427360005 2
+[2016-06-06 14:39:14]-[DT]-[CallEndHandle]-[201606061427360005]-Enter
+[2016-06-06 14:39:14]-Send Web Msg ==>5 15729383900,15937197558,,外呼,2016-06-06 14:38:10,2016-06-06 14:39:14,4,201606061427360005
+[2016-06-06 14:39:14]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:39:14]-Send DB  Msg ==>1204 230 0#
+[2016-06-06 14:39:14]-[ChangeCallState]-CallState_Connect-Change To-CallState_End
+[2016-06-06 14:39:14]-Send Web Msg ==>3000 31,1
+[2016-06-06 14:39:14]-[ChangeCallState]-CallState_End-Change To-CallSate_NULL
+[2016-06-06 14:39:14]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:39:14]-[DT]-[CallEndHandle]-[]-Return
+[2016-06-06 14:39:14]-Rev  DB  Msg <==1104 230 1
+[2016-06-06 14:39:14]-[ChangeMsiState]-SeatState_LoginOut-Change To-SeatState_LoginOut
+[2016-06-06 14:39:14]-Send Web Msg ==>16 1,1
+[2016-06-06 14:39:14]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:39:27]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:39:27]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:40:17]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:40:17]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:40:56]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:40:56]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:40:56]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seat/jsp/callPanel.jsp]-[-1]-URL
+[2016-06-06 14:40:57]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:40:57]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:40:57]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 14:41:07]-Rev  Web Msg <==7 
+[2016-06-06 14:41:07]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:41:07]-Send DB  Msg ==>1263 230 2#
+[2016-06-06 14:41:07]-Rev  DB  Msg <==1163 230 1
+[2016-06-06 14:41:07]-[DT]-[SetOutCalllHandle]-[]-Enter
+[2016-06-06 14:41:07]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_StateReq
+[2016-06-06 14:41:07]-Send Web Msg ==>3000 4,1
+[2016-06-06 14:41:07]-Rev  Web Msg <==8 12333,15937197558
+[2016-06-06 14:41:07]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:41:07]-Send DB  Msg ==>1267 230 15937197558 1258130695#
+[2016-06-06 14:41:07]-Send Web Msg ==>10 1
+[2016-06-06 14:41:07]-Send Web Msg ==>3000 4,1
+[2016-06-06 14:41:07]-[DT]-[SetOutCalllHandle]-[]-Return
+[2016-06-06 14:41:07]-Rev  DB  Msg <==1160 230 201606061430450006
+[2016-06-06 14:41:07]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_Beging
+[2016-06-06 14:41:07]-Send Web Msg ==>3000 5,1
+[2016-06-06 14:41:07]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:41:07]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:41:11]-Rev  DB  Msg <==1160 230 201606061430450006
+[2016-06-06 14:41:11]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_OutCall_Beging
+[2016-06-06 14:41:11]-Send Web Msg ==>3000 5,1
+[2016-06-06 14:41:17]-Rev  DB  Msg <==1167 230 201606061430450006 1 0
+[2016-06-06 14:41:17]-[DT]-[MsiCallInfo.State]-[201606061430450006]-
+[2016-06-06 14:41:17]-[DT]-[GetCallOutRespHandle]-[201606061430450006]-Enter
+[2016-06-06 14:41:17]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_Connect
+[2016-06-06 14:41:17]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:41:17]-Send Web Msg ==>3 15937197558,15729383900,,外呼,,,,201606061430450006
+[2016-06-06 14:41:17]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:41:17]-Send Web Msg ==>11 1
+[2016-06-06 14:41:17]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:41:17]-[DT]-[GetCallOutRespHandle]-[]-Return
+[2016-06-06 14:41:50]-Rev  DB  Msg <==1102 230 201606061430450006 1
+[2016-06-06 14:41:50]-[DT]-[CallEndHandle]-[201606061430450006]-Enter
+[2016-06-06 14:41:50]-Send Web Msg ==>5 15729383900,15937197558,,外呼,2016-06-06 14:41:17,2016-06-06 14:41:50,33,201606061430450006
+[2016-06-06 14:41:50]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:41:50]-Send DB  Msg ==>1204 230 0#
+[2016-06-06 14:41:50]-[ChangeCallState]-CallState_Connect-Change To-CallState_End
+[2016-06-06 14:41:50]-Send Web Msg ==>3000 31,1
+[2016-06-06 14:41:50]-[ChangeCallState]-CallState_End-Change To-CallSate_NULL
+[2016-06-06 14:41:50]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:41:50]-[DT]-[CallEndHandle]-[]-Return
+[2016-06-06 14:41:50]-Rev  DB  Msg <==1104 230 1
+[2016-06-06 14:41:50]-[ChangeMsiState]-SeatState_LoginOut-Change To-SeatState_LoginOut
+[2016-06-06 14:41:50]-Send Web Msg ==>16 1,1
+[2016-06-06 14:41:50]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:41:57]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:41:57]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:42:32]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:42:32]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:42:32]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seat/jsp/callPanel.jsp]-[-1]-URL
+[2016-06-06 14:42:32]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:42:32]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:42:32]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 14:42:38]-Rev  Web Msg <==7 
+[2016-06-06 14:42:38]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:42:38]-Send DB  Msg ==>1263 230 2#
+[2016-06-06 14:42:38]-Rev  DB  Msg <==1163 230 1
+[2016-06-06 14:42:38]-[DT]-[SetOutCalllHandle]-[]-Enter
+[2016-06-06 14:42:38]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_StateReq
+[2016-06-06 14:42:38]-Send Web Msg ==>3000 4,1
+[2016-06-06 14:42:38]-Rev  Web Msg <==8 12333,1597197558
+[2016-06-06 14:42:38]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:42:38]-Send DB  Msg ==>1267 230 1597197558 1258130695#
+[2016-06-06 14:42:38]-Send Web Msg ==>10 1
+[2016-06-06 14:42:38]-Send Web Msg ==>3000 4,1
+[2016-06-06 14:42:38]-[DT]-[SetOutCalllHandle]-[]-Return
+[2016-06-06 14:42:38]-Rev  DB  Msg <==1160 230 201606061432160007
+[2016-06-06 14:42:38]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_Beging
+[2016-06-06 14:42:38]-Send Web Msg ==>3000 5,1
+[2016-06-06 14:42:43]-Rev  DB  Msg <==1160 230 201606061432160007
+[2016-06-06 14:42:43]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_OutCall_Beging
+[2016-06-06 14:42:43]-Send Web Msg ==>3000 5,1
+[2016-06-06 14:42:47]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:42:47]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:42:58]-Rev  DB  Msg <==1167 230 201606061432160007 0 1
+[2016-06-06 14:42:58]-[DT]-[MsiCallInfo.State]-[201606061432160007]-
+[2016-06-06 14:42:58]-[DT]-[GetCallOutRespHandle]-[201606061432160007]-Enter
+[2016-06-06 14:42:58]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallSate_NULL
+[2016-06-06 14:42:58]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:42:58]-Send Web Msg ==>11 0,对方无法接通，请重试
+[2016-06-06 14:42:58]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:42:58]-[ChangeCallState]-CallSate_NULL-Change To-CallSate_NULL
+[2016-06-06 14:42:58]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:42:58]-[DT]-[GetCallOutRespHandle]-[]-Return
+[2016-06-06 14:43:03]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:43:03]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:43:03]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seat/jsp/callPanel.jsp]-[-1]-URL
+[2016-06-06 14:43:03]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:43:03]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:43:03]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 14:43:10]-Rev  Web Msg <==7 
+[2016-06-06 14:43:10]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:43:10]-Send DB  Msg ==>1263 230 2#
+[2016-06-06 14:43:10]-Rev  DB  Msg <==1163 230 1
+[2016-06-06 14:43:10]-[DT]-[SetOutCalllHandle]-[]-Enter
+[2016-06-06 14:43:10]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_StateReq
+[2016-06-06 14:43:10]-Send Web Msg ==>3000 4,1
+[2016-06-06 14:43:10]-Rev  Web Msg <==8 12333,15937197558
+[2016-06-06 14:43:10]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:43:10]-Send DB  Msg ==>1267 230 15937197558 1258130695#
+[2016-06-06 14:43:10]-Send Web Msg ==>10 1
+[2016-06-06 14:43:10]-Send Web Msg ==>3000 4,1
+[2016-06-06 14:43:10]-[DT]-[SetOutCalllHandle]-[]-Return
+[2016-06-06 14:43:10]-Rev  DB  Msg <==1160 230 201606061432480008
+[2016-06-06 14:43:10]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_Beging
+[2016-06-06 14:43:10]-Send Web Msg ==>3000 5,1
+[2016-06-06 14:43:15]-Rev  DB  Msg <==1160 230 201606061432480008
+[2016-06-06 14:43:15]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_OutCall_Beging
+[2016-06-06 14:43:15]-Send Web Msg ==>3000 5,1
+[2016-06-06 14:43:21]-Rev  DB  Msg <==1167 230 201606061432480008 1 0
+[2016-06-06 14:43:21]-[DT]-[MsiCallInfo.State]-[201606061432480008]-
+[2016-06-06 14:43:21]-[DT]-[GetCallOutRespHandle]-[201606061432480008]-Enter
+[2016-06-06 14:43:21]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_Connect
+[2016-06-06 14:43:21]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:43:21]-Send Web Msg ==>3 15937197558,15729383900,,外呼,,,,201606061432480008
+[2016-06-06 14:43:21]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:43:21]-Send Web Msg ==>11 1
+[2016-06-06 14:43:21]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:43:21]-[DT]-[GetCallOutRespHandle]-[]-Return
+[2016-06-06 14:43:37]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:43:37]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:43:51]-Rev  DB  Msg <==1172 230 201606061432480008 1
+[2016-06-06 14:43:51]-[ChangeCallState]-CallState_Connect-Change To-CallState_Entry_OK
+[2016-06-06 14:43:51]-Send Web Msg ==>3000 29,1
+[2016-06-06 14:43:51]-Send Web Msg ==>21 1
+[2016-06-06 14:43:51]-Send Web Msg ==>3000 29,1
+[2016-06-06 14:44:11]-Rev  DB  Msg <==1175 230 201606061432480008 0
+[2016-06-06 14:44:18]-Rev  DB  Msg <==1102 230 201606061432480008 2
+[2016-06-06 14:44:18]-[DT]-[CallEndHandle]-[201606061432480008]-Enter
+[2016-06-06 14:44:18]-Send Web Msg ==>5 15729383900,15937197558,,外呼,2016-06-06 14:43:21,2016-06-06 14:44:18,56,201606061432480008
+[2016-06-06 14:44:18]-Send Web Msg ==>3000 29,1
+[2016-06-06 14:44:18]-Send DB  Msg ==>1204 230 0#
+[2016-06-06 14:44:18]-[ChangeCallState]-CallState_Entry_OK-Change To-CallState_End
+[2016-06-06 14:44:18]-Send Web Msg ==>3000 31,1
+[2016-06-06 14:44:18]-[ChangeCallState]-CallState_End-Change To-CallSate_NULL
+[2016-06-06 14:44:18]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:44:18]-[DT]-[CallEndHandle]-[]-Return
+[2016-06-06 14:44:18]-Rev  DB  Msg <==1104 230 1
+[2016-06-06 14:44:18]-[ChangeMsiState]-SeatState_LoginOut-Change To-SeatState_LoginOut
+[2016-06-06 14:44:18]-Send Web Msg ==>16 1,1
+[2016-06-06 14:44:18]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:44:27]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:44:27]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:45:17]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:45:17]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:45:17]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seat/jsp/callPanel.jsp]-[-1]-URL
+[2016-06-06 14:45:17]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:45:17]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:45:17]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 14:45:17]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:45:17]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:45:25]-Rev  Web Msg <==7 
+[2016-06-06 14:45:25]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:45:25]-Send DB  Msg ==>1263 230 2#
+[2016-06-06 14:45:25]-Rev  DB  Msg <==1163 230 1
+[2016-06-06 14:45:25]-[DT]-[SetOutCalllHandle]-[]-Enter
+[2016-06-06 14:45:25]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_StateReq
+[2016-06-06 14:45:25]-Send Web Msg ==>3000 4,1
+[2016-06-06 14:45:25]-Rev  Web Msg <==8 12333,15937197558
+[2016-06-06 14:45:25]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:45:25]-Send DB  Msg ==>1267 230 15937197558 1258130695#
+[2016-06-06 14:45:25]-Send Web Msg ==>10 1
+[2016-06-06 14:45:25]-Send Web Msg ==>3000 4,1
+[2016-06-06 14:45:25]-[DT]-[SetOutCalllHandle]-[]-Return
+[2016-06-06 14:45:25]-Rev  DB  Msg <==1160 230 201606061435020009
+[2016-06-06 14:45:25]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_Beging
+[2016-06-06 14:45:25]-Send Web Msg ==>3000 5,1
+[2016-06-06 14:45:29]-Rev  DB  Msg <==1160 230 201606061435020009
+[2016-06-06 14:45:29]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_OutCall_Beging
+[2016-06-06 14:45:29]-Send Web Msg ==>3000 5,1
+[2016-06-06 14:45:35]-Rev  DB  Msg <==1167 230 201606061435020009 1 0
+[2016-06-06 14:45:35]-[DT]-[MsiCallInfo.State]-[201606061435020009]-
+[2016-06-06 14:45:35]-[DT]-[GetCallOutRespHandle]-[201606061435020009]-Enter
+[2016-06-06 14:45:35]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_Connect
+[2016-06-06 14:45:35]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:45:35]-Send Web Msg ==>3 15937197558,15729383900,,外呼,,,,201606061435020009
+[2016-06-06 14:45:35]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:45:35]-Send Web Msg ==>11 1
+[2016-06-06 14:45:35]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:45:35]-[DT]-[GetCallOutRespHandle]-[]-Return
+[2016-06-06 14:45:54]-Rev  DB  Msg <==1102 230 201606061435020009 1
+[2016-06-06 14:45:54]-[DT]-[CallEndHandle]-[201606061435020009]-Enter
+[2016-06-06 14:45:54]-Send Web Msg ==>5 15729383900,15937197558,,外呼,2016-06-06 14:45:35,2016-06-06 14:45:54,19,201606061435020009
+[2016-06-06 14:45:54]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:45:54]-Send DB  Msg ==>1204 230 0#
+[2016-06-06 14:45:54]-[ChangeCallState]-CallState_Connect-Change To-CallState_End
+[2016-06-06 14:45:54]-Send Web Msg ==>3000 31,1
+[2016-06-06 14:45:54]-[ChangeCallState]-CallState_End-Change To-CallSate_NULL
+[2016-06-06 14:45:54]-Rev  DB  Msg <==1104 230 1
+[2016-06-06 14:45:54]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:45:54]-[DT]-[CallEndHandle]-[]-Return
+[2016-06-06 14:45:54]-[ChangeMsiState]-SeatState_LoginOut-Change To-SeatState_LoginOut
+[2016-06-06 14:45:54]-Send Web Msg ==>16 1,1
+[2016-06-06 14:45:54]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:46:08]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:46:08]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:46:32]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:46:32]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:46:32]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seat/jsp/callPanel.jsp]-[-1]-URL
+[2016-06-06 14:46:32]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 14:46:32]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 14:46:32]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 14:46:37]-Rev  Web Msg <==7 
+[2016-06-06 14:46:37]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:46:37]-Send DB  Msg ==>1263 230 2#
+[2016-06-06 14:46:37]-Rev  DB  Msg <==1163 230 1
+[2016-06-06 14:46:37]-[DT]-[SetOutCalllHandle]-[]-Enter
+[2016-06-06 14:46:37]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_StateReq
+[2016-06-06 14:46:37]-Send Web Msg ==>3000 4,1
+[2016-06-06 14:46:37]-Rev  Web Msg <==8 12333,15937197558
+[2016-06-06 14:46:37]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:46:37]-Send DB  Msg ==>1267 230 15937197558 1258130695#
+[2016-06-06 14:46:37]-Send Web Msg ==>10 1
+[2016-06-06 14:46:37]-Send Web Msg ==>3000 4,1
+[2016-06-06 14:46:37]-[DT]-[SetOutCalllHandle]-[]-Return
+[2016-06-06 14:46:37]-Rev  DB  Msg <==1160 230 201606061436140010
+[2016-06-06 14:46:37]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_Beging
+[2016-06-06 14:46:37]-Send Web Msg ==>3000 5,1
+[2016-06-06 14:46:41]-Rev  DB  Msg <==1160 230 201606061436140010
+[2016-06-06 14:46:41]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_OutCall_Beging
+[2016-06-06 14:46:41]-Send Web Msg ==>3000 5,1
+[2016-06-06 14:46:48]-Rev  DB  Msg <==1167 230 201606061436140010 1 0
+[2016-06-06 14:46:48]-[DT]-[MsiCallInfo.State]-[201606061436140010]-
+[2016-06-06 14:46:48]-[DT]-[GetCallOutRespHandle]-[201606061436140010]-Enter
+[2016-06-06 14:46:48]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_Connect
+[2016-06-06 14:46:48]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:46:48]-Send Web Msg ==>3 15937197558,15729383900,,外呼,,,,201606061436140010
+[2016-06-06 14:46:48]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:46:48]-Send Web Msg ==>11 1
+[2016-06-06 14:46:48]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:46:48]-[DT]-[GetCallOutRespHandle]-[]-Return
+[2016-06-06 14:46:58]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:46:58]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:47:14]-Rev  DB  Msg <==1102 230 201606061436140010 2
+[2016-06-06 14:47:14]-[DT]-[CallEndHandle]-[201606061436140010]-Enter
+[2016-06-06 14:47:14]-Send Web Msg ==>5 15729383900,15937197558,,外呼,2016-06-06 14:46:48,2016-06-06 14:47:14,26,201606061436140010
+[2016-06-06 14:47:14]-Send Web Msg ==>3000 3,1
+[2016-06-06 14:47:14]-Send DB  Msg ==>1204 230 0#
+[2016-06-06 14:47:14]-[ChangeCallState]-CallState_Connect-Change To-CallState_End
+[2016-06-06 14:47:14]-Send Web Msg ==>3000 31,1
+[2016-06-06 14:47:14]-[ChangeCallState]-CallState_End-Change To-CallSate_NULL
+[2016-06-06 14:47:14]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:47:14]-[DT]-[CallEndHandle]-[]-Return
+[2016-06-06 14:47:14]-Rev  DB  Msg <==1104 230 1
+[2016-06-06 14:47:14]-[ChangeMsiState]-SeatState_LoginOut-Change To-SeatState_LoginOut
+[2016-06-06 14:47:14]-Send Web Msg ==>16 1,1
+[2016-06-06 14:47:14]-Send Web Msg ==>3000 0,1
+[2016-06-06 14:47:17]-Rev  Web Msg <==98 
+[2016-06-06 14:47:17]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:47:48]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:47:48]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:48:28]-Rev  Web Msg <==98 
+[2016-06-06 14:48:28]-Rev  Web MsgCCCC <==1
+[2016-06-06 14:48:38]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:48:38]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:49:28]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:49:28]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:50:18]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:50:18]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:51:08]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:51:08]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:51:58]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:51:58]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:52:48]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:52:48]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:53:38]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:53:38]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:54:28]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:54:28]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:55:18]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:55:18]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:56:08]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:56:08]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:56:58]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:56:58]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:57:48]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:57:48]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:58:38]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:58:38]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 14:59:28]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 14:59:28]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:00:18]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:00:18]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:01:08]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:01:08]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:01:58]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:01:58]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:02:48]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:02:48]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:03:38]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:03:38]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:04:28]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:04:28]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:05:18]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:05:18]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:06:08]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:06:08]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:06:58]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:06:58]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:07:37]-about:blank
+[2016-06-06 15:07:37]-http://218.206.244.202:2323/qytx-hotline/seatLogin.jsp?_clientType=wap
+[2016-06-06 15:07:39]-Rev  Web Msg <==19 230,1,1,e10adc3949ba59abbe56e057f20f883e,lihe,1,15729383900,1,0,1, , ,北京全亚,1,3710000,1
+[2016-06-06 15:07:40]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 15:07:40]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 15:07:40]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seat/jsp/seatWelcome_typeFour.jsp]-[-1]-URL
+[2016-06-06 15:07:40]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 15:07:40]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 15:07:40]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seatWelcome/jsp/index.jsp]-[-1]-URL
+[2016-06-06 15:07:40]-请求连接到IP:218.206.244.202端口:31202
+[2016-06-06 15:07:40]-Send DB  Msg ==>1200 230 1  1 -1 NoIpName 1 15729383900#
+[2016-06-06 15:07:40]-Rev  DB  Msg <==1100 230 1
+[2016-06-06 15:07:40]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 15:07:40]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 15:07:40]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 15:07:40]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 15:07:40]-Rev  Web MsgBBBBBB <==0
+[2016-06-06 15:07:40]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 15:08:30]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:08:30]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:09:20]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:09:20]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:09:48]-Rev  Web Msg <==6 
+[2016-06-06 15:09:48]-Rev  Web MsgCCCC <==0
+[2016-06-06 15:09:48]-Send DB  Msg ==>1204 230 0#
+[2016-06-06 15:09:48]-Rev  DB  Msg <==1104 230 1
+[2016-06-06 15:09:48]-[ChangeMsiState]-SeatState_LoginIn-Change To-SeatState_LoginOut
+[2016-06-06 15:09:48]-Send Web Msg ==>16 1,1
+[2016-06-06 15:09:48]-Send Web Msg ==>3000 0,1
+[2016-06-06 15:09:49]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 15:09:49]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 15:09:49]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seat/jsp/callPanel.jsp]-[-1]-URL
+[2016-06-06 15:09:49]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 15:09:49]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 15:09:49]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 15:09:56]-Rev  Web Msg <==7 
+[2016-06-06 15:09:56]-Rev  Web MsgCCCC <==1
+[2016-06-06 15:09:56]-Send DB  Msg ==>1263 230 2#
+[2016-06-06 15:09:56]-Rev  DB  Msg <==1163 230 1
+[2016-06-06 15:09:56]-[DT]-[SetOutCalllHandle]-[]-Enter
+[2016-06-06 15:09:56]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_StateReq
+[2016-06-06 15:09:56]-Send Web Msg ==>3000 4,1
+[2016-06-06 15:09:56]-Rev  Web Msg <==8 12333,15937197558
+[2016-06-06 15:09:56]-Rev  Web MsgCCCC <==1
+[2016-06-06 15:09:56]-Send DB  Msg ==>1267 230 15937197558 1258130695#
+[2016-06-06 15:09:56]-Send Web Msg ==>10 1
+[2016-06-06 15:09:56]-Send Web Msg ==>3000 4,1
+[2016-06-06 15:09:56]-[DT]-[SetOutCalllHandle]-[]-Return
+[2016-06-06 15:09:56]-Rev  DB  Msg <==1160 230 201606061459340011
+[2016-06-06 15:09:56]-[ChangeCallState]-CallSate_NULL-Change To-CallState_OutCall_Beging
+[2016-06-06 15:09:56]-Send Web Msg ==>3000 5,1
+[2016-06-06 15:10:00]-Rev  DB  Msg <==1160 230 201606061459340011
+[2016-06-06 15:10:00]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_OutCall_Beging
+[2016-06-06 15:10:00]-Send Web Msg ==>3000 5,1
+[2016-06-06 15:10:10]-Rev  DB  Msg <==1167 230 201606061459340011 1 0
+[2016-06-06 15:10:10]-[DT]-[MsiCallInfo.State]-[201606061459340011]-
+[2016-06-06 15:10:10]-[DT]-[GetCallOutRespHandle]-[201606061459340011]-Enter
+[2016-06-06 15:10:10]-[ChangeCallState]-CallState_OutCall_Beging-Change To-CallState_Connect
+[2016-06-06 15:10:10]-Send Web Msg ==>3000 3,1
+[2016-06-06 15:10:10]-Send Web Msg ==>3 15937197558,15729383900,,外呼,,,,201606061459340011
+[2016-06-06 15:10:10]-Send Web Msg ==>3000 3,1
+[2016-06-06 15:10:10]-Send Web Msg ==>11 1
+[2016-06-06 15:10:10]-Send Web Msg ==>3000 3,1
+[2016-06-06 15:10:10]-[DT]-[GetCallOutRespHandle]-[]-Return
+[2016-06-06 15:10:10]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:10:10]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:10:17]-Rev  Web Msg <==22 
+[2016-06-06 15:10:17]-Rev  Web MsgCCCC <==1
+[2016-06-06 15:10:17]-Send DB  Msg ==>1278 201606061459340011 1#
+[2016-06-06 15:10:18]-Rev  DB  Msg <==1178 1 1
+[2016-06-06 15:10:18]-[DT]-[AdviceTransferHoldRespArgs]-[201606061459340011]-Enter
+[2016-06-06 15:10:18]-[ChangeCallState]-CallState_Connect-Change To-CallState_Hold
+[2016-06-06 15:10:18]-Send Web Msg ==>3000 6,1
+[2016-06-06 15:10:18]-Send Web Msg ==>34 1,1
+[2016-06-06 15:10:18]-Send Web Msg ==>3000 6,1
+[2016-06-06 15:10:18]-[DT]-[AdviceTransferHoldRespArgs]-[201606061459340011]-Return
+[2016-06-06 15:10:22]-Rev  Web Msg <==9 2,0
+[2016-06-06 15:10:22]-Rev  Web MsgCCCC <==1
+[2016-06-06 15:10:22]-Send DB  Msg ==>1254 230 0 0 0 0#
+[2016-06-06 15:10:22]-Rev  DB  Msg <==1154 230 1 4|1 wuzhou 231 2 15824875962
+[2016-06-06 15:10:22]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 15:10:22]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 15:10:22]-[DT]-[http://218.206.244.202:2323/qytx-hotline/hotline/seat/jsp/threeSeatOrCSLink.jsp]-[-1]-URL
+[2016-06-06 15:10:22]-Send Web Msg ==>14 2=wuzhou,231,2,15824875962
+[2016-06-06 15:10:22]-Send Web Msg ==>3000 6,1
+[2016-06-06 15:10:22]-[DT]-[wbMain_DocumentCompleted]-[-1]-Enter
+[2016-06-06 15:10:22]-Rev  Web MsgBBBBBB <==1
+[2016-06-06 15:10:22]-[DT]-[http://218.206.244.202:2323/qytx-hotline/plugins/My97DatePicker/My97DatePicker.htm]-[-1]-URL
+[2016-06-06 15:10:24]-Rev  Web Msg <==24 0,231
+[2016-06-06 15:10:24]-Rev  Web MsgCCCC <==1
+[2016-06-06 15:10:24]-Send DB  Msg ==>1279 201606061459340011 0 231 230#
+[2016-06-06 15:10:32]-Rev  DB  Msg <==1179 1
+[2016-06-06 15:10:32]-[DT]-[AdviceTransferOutCall]-[201606061459340011]-Enter
+[2016-06-06 15:10:32]-[ChangeCallState]-CallState_Hold-Change To-CallState_Transfer_Begin
+[2016-06-06 15:10:32]-Send Web Msg ==>3000 10,1
+[2016-06-06 15:10:32]-Send Web Msg ==>35 1
+[2016-06-06 15:10:32]-Send Web Msg ==>3000 10,1
+[2016-06-06 15:10:32]-[DT]-[AdviceTransferOutCall]-[201606061459340011]-Return
+[2016-06-06 15:10:38]-Rev  Web Msg <==25 
+[2016-06-06 15:10:38]-Rev  Web MsgCCCC <==1
+[2016-06-06 15:10:38]-[DT]-[AdviceTranceferRoute]-[201606061459340011]-Enter
+[2016-06-06 15:10:38]-Send DB  Msg ==>1280 201606061459340011#
+[2016-06-06 15:10:38]-[DT]-[AdviceTranceferRoute]-[201606061459340011]-Return
+[2016-06-06 15:10:38]-Rev  DB  Msg <==1102 230 201606061459340011 0
+[2016-06-06 15:10:38]-[DT]-[CallEndHandle]-[201606061459340011]-Enter
+[2016-06-06 15:10:38]-Send Web Msg ==>5 15729383900,15937197558,,外呼,2016-06-06 15:10:10,2016-06-06 15:10:38,28,201606061459340011
+[2016-06-06 15:10:38]-Send Web Msg ==>3000 10,1
+[2016-06-06 15:10:38]-Send DB  Msg ==>1204 230 0#
+[2016-06-06 15:10:38]-[ChangeCallState]-CallState_Transfer_Begin-Change To-CallState_End
+[2016-06-06 15:10:38]-Send Web Msg ==>3000 31,1
+[2016-06-06 15:10:38]-[ChangeCallState]-CallState_End-Change To-CallSate_NULL
+[2016-06-06 15:10:38]-Send Web Msg ==>3000 0,1
+[2016-06-06 15:10:38]-[DT]-[CallEndHandle]-[]-Return
+[2016-06-06 15:10:38]-Rev  DB  Msg <==1104 230 1
+[2016-06-06 15:10:39]-[ChangeMsiState]-SeatState_LoginOut-Change To-SeatState_LoginOut
+[2016-06-06 15:10:39]-Send Web Msg ==>16 1,1
+[2016-06-06 15:10:39]-Send Web Msg ==>3000 0,1
+[2016-06-06 15:10:51]-Rev  Web Msg <==98 
+[2016-06-06 15:10:51]-Rev  Web MsgCCCC <==1
+[2016-06-06 15:11:00]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:11:00]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:11:50]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:11:50]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:12:40]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:12:40]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:13:30]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:13:30]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:14:20]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:14:20]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:15:10]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:15:10]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:16:00]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:16:00]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:16:50]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:16:50]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:17:40]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:17:40]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:18:30]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:18:30]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:19:20]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:19:20]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:20:10]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:20:10]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:21:00]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:21:00]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:21:50]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:21:50]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:22:40]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:22:40]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:23:30]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:23:30]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:24:20]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:24:20]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:25:10]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:25:10]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:26:00]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:26:00]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:26:50]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:26:50]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:27:40]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:27:40]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:28:30]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:28:30]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:29:20]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:29:20]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:30:10]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:30:10]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:31:00]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:31:00]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:31:50]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:31:50]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:32:40]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:32:40]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:33:30]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:33:30]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:34:20]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:34:20]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:35:10]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:35:10]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:36:00]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:36:00]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:36:50]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:36:50]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:37:40]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:37:40]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:38:30]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:38:30]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:39:20]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:39:20]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:40:10]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:40:10]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:41:00]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:41:00]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:41:50]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:41:50]-Rev  DB  Msg <==1168 0 0 0
+[2016-06-06 15:42:40]-Send DB  Msg ==>1268 0 0 0#
+[2016-06-06 15:42:40]-Rev  DB  Msg <==1168 0 0 0
