@@ -108,6 +108,9 @@ COMM_MSGHEAD_CONSTANTS.TRANSFERCALLRESP = "1164";
 COMM_MSGHEAD_CONSTANTS.OUTCALL = "1267";
 COMM_MSGHEAD_CONSTANTS.OUTCALLRESP = "1167";
 
+COMM_MSGHEAD_CONSTANTS.THREEWAY = "1270";
+COMM_MSGHEAD_CONSTANTS.THREEWAYRESP = "1170";
+
 COMM_MSGHEAD_CONSTANTS.MONITORLISTEN = "1271";
 COMM_MSGHEAD_CONSTANTS.MONITORLISTENRESP = "1171";
 
@@ -115,7 +118,13 @@ COMM_MSGHEAD_CONSTANTS.MONITORINSERT = "1272";
 COMM_MSGHEAD_CONSTANTS.MONITORINSERTRESP = "1172";
 
 COMM_MSGHEAD_CONSTANTS.MONITORINTERCEPT = "1273";
-COMM_MSGHEAD_CONSTANTS.MONITORINTERCEPTTRESP = "1173";
+COMM_MSGHEAD_CONSTANTS.MONITORINTERCEPTRESP = "1173";
+
+COMM_MSGHEAD_CONSTANTS.THREEWAYEND = "1274";
+COMM_MSGHEAD_CONSTANTS.THREEWAYENDRESP = "1174";
+
+COMM_MSGHEAD_CONSTANTS.MONITORINSERTEND = "1275";
+COMM_MSGHEAD_CONSTANTS.MONITORINSERTENDRESP = "1175";
 
 COMM_MSGHEAD_CONSTANTS.MONITORTEARDOWN = "1277";
 COMM_MSGHEAD_CONSTANTS.MONITORTEARDOWNRESP = "1177";
@@ -807,6 +816,71 @@ seat_client.onmonitorteardownResp = function(nResult){
     seat_client.log("seat_client.onmonitorteardownResp");
 }
 
+/**
+* @description 1175 强拆结束
+* 1175 坐席ID 呼叫ID 原因1/0 （自己挂断/其他）
+* @private
+*/
+seat_client.monitorinsertendResp = function (dataArray) {
+    if( seat_client.callInfo.nState == CALL_INFO_STATE_CONSTANTS.CallState_Demolished_OK ){
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Connect);
+        seat_client.onmonitorinsertendResp(dataArray[3]);
+    }
+}
+
+/**
+* @description 1175 强拆结束
+* 1175 坐席ID 呼叫ID 原因1/0 （自己挂断/其他）
+* @param {int} nReason 原因1/0 （自己挂断/其他）
+*/
+seat_client.onmonitorinsertendResp = function(nReason){
+    seat_client.log("seat_client.onmonitorinsertendResp");
+}
+
+/**
+* @description 1170 通话成功/失败
+* 1170 坐席ID 呼叫ID 1/0（通话成功/失败）
+* @private
+*/
+seat_client.threewayResp = function (dataArray) {
+    if(dataArray[3] == 1){
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Conf_OK);
+    }
+    else{
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Connect);
+    }
+    seat_client.onthreewayResp(dataArray[3]);
+}
+
+/**
+* @description 1170 通话成功/失败
+* 1170 坐席ID 呼叫ID 1/0（通话成功/失败）
+* @param {int} nResult 1/0（成功/失败）
+*/
+seat_client.onthreewayResp = function(nResult){
+    seat_client.log("seat_client.onthreewayendResp");
+}
+
+/**
+* @description 1174 三方结束
+* 1174 坐席ID 呼叫ID 原因1/0 （自己挂断/其他）
+* @private
+*/
+seat_client.threewayendResp = function (dataArray) {
+    seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Connect);
+    seat_client.onthreewayendResp(dataArray[3]);
+    
+}
+
+/**
+* @description 1175 三方结束
+* 1174 坐席ID 呼叫ID 原因1/0 （自己挂断/其他）
+* @param {int} nReason 原因1/0 （自己挂断/其他）
+*/
+seat_client.onthreewayendResp = function(nReason){
+    seat_client.log("seat_client.onthreewayendResp");
+}
+
 seat_client.msgMap = [
     { dataHead: COMM_MSGHEAD_CONSTANTS.LOGINRESP, procFunction: seat_client.loginResp },
     { dataHead: COMM_MSGHEAD_CONSTANTS.CALLINREPORT, procFunction: seat_client.callinReport },
@@ -831,6 +905,7 @@ seat_client.msgMap = [
     { dataHead: COMM_MSGHEAD_CONSTANTS.MONITORINSERTRESP, procFunction: seat_client.monitorinsertResp },
     { dataHead: COMM_MSGHEAD_CONSTANTS.MONITORINTERCEPTRESP, procFunction: seat_client.monitorinterceptResp },
     { dataHead: COMM_MSGHEAD_CONSTANTS.MONITORTEARDOWNRESP, procFunction: seat_client.monitorteardownResp },
+    { dataHead: COMM_MSGHEAD_CONSTANTS.MONITORINSERTENDRESP, procFunction: seat_client.monitorinsertendsResp },
 ]
 seat_client.msgMap.findAndProc = function (dataHead,data) {
     var bfind = false;
@@ -1378,6 +1453,38 @@ seat_client.sendmonitorteardown = function (nCompanyId,nTargetMSIUserId){
             + COMM_MSGHEAD_CONSTANTS.SPLIT + nCompanyId.toString()
             + COMM_MSGHEAD_CONSTANTS.SPLIT + nTargetMSIUserId.toString()
             + COMM_MSGHEAD_CONSTANTS.TAIL;
+        seat_client.send(data);
+        bRet = true;
+    }
+    return bRet;
+}
+
+/**
+ * @description 1270 请求三方通话
+ * 1270 坐席ID 呼叫ID 目标坐席ID 转接类型（1/0 转接内部座席/转接外线）转接外线号码，工单ID
+ * @param {int} nType 0 转接外线;1 转接内部座席
+ * @param {string} target  外线号码或目标坐席ID
+ */
+seat_client.sendthreeway = function (nType,target){
+    var bRet = false;
+    if((seat_client.callInfo.callId.length > 0) && (seat_client.callInfo.nState==CALL_INFO_STATE_CONSTANTS.CallState_Connect)){
+        var MSIUserId = seat_client.msiUser.msiUserId;
+        var callId = seat_client.callInfo.callId;
+        var head = COMM_MSGHEAD_CONSTANTS.THREEWAY;
+        var targetMsiId = "0";
+        var targetPhone = "0";
+        if(nType==0){
+            targetPhone = target; 
+        }
+        else {
+            targetMsiId = target;
+        }
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Conf_Begin);
+        var data = head + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() 
+            + COMM_MSGHEAD_CONSTANTS.SPLIT+callId + COMM_MSGHEAD_CONSTANTS.SPLIT
+            + targetMsiId + COMM_MSGHEAD_CONSTANTS.SPLIT+
+            nType.toString() + COMM_MSGHEAD_CONSTANTS.SPLIT+targetPhone +
+             COMM_MSGHEAD_CONSTANTS.SPLIT+"0"+ COMM_MSGHEAD_CONSTANTS.TAIL;
         seat_client.send(data);
         bRet = true;
     }

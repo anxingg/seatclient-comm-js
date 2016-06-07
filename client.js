@@ -126,6 +126,9 @@ function cmd(){
             else if(chunk.indexOf("checkout") != -1){
                 seat_client.sendcheckout(0);
             }
+            else if(chunk.indexOf("threeway") != -1){
+                seat_client.sendthreeway(1,294);
+            }
             else if(chunk.indexOf("checkin") != -1){
                 seat_client.sendsetmsistate(0);
             }
