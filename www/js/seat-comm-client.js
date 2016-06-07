@@ -93,14 +93,16 @@ COMM_MSGHEAD_CONSTANTS.MSISTATEMONITORRESP = "1156";
 
 COMM_MSGHEAD_CONSTANTS.OUTCALLIDREPORT = "1160";
 
+COMM_MSGHEAD_CONSTANTS.SINGLETRANSFERCALLNEW = "1262";
+
 COMM_MSGHEAD_CONSTANTS.SETMSIOUTCALLORCALLSTATE = "1263";
 COMM_MSGHEAD_CONSTANTS.SETMSIOUTCALLORCALLSTATERESP = "1163";
 
 COMM_MSGHEAD_CONSTANTS.CALLKEEPORCALLBACK = "1266";
 COMM_MSGHEAD_CONSTANTS.CALLKEEPORCALLBACKRESP = "1166";
 
-COMM_MSGHEAD_CONSTANTS.SINGLETRANSFERCALL = "1264";
-COMM_MSGHEAD_CONSTANTS.TRANSFERCALL = "1264";
+COMM_MSGHEAD_CONSTANTS.SINGLETRANSFERCALL = "1264";  // 实际已经不用
+COMM_MSGHEAD_CONSTANTS.TRANSFERCALL = "1264";        //实际已经不用
 COMM_MSGHEAD_CONSTANTS.TRANSFERCALLRESP = "1164";
 
 COMM_MSGHEAD_CONSTANTS.OUTCALL = "1267";
@@ -933,7 +935,7 @@ seat_client.sendmsistatemonitor = function () {
 seat_client.sendcallkeeporcallback = function (nType) {
     var bRet = false;
     var MSIUserId = seat_client.msiUser.msiUserId;
-    if((seat_client.callInfo.callId.length > 0) && (seat_client.callInfo.nCallState==CALL_INFO_STATE_CONSTANTS.CallState_Connect)){
+    if((seat_client.callInfo.callId.length > 0) && (seat_client.callInfo.nState==CALL_INFO_STATE_CONSTANTS.CallState_Connect)){
         var data = COMM_MSGHEAD_CONSTANTS.CALLKEEPORCALLBACK + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() 
             + COMM_MSGHEAD_CONSTANTS.SPLIT+nType.toString() + COMM_MSGHEAD_CONSTANTS.TAIL;
         seat_client.send(data);
@@ -972,6 +974,7 @@ seat_client.sendoutcall = function (phone,showNum) {
     return bRet;
 }
 /**
+ * @private 废弃的函数
  * @description 1264 请求转接其他坐席 1264 坐席ID 呼叫ID 目标坐席ID 转接类型（0/1转接外线/转接内部座席）转接外线号码
  * @param {bool} bSing 是否单步 
  * @param {int} nType 0 转接外线;1 转接内部座席
@@ -979,7 +982,7 @@ seat_client.sendoutcall = function (phone,showNum) {
  */
 seat_client.sendtransfercall = function (bSingle,nType,target) {
     var bRet = false;
-    if((seat_client.callInfo.callId.length > 0) && (seat_client.callInfo.nCallState==CALL_INFO_STATE_CONSTANTS.CallState_Connect)){
+    if((seat_client.callInfo.callId.length > 0) && (seat_client.callInfo.nState==CALL_INFO_STATE_CONSTANTS.CallState_Connect)){
         var MSIUserId = seat_client.msiUser.msiUserId;
         var callId = seat_client.callInfo.callId;
         var head = COMM_MSGHEAD_CONSTANTS.TRANSFERCALL;
@@ -994,6 +997,37 @@ seat_client.sendtransfercall = function (bSingle,nType,target) {
         else {
             targetMsiId = target;
         }
+        var data = head + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() 
+            + COMM_MSGHEAD_CONSTANTS.SPLIT+callId + COMM_MSGHEAD_CONSTANTS.SPLIT
+            + targetMsiId + COMM_MSGHEAD_CONSTANTS.SPLIT+
+            nType.toString() + COMM_MSGHEAD_CONSTANTS.SPLIT+targetPhone + COMM_MSGHEAD_CONSTANTS.TAIL;
+        seat_client.send(data);
+        bRet = true;
+    }
+    return bRet;
+}
+/**
+ * @description 1262 坐席ID 呼叫ID 目标坐席ID 转接类型（0/1转接外线/转接内部座席）转接外线号码
+ * @param {int} nType 0 转接外线;1 转接内部座席
+ * @param {string} target  外线号码或目标坐席ID
+ */
+seat_client.sendsinglesteptransfercall = function (nType,target){
+    var bRet = false;
+    seat_client.log("sendsinglesteptransfercall:nCallState="+seat_client.callInfo.nState
+        +",callid="+seat_client.callInfo.callId.length);
+    if((seat_client.callInfo.callId.length > 0) && (seat_client.callInfo.nState==CALL_INFO_STATE_CONSTANTS.CallState_Connect)){
+        var MSIUserId = seat_client.msiUser.msiUserId;
+        var callId = seat_client.callInfo.callId;
+        var head = COMM_MSGHEAD_CONSTANTS.SINGLETRANSFERCALLNEW;
+        var targetMsiId = "0";
+        var targetPhone = "0";
+        if(nType==0){
+            targetPhone = target; 
+        }
+        else {
+            targetMsiId = target;
+        }
+        seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Single_Begin);
         var data = head + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() 
             + COMM_MSGHEAD_CONSTANTS.SPLIT+callId + COMM_MSGHEAD_CONSTANTS.SPLIT
             + targetMsiId + COMM_MSGHEAD_CONSTANTS.SPLIT+

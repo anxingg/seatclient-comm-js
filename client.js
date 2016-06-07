@@ -17,8 +17,8 @@ function onclose() {
 
 log = ""; // Clear log on reload
 
-var gMSIUserId = 294
-var gWorkNo = 393900;
+var gMSIUserId = 295
+var gWorkNo = 398908;
 
 seat_client.server_url = "ws://218.206.243.36:1202/msiserver";
 
@@ -27,7 +27,7 @@ seat_client.onclose = onclose;
 seat_client.onopen = function onopen() {
     log += "Connected\n";
     print();
-    seat_client.sendlogin(gMSIUserId,gWorkNo,"pass",1,-1,'NoIpName',1,'13783476576');
+    seat_client.sendlogin(gMSIUserId,gWorkNo,"pass",1,-1,'NoIpName',1,'13683717560');
 };
 
 seat_client.onloginResp = function(MSIUserId,nResult){
@@ -95,7 +95,10 @@ function cmd(){
                 seat_client.sendmsioutcallorcallstate(2);
             }
             else if(chunk.indexOf("outcall") != -1){
-                seat_client.sendoutcall("13683717560","+8637156597182");
+                seat_client.sendoutcall("15729383900","+8637156597182");
+            }
+            else if(chunk.indexOf("singlesteptransfer") != -1){
+                seat_client.sendsinglesteptransfercall(0,"15729383900");
             }
             else 
                 process.stdout.write("unknown!");
