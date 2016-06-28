@@ -25,7 +25,7 @@ var gMSIPhone ="13783688005";
 var gMSIUserId = 295;
 var gWorkNo = 398908;
 var gMSIPhone ="13683717560";
-
+var gAnotherPhone="13783688005";
 
 seat_client.server_url = "ws://218.206.243.36:1202/msiserver";
 
@@ -96,11 +96,11 @@ function cmd(){
             if(chunk.indexOf("exit") != -1)
                 process.exit();
             
-            else if(chunk.indexOf("outcallorcallstate") != -1){
+            else if(chunk.indexOf("outcallorcallstate") != -1){  //外呼时先发送迁出，然后发送设置外呼状态，才能外呼
                 seat_client.sendmsioutcallorcallstate(2);
             }
             else if(chunk.indexOf("singlesteptransfer") != -1){
-                seat_client.sendsinglesteptransfercall(0,"15729383900");
+                seat_client.sendsinglesteptransfercall(0,gAnotherPhone);
             }
             else if(chunk.indexOf("transferhold") != -1){
                 seat_client.sendadvicetransferhold(1);
@@ -133,7 +133,16 @@ function cmd(){
                 seat_client.sendsetmsistate(0);
             }
             else if(chunk.indexOf("outcall") != -1){
-                seat_client.sendoutcall("15729383900","+8637156597182");
+                seat_client.sendoutcall(gAnotherPhone,"+8637156597182");
+            }
+            else if(chunk.indexOf("hangup") != -1){
+                seat_client.sendhangup();
+            }
+            else if(chunk.indexOf("keep") != -1){
+                seat_client.sendcallkeeporcallback(1);
+            }
+            else if(chunk.indexOf("callback") != -1){
+                seat_client.sendcallkeeporcallback(2);
             }
             else 
                 process.stdout.write("unknown!");

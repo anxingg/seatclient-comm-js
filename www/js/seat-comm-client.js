@@ -1212,8 +1212,10 @@ seat_client.sendmsistatemonitor = function () {
 seat_client.sendcallkeeporcallback = function (nType) {
     var bRet = false;
     var MSIUserId = seat_client.msiUser.msiUserId;
-    if((seat_client.callInfo.callId.length > 0) && (seat_client.callInfo.nState==CALL_INFO_STATE_CONSTANTS.CallState_Connect)){
-        var data = COMM_MSGHEAD_CONSTANTS.CALLKEEPORCALLBACK + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() 
+    var callId = seat_client.callInfo.callId;
+    if(seat_client.callInfo.callId.length > 0){
+        var data = COMM_MSGHEAD_CONSTANTS.CALLKEEPORCALLBACK + COMM_MSGHEAD_CONSTANTS.SPLIT
+             + MSIUserId.toString() +COMM_MSGHEAD_CONSTANTS.SPLIT+callId
             + COMM_MSGHEAD_CONSTANTS.SPLIT+nType.toString() + COMM_MSGHEAD_CONSTANTS.TAIL;
         seat_client.send(data);
         bRet = true;
