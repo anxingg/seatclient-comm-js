@@ -20,14 +20,42 @@ log = ""; // Clear log on reload
 var gMSIUserId = 294;
 var gWorkNo = 393900;
 var gMSIPhone ="13783688005";
-*/
 
 var gMSIUserId = 295;
 var gWorkNo = 398908;
-var gMSIPhone ="13683717560";
+var gCompyId = 83;
+var gAnotherMSIId = 264;//另外的坐席 ID
+var gHotLineNo = "+8637156597182";
+
+var gMSIUserId = 270;
+var gWorkNo = 6113;
+var gMSIPhone ="13783688005";
+var gAnotherPhone="15838369365";
+
+var gCompyId = 1;
+var gAnotherMSIId = 262;//另外的坐席 ID
+var gHotLineNo = "125813069";
+
+var gMSIUserId = 262;
+var gWorkNo = 1111;
+var gMSIPhone ="15838369365";
 var gAnotherPhone="13783688005";
 
-seat_client.server_url = "ws://218.206.243.36:1202/msiserver";
+var gCompyId = 1;
+var gAnotherMSIId = 270;//另外的坐席 ID
+var gHotLineNo = "125813069";
+*/
+
+var gMSIUserId = 270;
+var gWorkNo = 6113;
+var gMSIPhone ="13783688005";
+var gAnotherPhone="15838369365";
+
+var gCompyId = 1;
+var gAnotherMSIId = 262;//另外的坐席 ID
+var gHotLineNo = "125813069";
+
+seat_client.server_url = "ws://218.206.243.36:3202/msiserver";
 
 seat_client.onclose = onclose;
 
@@ -95,7 +123,9 @@ function cmd(){
             process.stdout.write('您输入的指令是:' + chunk);
             if(chunk.indexOf("exit") != -1)
                 process.exit();
-            
+            else if(chunk.indexOf("sendgetidlemsistate") != -1){
+                seat_client.sendgetidlemsistate();
+            }
             else if(chunk.indexOf("outcallorcallstate") != -1){  //外呼时先发送迁出，然后发送设置外呼状态，才能外呼
                 seat_client.sendmsioutcallorcallstate(2);
             }
@@ -106,34 +136,34 @@ function cmd(){
                 seat_client.sendadvicetransferhold(1);
             }
             else if(chunk.indexOf("transferoutcall") != -1){
-                seat_client.sendadvicetransferoutcall(0,294);
+                seat_client.sendadvicetransferoutcall(0,gAnotherMSIId);
             }
             else if(chunk.indexOf("transfertransfer") != -1){
                 seat_client.sendadvicetransfertransfer();
             }
             else if(chunk.indexOf("monitorlisten") != -1){
-                seat_client.sendmonitorlinsen(294);
+                seat_client.sendmonitorlinsen(gAnotherMSIId);
             }
             else if(chunk.indexOf("monitorinsert") != -1){
-                seat_client.sendmonitorinsert(294);
+                seat_client.sendmonitorinsert(gAnotherMSIId);
             }
             else if(chunk.indexOf("monitorintercept") != -1){
-                seat_client.sendmonitorintercept(294);
+                seat_client.sendmonitorintercept(gAnotherMSIId);
             }
             else if(chunk.indexOf("monitorteardown") != -1){
-                seat_client.sendmonitorteardown(83,294);
+                seat_client.sendmonitorteardown(gCompyId,gAnotherMSIId);
             }
             else if(chunk.indexOf("checkout") != -1){
                 seat_client.sendcheckout(0);
             }
             else if(chunk.indexOf("threeway") != -1){
-                seat_client.sendthreeway(1,294);
+                seat_client.sendthreeway(0,gAnotherPhone);
             }
             else if(chunk.indexOf("checkin") != -1){
                 seat_client.sendsetmsistate(0);
             }
             else if(chunk.indexOf("outcall") != -1){
-                seat_client.sendoutcall(gAnotherPhone,"+8637156597182");
+                seat_client.sendoutcall(gAnotherPhone,gHotLineNo);
             }
             else if(chunk.indexOf("hangup") != -1){
                 seat_client.sendhangup();

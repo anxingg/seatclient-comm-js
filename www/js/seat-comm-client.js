@@ -348,7 +348,8 @@ seat_client.callinReport = function (dataArray) {
     seat_client.callInfo.phone = dataArray[6];
     if (dataArray[9] == 1) {
         // 理论上三方跟普通来电没有区别
-        throw "三方未实现";  
+        seat_client.oncallinReport(dataArray[1], dataArray[2], dataArray[3], dataArray[4], dataArray[5], dataArray[6],
+            dataArray[7], dataArray[8], dataArray[9],seat_client.callInfo.nCallType);
     }
     else {
         seat_client.oncallinReport(dataArray[1], dataArray[2], dataArray[3], dataArray[4], dataArray[5], dataArray[6],
@@ -444,9 +445,11 @@ seat_client.hangupReport = function (dataArray) {
     if (seat_client.callInfo.callId == dataArray[2]) {
         if (seat_client.callInfo.nState != CALL_INFO_STATE_CONSTANTS.CallSate_NULL) {
             if (seat_client.callInfo.nCallType == CALL_TYPE_CONSTANTS.InCome) {
+                seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_End);
                 seat_client.onhangupReport(dataArray[1], dataArray[2], dataArray[3]);
             }
             else if (seat_client.callInfo.nCallType == CALL_TYPE_CONSTANTS.OutCall) {
+                seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_End);
                 seat_client.onhangupReport(dataArray[1], dataArray[2], dataArray[3]);
             }
             if (seat_client.msiUser.msiState == MSI_STATE_CONSTANTS.SeatState_LoginIn)//置闲
@@ -457,7 +460,6 @@ seat_client.hangupReport = function (dataArray) {
             {
                 seat_client.sendcheckout(0);//签出
             }
-            seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_End);
             seat_client.initCallInfo();
             seat_client.log("hangupreport end");
         }
@@ -479,8 +481,24 @@ seat_client.serviceReport = function (dataArray) {
 * @private
 */
 seat_client.getidlemsistateResp = function (dataArray) {
-    seat_client.ongetidlemsistateResp(dataArray[1], dataArray[2], dataArray[3]);
+	var userList = dataArray[2]+"=";
+	if(dataArray[0]>0){
+		var userListStr = dataArray.slice(3).join(",");
+		var userListArr = userListStr.split(",");
+		for(var j=0;j<userListArr.length;j++){
+			userList+=userListArr[j];
+		    if((j+1)%5==0){
+				if(j!=userListArr.length-1){
+					userList+=";";
+				}
+		   }else{
+			   userList+=",";
+		   }
+		}
+	}
+    seat_client.ongetidlemsistateResp(dataArray[1], dataArray[2], userList);
 }
+
 /**
 * @description 得到空闲坐席列表状态响应
 * @param {int} MSIUserId 坐席ID
@@ -498,10 +516,10 @@ seat_client.gettalkmsistateResp = function (dataArray) {
     seat_client.ongettalkmsistateResp(dataArray[1], dataArray[2], dataArray[3]);
 }
 /**
-* @description 得到通话中坐席列表状态响应
+* @description 得到通话中坐席列表状态响应 1154 262 2 1 杨金亭 262 1111 15838369365 1 潘博 270 6113 13783688005#
 * @param {int} MSIUserId 坐席ID
 * @param {int} num 数目
-* @param {string} 坐席列表 姓名|ID|工号
+* @param {string} 坐席列表 队列ID列表（用|分割）姓名 坐席ID 坐席工号 手机号码 
 */
 seat_client.ongettalkmsistateResp = function(MSIUserId,num,msiStateList){
     seat_client.log("seat_client.ongettalkmsistateResp");
@@ -517,7 +535,7 @@ seat_client.msistatemonitorResp = function (dataArray) {
 * @description 坐席状态监控响应
 * @param {int} MSIUserId 坐席ID
 * @param {int} num 数目
-* @param {string} 坐席列表 ID|工号|状态
+* @param {string} 坐席列表 队列ID列表（用|分割）姓名 坐席ID 坐席工号 手机号码
 */
 seat_client.onmsistatemonitorResp = function(MSIUserId,num,msiStateList){
     seat_client.log("seat_client.onmsistatemonitorResp");
@@ -732,7 +750,7 @@ seat_client.monitorlistenResp = function (dataArray) {
         else {
             seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Monitor_OK);
         } 
-        seat_client.onmonitorlistenResp(3);
+        seat_client.onmonitorlistenResp(dataArray[3]);
     }
     else{
         seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Monitor_Filed);
@@ -901,6 +919,8 @@ seat_client.msgMap = [
     { dataHead: COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERHOLDRESP, procFunction: seat_client.advicetransferholdResp },
     { dataHead: COMM_MSGHEAD_CONSTANTS.ADVICETRANSFEROUTCALLRESP, procFunction: seat_client.advicetransferoutcallResp },
     { dataHead: COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERHANGUPRESP, procFunction: seat_client.advicetransferhangupResp },
+    { dataHead: COMM_MSGHEAD_CONSTANTS.THREEWAYRESP, procFunction: seat_client.threewayResp },
+    { dataHead: COMM_MSGHEAD_CONSTANTS.THREEWAYENDRESP, procFunction: seat_client.threewayendResp },
     { dataHead: COMM_MSGHEAD_CONSTANTS.MONITORLISTENRESP, procFunction: seat_client.monitorlistenResp },
     { dataHead: COMM_MSGHEAD_CONSTANTS.MONITORINSERTRESP, procFunction: seat_client.monitorinsertResp },
     { dataHead: COMM_MSGHEAD_CONSTANTS.MONITORINTERCEPTRESP, procFunction: seat_client.monitorinterceptResp },
@@ -965,7 +985,7 @@ function GetDateDiff(sTime, eTime, diffType) {
 seat_client.onidle = function () {
     try{
     if (seat_client.comm.socket.readyState == WebSocket.OPEN) {
-        seat_client.comm.ping();
+        //seat_client.comm.ping();
         var minu = GetDateDiff(seat_client.lastmsgtime, Date(), "minute");
         if (minu >= 3 * COMM_MSGHEAD_CONSTANTS.IDLEMAX) {
             seat_client.close(false);
@@ -1097,7 +1117,8 @@ seat_client.sendcheckout = function (nType) {
     var bRet = false;
     var MSIUserId = seat_client.msiUser.msiUserId;
     if(seat_client.msiUser.msiState == MSI_STATE_CONSTANTS.SeatState_LoginIn){
-        if(seat_client.callInfo.nState == CALL_INFO_STATE_CONSTANTS.CallSate_NULL){
+        if((seat_client.callInfo.nState == CALL_INFO_STATE_CONSTANTS.CallSate_NULL)||
+            (seat_client.callInfo.nState == CALL_INFO_STATE_CONSTANTS.CallState_End)){
             var data = COMM_MSGHEAD_CONSTANTS.CHECKOUT + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() + COMM_MSGHEAD_CONSTANTS.SPLIT
                 + nType.toString() + " 0" + COMM_MSGHEAD_CONSTANTS.TAIL;
             seat_client.send(data);
@@ -1125,7 +1146,8 @@ seat_client.oncheckoutResp = function (MSIUserId, nResult) {
 seat_client.sendsetmsistate = function (nType) {
     var bRet = false;
     var MSIUserId = seat_client.msiUser.msiUserId;
-    if(seat_client.msiUser.msiState == MSI_STATE_CONSTANTS.SeatState_LoginOut){
+    if(seat_client.msiUser.msiState == MSI_STATE_CONSTANTS.SeatState_LoginOut)  
+    {
         if(seat_client.callInfo.nState == CALL_INFO_STATE_CONSTANTS.CallSate_NULL){
             var data = COMM_MSGHEAD_CONSTANTS.SETMSISTATE + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() + COMM_MSGHEAD_CONSTANTS.SPLIT
                 + nType.toString() + " 0" + COMM_MSGHEAD_CONSTANTS.TAIL;
