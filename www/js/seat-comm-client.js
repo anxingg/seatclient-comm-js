@@ -903,11 +903,25 @@ seat_client.onthreewayendResp = function(nReason){
 
 /**
 * @description 1149 批量外呼状态
-* 1149 坐席ID 呼叫ID  状态（0：开始呼叫 1：振铃 3:挂断） 对象（1：坐席2：客户）
+* 1149 坐席ID 呼叫ID  状态（0：开始呼叫 1：振铃 2:接通 3:挂断） 对象（1：坐席2：客户）
 * @private
 */
 seat_client.batchoutcall_state_report = function (dataArray) {
-    seat_client.onbatchoutcall_state_report(dataArray[3]);
+    if(dataArray[4]==1){
+        if(dataArray[3]==0){
+            seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_OutCall_Beging);
+        }
+        else if(dataArray[3]==1){
+            seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_OutCall_Alerting);
+        }
+        else if(dataArray[3]==2){
+            seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Connect);
+        }
+        else if(dataArray[3]==3){
+            seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallSate_NULL);
+        }
+    }
+    seat_client.onbatchoutcall_state_report(dataArray[3],dataArray[4]);
 }
 
 /**
