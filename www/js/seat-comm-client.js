@@ -141,7 +141,9 @@ COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERTRANSFERRESP = "1180";
 COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERHANGUP = "1281";
 COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERHANGUPRESP = "1181";
 
-
+COMM_MSGHEAD_CONSTANTS.BATCHOUTCALL = "1293";
+COMM_MSGHEAD_CONSTANTS.BATCHOUTCALL_STATE_REPORT = "1149";
+COMM_MSGHEAD_CONSTANTS.BATCHOUTCALL_HANGUPREQ = "1294";
 
 COMM_MSGHEAD_CONSTANTS.IDLE = "1268";
 COMM_MSGHEAD_CONSTANTS.IDLERESP = "1168";
@@ -899,6 +901,25 @@ seat_client.onthreewayendResp = function(nReason){
     seat_client.log("seat_client.onthreewayendResp");
 }
 
+/**
+* @description 1149 批量外呼状态
+* 1149 坐席ID 呼叫ID  状态（0：开始呼叫 1：振铃 3:挂断） 对象（1：坐席2：客户）
+* @private
+*/
+seat_client.batchoutcall_state_report = function (dataArray) {
+    seat_client.onbatchoutcall_state_report(dataArray[3]);
+}
+
+/**
+* @description 1175 三方结束
+* 1149 坐席ID 呼叫ID  状态（0：开始呼叫 1：振铃 3:挂断） 对象（1：坐席2：客户）
+* @param {int} nState 状态（0：开始呼叫 1：振铃 3:挂断）
+* @param {int} nTarget 对象（1：坐席2：客户）
+*/
+seat_client.onbatchoutcall_state_report = function(nState,nTarget){
+    seat_client.log("seat_client.onbatchoutcall_state_report");
+}
+
 seat_client.msgMap = [
     { dataHead: COMM_MSGHEAD_CONSTANTS.LOGINRESP, procFunction: seat_client.loginResp },
     { dataHead: COMM_MSGHEAD_CONSTANTS.CALLINREPORT, procFunction: seat_client.callinReport },
@@ -926,6 +947,7 @@ seat_client.msgMap = [
     { dataHead: COMM_MSGHEAD_CONSTANTS.MONITORINTERCEPTRESP, procFunction: seat_client.monitorinterceptResp },
     { dataHead: COMM_MSGHEAD_CONSTANTS.MONITORTEARDOWNRESP, procFunction: seat_client.monitorteardownResp },
     { dataHead: COMM_MSGHEAD_CONSTANTS.MONITORINSERTENDRESP, procFunction: seat_client.monitorinsertendsResp },
+    { dataHead: COMM_MSGHEAD_CONSTANTS.BATCHOUTCALL_STATE_REPORT, procFunction: seat_client.batchoutcall_state_report },
 ]
 seat_client.msgMap.findAndProc = function (dataHead,data) {
     var bfind = false;
@@ -1509,6 +1531,42 @@ seat_client.sendthreeway = function (nType,target){
             + targetMsiId + COMM_MSGHEAD_CONSTANTS.SPLIT+
             nType.toString() + COMM_MSGHEAD_CONSTANTS.SPLIT+targetPhone +
              COMM_MSGHEAD_CONSTANTS.SPLIT+"0"+ COMM_MSGHEAD_CONSTANTS.TAIL;
+        seat_client.send(data);
+        bRet = true;
+    }
+    return bRet;
+}
+
+/**
+ * @description 1292 外呼电话 
+ * 1292 坐席ID 外呼号码 显示号码
+ * 显示号码目前保留：传0
+ * @param {string} phone 外呼号码 
+ * @param {string} showNum 显示号码 
+ */
+seat_client.sendbatchoutcall = function (phone,showNum) {
+    var bRet = false;
+    var MSIUserId = seat_client.msiUser.msiUserId;
+    seat_client.callInfo.phone = phone;
+    var data = COMM_MSGHEAD_CONSTANTS.BATCHOUTCALL + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() 
+        + COMM_MSGHEAD_CONSTANTS.SPLIT+ phone + COMM_MSGHEAD_CONSTANTS.SPLIT+showNum + COMM_MSGHEAD_CONSTANTS.TAIL;
+    seat_client.send(data);
+    bRet = true;
+    return bRet;
+}
+
+/**
+ * @description 批量外呼挂机
+ * 1291 坐席ID 呼叫ID  挂断类型（1：坐席挂断 2：客户挂断）
+ * @param {int} type 挂断类型（1：坐席挂断 2：客户挂断）
+ */
+seat_client.sendbatchhangup = function (type) {
+    var bRet = false;
+    var MSIUserId = seat_client.msiUser.msiUserId;
+    var callId = seat_client.callInfo.callId;
+    if(seat_client.callInfo.callId.length > 0){
+        var data = COMM_MSGHEAD_CONSTANTS.BATCHOUTCALL_HANGUPREQ + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() + COMM_MSGHEAD_CONSTANTS.SPLIT
+            + callId.toString() + COMM_MSGHEAD_CONSTANTS.SPLIT+type.toString()+" 0" + COMM_MSGHEAD_CONSTANTS.TAIL;
         seat_client.send(data);
         bRet = true;
     }
