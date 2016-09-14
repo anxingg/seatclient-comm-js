@@ -908,6 +908,10 @@ seat_client.onthreewayendResp = function(nReason){
 */
 seat_client.batchoutcall_state_report = function (dataArray) {
     if(dataArray[4]==1){
+        if(seat_client.callInfo.callId.length==0){
+            seat_client.callInfo.callId = dataArray[2];
+            seat_client.callInfo.nCallType = CALL_TYPE_CONSTANTS.OutCall;
+        }
         if(dataArray[3]==0){
             seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_OutCall_Beging);
         }
@@ -1554,7 +1558,7 @@ seat_client.sendthreeway = function (nType,target){
 /**
  * @description 1292 外呼电话 
  * 1292 坐席ID 外呼号码 显示号码
- * 显示号码目前保留：传0
+ * 显示号码应该传热线号码
  * @param {string} phone 外呼号码 
  * @param {string} showNum 显示号码 
  */
