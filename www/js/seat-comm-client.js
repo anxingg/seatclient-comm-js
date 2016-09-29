@@ -33,6 +33,7 @@ var seat_comm_client = function (server_url, onopen, onclose, onmessage, onerror
 
     ob.send = function (data) {
         if (this.socket.readyState == WebSocket.OPEN) {
+            console.log("socket send:"+data);
             this.socket.send(data);
         } else {
             var err = "socket send error:socket.readyState=" + this.socket.readyState;
@@ -141,6 +142,12 @@ COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERTRANSFERRESP = "1180";
 COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERHANGUP = "1281";
 COMM_MSGHEAD_CONSTANTS.ADVICETRANSFERHANGUPRESP = "1181";
 
+COMM_MSGHEAD_CONSTANTS.CONTROLMSISTATEUSED = "1283";
+COMM_MSGHEAD_CONSTANTS.CONTROLMSISTATEUSEDRESP = "1183";
+
+COMM_MSGHEAD_CONSTANTS.CONTROLMSISTATEIDLE = "1284";
+COMM_MSGHEAD_CONSTANTS.CONTROLMSISTATEIDLERESP = "1184";
+
 COMM_MSGHEAD_CONSTANTS.BATCHOUTCALL = "1293";
 COMM_MSGHEAD_CONSTANTS.BATCHOUTCALL_STATE_REPORT = "1149";
 COMM_MSGHEAD_CONSTANTS.BATCHOUTCALL_HANGUPREQ = "1294";
@@ -233,6 +240,7 @@ var msiUser = {
     serviceId : -1,
     msiPhoneType : -1,
     msiState : MSI_STATE_CONSTANTS.SeatState_LoginOut,
+    msiBatchOutCallState : 0,  //是否是批处理外呼状态
     compyId : -1
 }
 /**
@@ -613,7 +621,8 @@ seat_client.outcallResp = function (dataArray) {
         seat_client.onconnectedReport(dataArray[1],dataArray[2], 1, 0, CALL_TYPE_CONSTANTS.OutCall) 
     }
     else{
-        seat_client.initCallInfo();
+        if(seat_client.msiUser.msiBatchOutCallState==0)  //当不是批处理外呼时候
+            seat_client.initCallInfo();
     }
     seat_client.onoutcallResp(dataArray[1],dataArray[2],dataArray[3],dataArray[4]);
 }
@@ -913,6 +922,7 @@ seat_client.batchoutcall_state_report = function (dataArray) {
             seat_client.callInfo.nCallType = CALL_TYPE_CONSTANTS.OutCall;
         }
         if(dataArray[3]==0){
+            seat_client.msiUser.msiBatchOutCallState=1;
             seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_OutCall_Beging);
         }
         else if(dataArray[3]==1){
@@ -922,6 +932,7 @@ seat_client.batchoutcall_state_report = function (dataArray) {
             seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallState_Connect);
         }
         else if(dataArray[3]==3){
+            seat_client.msiUser.msiBatchOutCallState=0;
             seat_client.changeCallState(CALL_INFO_STATE_CONSTANTS.CallSate_NULL);
         }
     }
@@ -936,6 +947,30 @@ seat_client.batchoutcall_state_report = function (dataArray) {
 */
 seat_client.onbatchoutcall_state_report = function(nState,nTarget){
     seat_client.log("seat_client.onbatchoutcall_state_report");
+}
+
+/**
+* @description 1183 指定坐席置忙
+* 1183 坐席ID
+*/
+seat_client.controlmsistateusedResp = function (dataArray) {
+    seat_client.oncontrolmsistateResp(2);
+}
+
+/**
+* @description 1184 指定坐席置闲
+* 1184 坐席ID
+*/
+seat_client.controlmsistateidleResp = function (dataArray) {
+    seat_client.oncontrolmsistateResp(1);
+}
+
+/**
+* @description 控制闲忙状态返回
+* @param {int} nType 1：闲，2：忙
+*/
+seat_client.oncontrolmsistateResp = function(nType){
+    seat_client.log("seat_client.oncontrolmsistate："+nType);
 }
 
 seat_client.msgMap = [
@@ -966,6 +1001,8 @@ seat_client.msgMap = [
     { dataHead: COMM_MSGHEAD_CONSTANTS.MONITORTEARDOWNRESP, procFunction: seat_client.monitorteardownResp },
     { dataHead: COMM_MSGHEAD_CONSTANTS.MONITORINSERTENDRESP, procFunction: seat_client.monitorinsertendsResp },
     { dataHead: COMM_MSGHEAD_CONSTANTS.BATCHOUTCALL_STATE_REPORT, procFunction: seat_client.batchoutcall_state_report },
+    { dataHead: COMM_MSGHEAD_CONSTANTS.CONTROLMSISTATEUSEDRESP, procFunction: seat_client.controlmsistateusedResp },
+    { dataHead: COMM_MSGHEAD_CONSTANTS.CONTROLMSISTATEIDLERESP, procFunction: seat_client.controlmsistateidleResp },
 ]
 seat_client.msgMap.findAndProc = function (dataHead,data) {
     var bfind = false;
@@ -1156,7 +1193,8 @@ seat_client.sendheartbeat = function () {
 seat_client.sendcheckout = function (nType) {
     var bRet = false;
     var MSIUserId = seat_client.msiUser.msiUserId;
-    if(seat_client.msiUser.msiState == MSI_STATE_CONSTANTS.SeatState_LoginIn){
+    //seat_client.msiUser.msiState == MSI_STATE_CONSTANTS.SeatState_LoginIn,这个判断不做了，由于可能状态不一致
+    if(true){
         if((seat_client.callInfo.nState == CALL_INFO_STATE_CONSTANTS.CallSate_NULL)||
             (seat_client.callInfo.nState == CALL_INFO_STATE_CONSTANTS.CallState_End)){
             var data = COMM_MSGHEAD_CONSTANTS.CHECKOUT + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId.toString() + COMM_MSGHEAD_CONSTANTS.SPLIT
@@ -1601,6 +1639,26 @@ seat_client.sendbatchhangup = function (type) {
 seat_client.onserviceReport = function (MSIUserId, serviceId, nServiceNum, phoneList) {
     seat_client.log("seat_client.onserviceReport:" + MSIUserId.toString() + "," + serviceId.toString());
 }
+
+/**
+ * @description 设置坐席忙闲状态
+ * @param {int} MSIUserId 坐席ID
+ * @param {int} nType 1：闲，2：忙
+ */
+seat_client.sendcontrolsetmsistate = function (MSIUserId,nType) {
+    var bRet = false;
+    var head;
+    if(nType == 1)
+        head = COMM_MSGHEAD_CONSTANTS.CONTROLMSISTATEIDLE;
+    else
+        head = COMM_MSGHEAD_CONSTANTS.CONTROLMSISTATEUSED;
+    var data = head + COMM_MSGHEAD_CONSTANTS.SPLIT + MSIUserId
+        + COMM_MSGHEAD_CONSTANTS.SPLIT + "0 0"+ COMM_MSGHEAD_CONSTANTS.TAIL;
+    seat_client.send(data);
+    bRet = true;
+    return bRet;
+}
+
 
 /**
  * @description 呼叫挂断
